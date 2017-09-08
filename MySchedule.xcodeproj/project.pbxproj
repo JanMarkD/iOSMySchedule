@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C2CBA9A1F62BADE001C470E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CBA991F62BADE001C470E /* ProfileViewController.swift */; };
+		3C2CBA9C1F62BB07001C470E /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CBA9B1F62BB07001C470E /* ScheduleViewController.swift */; };
+		3C2CBA9E1F62BB44001C470E /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CBA9D1F62BB44001C470E /* NavigationViewController.swift */; };
 		3C9314141F62B4AD003A2BA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9314131F62B4AD003A2BA3 /* AppDelegate.swift */; };
-		3C9314161F62B4AD003A2BA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9314151F62B4AD003A2BA3 /* ViewController.swift */; };
+		3C9314161F62B4AD003A2BA3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9314151F62B4AD003A2BA3 /* LoginViewController.swift */; };
 		3C9314191F62B4AD003A2BA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C9314171F62B4AD003A2BA3 /* Main.storyboard */; };
 		3C93141C1F62B4AD003A2BA3 /* MySchedule.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C93141A1F62B4AD003A2BA3 /* MySchedule.xcdatamodeld */; };
 		3C93141E1F62B4AD003A2BA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C93141D1F62B4AD003A2BA3 /* Assets.xcassets */; };
@@ -36,9 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C2CBA991F62BADE001C470E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		3C2CBA9B1F62BB07001C470E /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		3C2CBA9D1F62BB44001C470E /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		3C9314101F62B4AD003A2BA3 /* MySchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C9314131F62B4AD003A2BA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3C9314151F62B4AD003A2BA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3C9314151F62B4AD003A2BA3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3C9314181F62B4AD003A2BA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C93141B1F62B4AD003A2BA3 /* MySchedule.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MySchedule.xcdatamodel; sourceTree = "<group>"; };
 		3C93141D1F62B4AD003A2BA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,8 +108,11 @@
 			isa = PBXGroup;
 			children = (
 				3C9314131F62B4AD003A2BA3 /* AppDelegate.swift */,
-				3C9314151F62B4AD003A2BA3 /* ViewController.swift */,
+				3C9314151F62B4AD003A2BA3 /* LoginViewController.swift */,
 				3C9314441F62B752003A2BA3 /* HomeViewController.swift */,
+				3C2CBA991F62BADE001C470E /* ProfileViewController.swift */,
+				3C2CBA9B1F62BB07001C470E /* ScheduleViewController.swift */,
+				3C2CBA9D1F62BB44001C470E /* NavigationViewController.swift */,
 				3C9314171F62B4AD003A2BA3 /* Main.storyboard */,
 				3C93141D1F62B4AD003A2BA3 /* Assets.xcassets */,
 				3C93141F1F62B4AD003A2BA3 /* LaunchScreen.storyboard */,
@@ -268,9 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C9314161F62B4AD003A2BA3 /* ViewController.swift in Sources */,
+				3C9314161F62B4AD003A2BA3 /* LoginViewController.swift in Sources */,
 				3C9314141F62B4AD003A2BA3 /* AppDelegate.swift in Sources */,
+				3C2CBA9A1F62BADE001C470E /* ProfileViewController.swift in Sources */,
+				3C2CBA9C1F62BB07001C470E /* ScheduleViewController.swift in Sources */,
 				3C93141C1F62B4AD003A2BA3 /* MySchedule.xcdatamodeld in Sources */,
+				3C2CBA9E1F62BB44001C470E /* NavigationViewController.swift in Sources */,
 				3C9314451F62B752003A2BA3 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,6 +536,7 @@
 				3C93143D1F62B4AE003A2BA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C93143E1F62B4AE003A2BA3 /* Build configuration list for PBXNativeTarget "MyScheduleTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +545,7 @@
 				3C9314401F62B4AE003A2BA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C9314411F62B4AE003A2BA3 /* Build configuration list for PBXNativeTarget "MyScheduleUITests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +554,7 @@
 				3C9314431F62B4AE003A2BA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
