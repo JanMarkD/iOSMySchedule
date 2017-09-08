@@ -15,6 +15,7 @@
 		3C9314211F62B4AD003A2BA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C93141F1F62B4AD003A2BA3 /* LaunchScreen.storyboard */; };
 		3C93142C1F62B4AD003A2BA3 /* MyScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C93142B1F62B4AD003A2BA3 /* MyScheduleTests.swift */; };
 		3C9314371F62B4AE003A2BA3 /* MyScheduleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9314361F62B4AE003A2BA3 /* MyScheduleUITests.swift */; };
+		3C9314451F62B752003A2BA3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9314441F62B752003A2BA3 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3C9314321F62B4AE003A2BA3 /* MyScheduleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyScheduleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C9314361F62B4AE003A2BA3 /* MyScheduleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScheduleUITests.swift; sourceTree = "<group>"; };
 		3C9314381F62B4AE003A2BA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C9314441F62B752003A2BA3 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				3C9314131F62B4AD003A2BA3 /* AppDelegate.swift */,
 				3C9314151F62B4AD003A2BA3 /* ViewController.swift */,
+				3C9314441F62B752003A2BA3 /* HomeViewController.swift */,
 				3C9314171F62B4AD003A2BA3 /* Main.storyboard */,
 				3C93141D1F62B4AD003A2BA3 /* Assets.xcassets */,
 				3C93141F1F62B4AD003A2BA3 /* LaunchScreen.storyboard */,
@@ -268,6 +271,7 @@
 				3C9314161F62B4AD003A2BA3 /* ViewController.swift in Sources */,
 				3C9314141F62B4AD003A2BA3 /* AppDelegate.swift in Sources */,
 				3C93141C1F62B4AD003A2BA3 /* MySchedule.xcdatamodeld in Sources */,
+				3C9314451F62B752003A2BA3 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
