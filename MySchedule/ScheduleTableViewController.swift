@@ -9,6 +9,8 @@
 import UIKit
 
 class ScheduleTableViewController: UITableViewController {
+    
+    let numberOfRowsInSection = [1,2,3,4,5]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +36,12 @@ class ScheduleTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return numberOfRowsInSection.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return numberOfRowsInSection[section]
     }
 
     /*
