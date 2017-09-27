@@ -12,7 +12,7 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBAction func finishEditing(_ sender: UITextField) {
-        //save text
+        //save text oke
     }
     
     

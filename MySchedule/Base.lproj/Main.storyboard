@@ -102,24 +102,150 @@
             </objects>
             <point key="canvasLocation" x="2614" y="435"/>
         </scene>
-        <!--Schedule-->
-        <scene sceneID="IRc-Mm-xCP">
+        <!--Schedule Table View Controller-->
+        <scene sceneID="0HU-wS-wBX">
             <objects>
-                <viewController id="QA7-sN-kUF" customClass="ScheduleViewController" customModule="MySchedule" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="IXR-60-Ke5"/>
-                        <viewControllerLayoutGuide type="bottom" id="3Zz-xX-N3N"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Gyl-2U-nvG">
+                <tableViewController id="pZX-TO-tbq" customClass="ScheduleTableViewController" customModule="MySchedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Ee0-3d-WoO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" id="jWz-YO-j98">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSU-HX-mCJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
+                                    <state key="normal" title="Button"/>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Week" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0p-JG-6Lt">
+                                    <rect key="frame" x="125" y="0.0" width="125" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9D5-Sv-Pti">
+                                    <rect key="frame" x="250" y="0.0" width="125" height="30"/>
+                                    <state key="normal" title="Button"/>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="9D5-Sv-Pti" firstAttribute="leading" secondItem="P0p-JG-6Lt" secondAttribute="trailing" id="1pP-i8-mrD"/>
+                                <constraint firstItem="nSU-HX-mCJ" firstAttribute="leading" secondItem="jWz-YO-j98" secondAttribute="leading" id="Inx-Zl-U4i"/>
+                                <constraint firstAttribute="bottom" secondItem="9D5-Sv-Pti" secondAttribute="bottom" id="LbW-3t-cqe"/>
+                                <constraint firstAttribute="trailing" secondItem="9D5-Sv-Pti" secondAttribute="trailing" id="Mnv-jJ-YQX"/>
+                                <constraint firstItem="P0p-JG-6Lt" firstAttribute="leading" secondItem="nSU-HX-mCJ" secondAttribute="trailing" id="NWq-4q-9r2"/>
+                                <constraint firstItem="nSU-HX-mCJ" firstAttribute="top" secondItem="jWz-YO-j98" secondAttribute="top" id="OEB-eM-5aT"/>
+                                <constraint firstItem="9D5-Sv-Pti" firstAttribute="leading" secondItem="P0p-JG-6Lt" secondAttribute="trailing" id="Q0x-Qa-IQm"/>
+                                <constraint firstAttribute="bottom" secondItem="nSU-HX-mCJ" secondAttribute="bottom" id="Rjh-u4-nh9"/>
+                                <constraint firstItem="9D5-Sv-Pti" firstAttribute="top" secondItem="jWz-YO-j98" secondAttribute="top" id="ej3-Rx-RBM"/>
+                                <constraint firstAttribute="bottom" secondItem="P0p-JG-6Lt" secondAttribute="bottom" id="exh-SJ-Tex"/>
+                                <constraint firstItem="P0p-JG-6Lt" firstAttribute="leading" secondItem="nSU-HX-mCJ" secondAttribute="trailing" id="iLK-pd-R0t"/>
+                                <constraint firstItem="P0p-JG-6Lt" firstAttribute="top" secondItem="jWz-YO-j98" secondAttribute="top" id="zOj-kI-hZ5"/>
+                            </constraints>
+                        </stackView>
+                        <sections>
+                            <tableViewSection headerTitle="Monday" id="zHC-AJ-u8i">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="iSL-9d-sgm">
+                                        <rect key="frame" x="0.0" y="85.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iSL-9d-sgm" id="bqD-NO-5BG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Tuesday" id="UPf-ql-ndp">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Jtj-ce-hLR">
+                                        <rect key="frame" x="0.0" y="185.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jtj-ce-hLR" id="jeK-JY-inE">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Wednesday" id="jlo-0e-meO">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Xrv-ik-mN2">
+                                        <rect key="frame" x="0.0" y="285.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xrv-ik-mN2" id="jjh-rH-gES">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Thursday" id="8Jr-rj-ViD">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Qug-Ty-bxP">
+                                        <rect key="frame" x="0.0" y="385.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qug-Ty-bxP" id="YGb-tV-22l">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Friday" id="MDD-qF-eTD">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="qmj-TL-dyZ">
+                                        <rect key="frame" x="0.0" y="485.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qmj-TL-dyZ" id="D7V-7b-HRD">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="pZX-TO-tbq" id="QaS-T4-EKy"/>
+                            <outlet property="delegate" destination="pZX-TO-tbq" id="uAP-mU-rSX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="VCY-6U-tx5">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="0ns-Im-Qlu"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gbl-bS-caY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1081" y="1518"/>
+        </scene>
+        <!--Class Table View Controller-->
+        <scene sceneID="oFA-uY-nN9">
+            <objects>
+                <tableViewController id="DeX-Ea-Mex" customClass="ClassTableViewController" customModule="MySchedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WyX-vf-wPd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Schedule" id="Jir-jM-4fH"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VvJ-tF-ziJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1c2-uK-VXn">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1c2-uK-VXn" id="Opj-6S-xR0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DeX-Ea-Mex" id="YeF-7C-GCw"/>
+                            <outlet property="delegate" destination="DeX-Ea-Mex" id="KdC-3L-ism"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CL6-tA-bME" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1929" y="1092"/>
+            <point key="canvasLocation" x="1081" y="2191"/>
         </scene>
         <!--Navigation-->
         <scene sceneID="xWK-fE-d6W">
@@ -138,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4xG-IB-P7X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2614" y="1092"/>
+            <point key="canvasLocation" x="2952.8000000000002" y="1091.6041979010495"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5ix-AC-EmR">
@@ -152,14 +278,33 @@
                     </tabBar>
                     <connections>
                         <segue destination="6b5-ik-t1F" kind="relationship" relationship="viewControllers" id="KGv-ef-RVw"/>
-                        <segue destination="QA7-sN-kUF" kind="relationship" relationship="viewControllers" id="ebS-EB-ZSu"/>
                         <segue destination="MSi-zm-Uve" kind="relationship" relationship="viewControllers" id="KbH-zM-kNM"/>
                         <segue destination="aCp-5L-lO6" kind="relationship" relationship="viewControllers" id="80u-hy-BBi"/>
+                        <segue destination="5d0-eJ-QGf" kind="relationship" relationship="viewControllers" id="Ilu-Mp-IwD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H1n-va-J2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1080.8" y="750.67466266866575"/>
+        </scene>
+        <!--Schedule-->
+        <scene sceneID="giF-8S-Vhx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5d0-eJ-QGf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Schedule" id="0iW-qO-KpI"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GWo-ri-dQR">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pZX-TO-tbq" kind="relationship" relationship="rootViewController" id="ZZn-ie-m0l"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KMD-fE-hk8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="329" y="1518"/>
         </scene>
     </scenes>
 </document>
