@@ -10,11 +10,13 @@ import UIKit
 
 class ScheduleTableViewController: UITableViewController {
     
-    let numberOfRowsInSection = [1,2,3,4,5]
+    let numberOfRowsInSection = [1,1,1,1,1]
+    let headerForSection = ["Monday","Tuesday","Wednesday","Thursday","Friday"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.delegate = self
+        tableView.dataSource = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,6 +31,13 @@ class ScheduleTableViewController: UITableViewController {
     
     func retrievingSchedule(studentNumber: Int, startTime: String, endTime: String) -> String{
         let domainName = "driestarcollege"
+        let tokenHTTPS = "https://"+domainName+".zportal.nl/api/v3/oauth/token"
+        let token = 0
+        let scheduleHTTPS = 1
+        
+        
+        
+        
         let mySchedule = "rooster"
         return mySchedule
     }
@@ -43,16 +52,18 @@ class ScheduleTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return numberOfRowsInSection[section]
     }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return headerForSection[section]
+    }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         // Configure the cell...
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
