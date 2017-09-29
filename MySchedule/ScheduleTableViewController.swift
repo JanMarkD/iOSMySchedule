@@ -14,6 +14,8 @@ class ScheduleTableViewController: UITableViewController {
     
     let headerForSection = ["Monday","Tuesday","Wednesday","Thursday","Friday"]
     
+    var valueToPass:String!
+    
     func getClassesDay(weekNumberX:Int)->Array<Int>{
         return [1,1,1,1,1]
     }
@@ -67,11 +69,20 @@ class ScheduleTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-
+        
         // Configure the cell...
 
         return cell
     }
+    
+   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let indexPath = tableView.indexPathForSelectedRow
+        let currentCell = tableView.cellForRow(at: indexPath!) as! UITableViewCell
+        
+        let valueToPass = currentCell.textLabel?.text
+        performSegue(withIdentifier: "classTapped", sender: self)
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -108,14 +119,15 @@ class ScheduleTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
+    
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "classTapped"){
+            var viewController = segue.destination as! ClassTableViewController
+            viewController.classData = valueToPass
+        }
     }
-    */
+
 
 }
