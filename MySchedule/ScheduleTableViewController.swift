@@ -14,7 +14,7 @@ class ScheduleTableViewController: UITableViewController {
     
     let headerForSection = ["Monday","Tuesday","Wednesday","Thursday","Friday"]
     
-    func getClassesDay(weekNumber:Int)->Array<Int>{
+    func getClassesDay(weekNumberX:Int)->Array<Int>{
         return [1,1,1,1,1]
     }
     
@@ -50,12 +50,12 @@ class ScheduleTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        let numberOfRowsInSection = getClassesDay()
+        let numberOfRowsInSection = getClassesDay(weekNumberX:1)
         return numberOfRowsInSection.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let numberOfRowsInSection = getClassesDay()
+        let numberOfRowsInSection = getClassesDay(weekNumberX:1)
         return numberOfRowsInSection[section]
     }
     
