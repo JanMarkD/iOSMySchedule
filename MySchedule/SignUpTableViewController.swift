@@ -10,8 +10,39 @@ import UIKit
 
 class SignUpTableViewController: UITableViewController {
     
+    
+    //TableView Setup
+    
     let numberOfRows = [3,3,3,1]
-
+    
+    
+    //Outlets
+    
+    @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var lastName: UITextField!
+    @IBOutlet weak var emailAdress: UITextField!
+    @IBOutlet weak var domainName: UITextField!
+    @IBOutlet weak var activationCode: UITextField!
+    @IBOutlet weak var userName: UITextField!
+    @IBOutlet weak var passWord1: UITextField!
+    @IBOutlet weak var passWord2: UITextField!
+    
+    
+    //Actions
+    
+    @IBAction func checkPasswords(_ sender: Any) {
+        //check if passwords are equal
+        
+    }
+    
+    @IBAction func signUp(_ sender: UIButton) {
+        //get information
+        
+        //save information
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

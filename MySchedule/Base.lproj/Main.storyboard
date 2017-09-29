@@ -519,6 +519,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="checkPasswords:" destination="jYe-1p-gtD" eventType="editingDidEnd" id="YOC-Qo-DOo"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -557,6 +560,7 @@
                                                             <rect key="frame" x="187.5" y="0.0" width="187.5" height="43.5"/>
                                                             <state key="normal" title="Sign Up"/>
                                                             <connections>
+                                                                <action selector="signUp:" destination="jYe-1p-gtD" eventType="touchUpInside" id="4B7-m5-rtV"/>
                                                                 <segue destination="BYZ-38-t0r" kind="show" id="yxz-bN-bNI"/>
                                                             </connections>
                                                         </button>
@@ -580,6 +584,16 @@
                         </connections>
                     </tableView>
                     <size key="freeformSize" width="375" height="720"/>
+                    <connections>
+                        <outlet property="activationCode" destination="4U1-W2-4WQ" id="ZWT-8H-EuY"/>
+                        <outlet property="domainName" destination="Scz-pe-Y5d" id="LX6-PP-XOO"/>
+                        <outlet property="emailAdress" destination="Bpk-af-dSc" id="8NF-7I-WSl"/>
+                        <outlet property="firstName" destination="VRt-zR-duY" id="ki1-QH-mUN"/>
+                        <outlet property="lastName" destination="eRN-Du-wuX" id="eJO-4f-9M0"/>
+                        <outlet property="passWord1" destination="w3a-8T-Cpi" id="OFd-x2-MxZ"/>
+                        <outlet property="passWord2" destination="4OH-HE-xKH" id="kei-83-4fa"/>
+                        <outlet property="userName" destination="B8P-ed-XMB" id="7cR-40-dT6"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbc-cG-Acp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
