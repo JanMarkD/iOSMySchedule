@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2JZ-TP-MyX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -40,16 +40,13 @@
                                 <rect key="frame" x="164" y="318" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
-                                <connections>
-                                    <segue destination="E5G-3l-Y4J" kind="show" id="L6s-sp-GVF"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebv-q1-9nG">
                                 <rect key="frame" x="157" y="356" width="60" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
-                                    <segue destination="jYe-1p-gtD" kind="popoverPresentation" popoverAnchorView="ebv-q1-9nG" id="XMC-Ax-Zhp">
+                                    <segue destination="jYe-1p-gtD" kind="popoverPresentation" popoverAnchorView="ebv-q1-9nG" id="pix-qO-1e9">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
@@ -63,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="47" y="750"/>
+            <point key="canvasLocation" x="289" y="750"/>
         </scene>
         <!--Home-->
         <scene sceneID="bEz-bh-uPH">
@@ -179,20 +176,40 @@
         <scene sceneID="oFA-uY-nN9">
             <objects>
                 <tableViewController id="DeX-Ea-Mex" customClass="ClassTableViewController" customModule="MySchedule" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WyX-vf-wPd">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WyX-vf-wPd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1c2-uK-VXn">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1c2-uK-VXn" id="Opj-6S-xR0">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <sections>
+                            <tableViewSection id="tfF-SH-HlX">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1c2-uK-VXn">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1c2-uK-VXn" id="Opj-6S-xR0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="phn-U1-ERP">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="phn-U1-ERP" id="J7q-xl-vdt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kGL-pC-nWj">
+                                        <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kGL-pC-nWj" id="AaM-by-p8i">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="DeX-Ea-Mex" id="YeF-7C-GCw"/>
                             <outlet property="delegate" destination="DeX-Ea-Mex" id="KdC-3L-ism"/>
@@ -248,7 +265,7 @@
             <objects>
                 <tableViewController id="jYe-1p-gtD" customClass="SignUpTableViewController" customModule="MySchedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="t4j-kd-lo7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="720"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -526,16 +543,31 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTO-5W-If3">
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NN6-I1-o6y">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                                    <state key="normal" title="Sign Up"/>
-                                                </button>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4m-iy-bU8">
+                                                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="43.5"/>
+                                                            <state key="normal" title="Cancel"/>
+                                                            <connections>
+                                                                <segue destination="BYZ-38-t0r" kind="show" id="aR1-sh-A0C"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kan-Jf-2I8">
+                                                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="43.5"/>
+                                                            <state key="normal" title="Sign Up"/>
+                                                            <connections>
+                                                                <segue destination="BYZ-38-t0r" kind="show" id="yxz-bN-bNI"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="HTO-5W-If3" secondAttribute="bottom" id="dnj-Jh-WZc"/>
-                                                <constraint firstAttribute="trailing" secondItem="HTO-5W-If3" secondAttribute="trailing" id="gqZ-dg-lmD"/>
-                                                <constraint firstItem="HTO-5W-If3" firstAttribute="leading" secondItem="QwS-Ea-B2F" secondAttribute="leading" id="h6K-pt-q5t"/>
-                                                <constraint firstItem="HTO-5W-If3" firstAttribute="top" secondItem="QwS-Ea-B2F" secondAttribute="top" id="ipb-f5-E6k"/>
+                                                <constraint firstAttribute="bottom" secondItem="NN6-I1-o6y" secondAttribute="bottom" id="0TQ-1k-cKP"/>
+                                                <constraint firstItem="NN6-I1-o6y" firstAttribute="top" secondItem="QwS-Ea-B2F" secondAttribute="top" id="7HR-9w-Md4"/>
+                                                <constraint firstAttribute="trailing" secondItem="NN6-I1-o6y" secondAttribute="trailing" id="qNV-KB-Vdu"/>
+                                                <constraint firstItem="NN6-I1-o6y" firstAttribute="leading" secondItem="QwS-Ea-B2F" secondAttribute="leading" id="sAv-HL-LZK"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -547,10 +579,11 @@
                             <outlet property="delegate" destination="jYe-1p-gtD" id="Qnj-gX-WPD"/>
                         </connections>
                     </tableView>
+                    <size key="freeformSize" width="375" height="720"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbc-cG-Acp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="46" y="1517"/>
+            <point key="canvasLocation" x="289" y="1539"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="giF-8S-Vhx">
@@ -571,23 +604,8 @@
             </objects>
             <point key="canvasLocation" x="1063" y="1516"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="xEE-a3-glp">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2JZ-TP-MyX" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BdS-xg-7cn">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="s8B-wd-XqZ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bW6-wN-t6u" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-759" y="750"/>
-        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="aR1-sh-A0C"/>
+    </inferredMetricsTieBreakers>
 </document>

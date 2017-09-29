@@ -9,6 +9,8 @@
 import UIKit
 
 class SignUpTableViewController: UITableViewController {
+    
+    let numberOfRows = [3,3,3,1]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +31,12 @@ class SignUpTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return numberOfRows.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return numberOfRows[section]
     }
 
     /*

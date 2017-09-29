@@ -10,7 +10,7 @@ import UIKit
 
 class ClassTableViewController: UITableViewController {
     
-    let classData = String()
+    var classData = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
