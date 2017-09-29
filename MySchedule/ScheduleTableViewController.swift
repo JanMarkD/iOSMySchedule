@@ -10,9 +10,15 @@ import UIKit
 
 class ScheduleTableViewController: UITableViewController {
     
-    let numberOfRowsInSection = [1,1,1,1,1]
+    @IBOutlet weak var weekNumber: UILabel!
+    
     let headerForSection = ["Monday","Tuesday","Wednesday","Thursday","Friday"]
-
+    
+    func getClassesDay(weekNumber:Int)->Array<Int>{
+        return [1,1,1,1,1]
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -29,7 +35,7 @@ class ScheduleTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func retrievingSchedule(studentNumber: Int, startTime: String, endTime: String) -> String{
+    func retrievingSchedule(studentNumber: Int, startTime: String, endTime: String)->String{
         let domainName = "driestarcollege"
         let tokenHTTPS = "https://"+domainName+".zportal.nl/api/v3/oauth/token"
         let token = 0
@@ -44,12 +50,12 @@ class ScheduleTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        let numberOfRowsInSection = getClassesDay()
         return numberOfRowsInSection.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        let numberOfRowsInSection = getClassesDay()
         return numberOfRowsInSection[section]
     }
     

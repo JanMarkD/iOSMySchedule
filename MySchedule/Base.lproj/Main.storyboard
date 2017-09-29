@@ -166,6 +166,9 @@
                     <navigationItem key="navigationItem" id="VCY-6U-tx5">
                         <barButtonItem key="backBarButtonItem" title="Back" id="0ns-Im-Qlu"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="weekNumber" destination="P0p-JG-6Lt" id="sMC-ir-euZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gbl-bS-caY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
