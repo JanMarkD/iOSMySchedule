@@ -520,7 +520,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <action selector="checkPasswords:" destination="jYe-1p-gtD" eventType="editingDidEnd" id="YOC-Qo-DOo"/>
+                                                        <action selector="passwordEditingDidEnd:" destination="jYe-1p-gtD" eventType="editingDidEnd" id="Nlc-xC-KP1"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -586,6 +586,7 @@
                     <size key="freeformSize" width="375" height="720"/>
                     <connections>
                         <outlet property="activationCode" destination="4U1-W2-4WQ" id="ZWT-8H-EuY"/>
+                        <outlet property="checkPasswordsTapped" destination="4OH-HE-xKH" id="hAf-dx-D7B"/>
                         <outlet property="domainName" destination="Scz-pe-Y5d" id="LX6-PP-XOO"/>
                         <outlet property="emailAdress" destination="Bpk-af-dSc" id="8NF-7I-WSl"/>
                         <outlet property="firstName" destination="VRt-zR-duY" id="ki1-QH-mUN"/>

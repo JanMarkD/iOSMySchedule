@@ -28,20 +28,68 @@ class SignUpTableViewController: UITableViewController {
     @IBOutlet weak var passWord2: UITextField!
     
     
+    //Functions
+    
+    func checkPasswords(password1:String, password2:String) -> Bool{
+        if (password1 == password2){
+            return true
+        }else{
+            return false
+        }
+    }
+    
+    
     //Actions
     
-    @IBAction func checkPasswords(_ sender: Any) {
-        //check if passwords are equal
+    @IBAction func passwordEditingDidEnd(_ sender: UITextField) {
+        let password1 = passWord1.text ?? "Geen wachwoord1"
+        let password2 = passWord2.text ?? "Geen wachtwoord2"
+        let check = checkPasswords(password1: password1, password2: password2)
         
     }
     
+
     @IBAction func signUp(_ sender: UIButton) {
-        //get information
         
-        //save information
+        let password1 = passWord1.text ?? "Nothing"
+        let password2 = passWord2.text ?? "Nothing"
+        let check = checkPasswords(password1: password1, password2: password2)
+        
+        if (check == true){
+            let firstNameX = firstName.text ?? "Nothing"
+            let lastNameX = lastName.text ?? "Nothing"
+            let emailAdressX = emailAdress.text ?? "Nothing"
+            let domainNameX = domainName.text ?? "Nothing"
+            let activationCodeX = activationCode.text ?? "Nothing"
+            let userNameX = userName.text ?? "Nothing"
+            
+            if firstNameX == "Nothing"||lastNameX == "Nothing"||emailAdressX == "Nothing"||domainNameX == "Nothing"||activationCodeX == "Nothing"||userNameX == "Nothing"||password2 == "Nothing"||password1 == "Nothing"{
+                let alertController = UIAlertController(title: "Non-matching Passwords", message:
+                    "Please use the same passwords", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
+                
+                self.present(alertController, animated: true, completion: nil)
+            }else{
+                let nameList = [firstNameX,lastNameX]
+                let loginSet = [userNameX, password1]
+                let defaults = UserDefaults.standard
+                defaults.set(nameList, forKey: "Name")
+                defaults.set(emailAdressX,forKey: "Emailadress")
+                defaults.set(loginSet,forKey: "Login")
+                defaults.set(domainNameX, forKey: "Domain name")
+                defaults.set(activationCodeX, forKey: "Activation code")}
+            
+        }else{
+            let alertController = UIAlertController(title: "Missing Data", message:
+                "Please fill in all the fields", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)        }
     }
     
     
+    //Functions
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
