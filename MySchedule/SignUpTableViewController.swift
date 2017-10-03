@@ -38,6 +38,12 @@ class SignUpTableViewController: UITableViewController {
         }
     }
     
+    func addAlert(title:String, message:String, action:String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: action, style: .default, handler: nil))
+        self.present(alert, animated: true,completion: nil)
+    }
+    
     
     //Actions
     
@@ -51,7 +57,7 @@ class SignUpTableViewController: UITableViewController {
 
     @IBAction func signUp(_ sender: UIButton) {
         
-        let password1 = passWord1.text ?? "Nothing"
+        let password1 = passWord1.text ?? "Nothingx"
         let password2 = passWord2.text ?? "Nothing"
         let check = checkPasswords(password1: password1, password2: password2)
         
@@ -60,15 +66,13 @@ class SignUpTableViewController: UITableViewController {
             let lastNameX = lastName.text ?? "Nothing"
             let emailAdressX = emailAdress.text ?? "Nothing"
             let domainNameX = domainName.text ?? "Nothing"
-            let activationCodeX = activationCode.text ?? "Nothing"
-            let userNameX = userName.text ?? "Nothing"
+            let activationCodeX = activationCode.text ?? ""
+            let userNameX = userName.text ?? "kdjfkj"
+            print(type(of: userNameX))
+            print(userNameX)
             
-            if firstNameX == "Nothing"||lastNameX == "Nothing"||emailAdressX == "Nothing"||domainNameX == "Nothing"||activationCodeX == "Nothing"||userNameX == "Nothing"||password2 == "Nothing"||password1 == "Nothing"{
-                let alertController = UIAlertController(title: "Non-matching Passwords", message:
-                    "Please use the same passwords", preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
-                
-                self.present(alertController, animated: true, completion: nil)
+            if (firstNameX == ""){
+                addAlert(title: "Empty Fields", message: "Please fill all fields", action: "OK")
             }else{
                 let nameList = [firstNameX,lastNameX]
                 let loginSet = [userNameX, password1]
@@ -80,11 +84,9 @@ class SignUpTableViewController: UITableViewController {
                 defaults.set(activationCodeX, forKey: "Activation code")}
             
         }else{
-            let alertController = UIAlertController(title: "Missing Data", message:
-                "Please fill in all the fields", preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
-            
-            self.present(alertController, animated: true, completion: nil)        }
+            addAlert(title: "Non-matching Passwords", message: "Passwords do not match", action: "OK")
+            print("Hoi")
+        }
     }
     
     
@@ -107,7 +109,7 @@ class SignUpTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 4
+        return numberOfRows.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
