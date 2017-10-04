@@ -55,9 +55,6 @@ class SignUpTableViewController: UITableViewController {
         }
     }
     
-    private func presentViewController(alert: UIAlertController, animated flag: Bool, completion: (() -> Void)?) -> Void {
-        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: flag, completion: completion)
-    }
     
     func topMostController() -> UIViewController {
         var topController: UIViewController? = UIApplication.shared.keyWindow?.rootViewController
@@ -106,7 +103,7 @@ class SignUpTableViewController: UITableViewController {
             let activationCodeX = activationCode.text ?? ""
             let userNameX = userName.text ?? "kdjfkj"
             
-            if (checkFields() == true) {
+            if (checkFields() == false) {
                 
                 alert(message: "Please fill in all fields", title: "Empty fields")
                 
@@ -129,11 +126,6 @@ class SignUpTableViewController: UITableViewController {
             alert(message: "Passwords don't match", title: "Password")
         }
     }
-    
-    
-    //Functions
-
-    
     
     
     override func viewDidLoad() {
