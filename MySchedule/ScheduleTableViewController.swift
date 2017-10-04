@@ -11,15 +11,32 @@ import Alamofire
 
 class ScheduleTableViewController: UITableViewController {
     
+    //Outlets
+    
     @IBOutlet weak var weekNumber: UILabel!
+    
+    
+    //Layout Data
     
     let headerForSection = ["Monday","Tuesday","Wednesday","Thursday","Friday"]
     
     var valueToPass:String!
     
+    
+    
+    //Functions
+    
     func getClassesDay(weekNumberX:Int)->Array<Int>{
         return [1,1,1,1,1]
     }
+    
+    
+    //Actions
+    
+    
+    
+    
+    
     
     
     override func viewDidLoad() {
@@ -45,9 +62,25 @@ class ScheduleTableViewController: UITableViewController {
         let tokenHTTPS = "https://"+domainName+".zportal.nl/api/v3/oauth/token"
         let token = 0
         let scheduleHTTPS = 1
+        let parameters: Parameters = [
+            "grant_type": "authorization_code",
+            "code": 5734890759345
+        ]
         
-        //Alamofire.request(.POST, tokenHTTPS, parameters: params, encoding: .JSON, headers: headers).authenticate(user: "clientID", password: "clientSecret").responseJSON { response in
-            //debugPrint(response)}
+        Alamofire.request(tokenHTTPS, method: .post, parameters: parameters).responseJSON { response in
+            print("Request: \(String(describing: response.request))")   // original url request
+            print("Response: \(String(describing: response.response))") // http url response
+            print("Result: \(response.result)")                         // response serialization result
+            
+            if let json = response.result.value {
+                print("JSON: \(json)") // serialized json response
+                // hier fancy shit met token opslaan enzo
+            }
+            
+            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                print("Data: \(utf8Text)") // original server data as UTF8 string; gebeurt alleen als de server iets anders terugstuurt dan JSON
+            }
+        }
         
         let mySchedule = "rooster"
         return mySchedule

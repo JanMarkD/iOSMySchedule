@@ -11,7 +11,7 @@ import UIKit
 class SignUpTableViewController: UITableViewController {
     
     
-    //TableView Setup
+    //Layout Data
     
     let numberOfRows = [3,3,3,1]
     

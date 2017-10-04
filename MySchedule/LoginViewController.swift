@@ -54,9 +54,9 @@ class LoginViewController: UIViewController {
         let username = usernameTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         
-        let check = checkUsername(username:username, password:password)
+        let check = checkUsernamePassword(username:username, password:password)
         
-        if check = true{
+        if check == true{
             // set up new view
         }else{
             alert(message: "Please fill in correct username and password", title: "Incorrect password or username")

@@ -62,7 +62,6 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="icX-4G-Tg0"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="loginButton" destination="6hO-C5-XR7" id="VmG-jp-d85"/>
                         <outlet property="passwordTextField" destination="DEd-5o-CTe" id="grx-Ba-vbF"/>
                         <outlet property="usernameTextField" destination="Cg5-xR-kax" id="OsJ-d5-PLX"/>
                     </connections>
