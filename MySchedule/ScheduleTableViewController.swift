@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ScheduleTableViewController: UITableViewController {
     
@@ -45,8 +46,8 @@ class ScheduleTableViewController: UITableViewController {
         let token = 0
         let scheduleHTTPS = 1
         
-        
-        
+        //Alamofire.request(.POST, tokenHTTPS, parameters: params, encoding: .JSON, headers: headers).authenticate(user: "clientID", password: "clientSecret").responseJSON { response in
+            //debugPrint(response)}
         
         let mySchedule = "rooster"
         return mySchedule

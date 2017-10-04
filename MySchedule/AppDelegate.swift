@@ -91,3 +91,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+func topMostController() -> UIViewController {
+    var topController: UIViewController? = UIApplication.shared.keyWindow?.rootViewController
+    while ((topController?.presentedViewController) != nil) {
+        topController = topController?.presentedViewController
+    }
+    return topController!
+}
+
+func alert(message:String){
+    let alert=UIAlertController(title: "AppName", message: message, preferredStyle: .alert);
+    let cancelAction: UIAlertAction = UIAlertAction(title: "OK", style: .cancel) { action -> Void in
+        
+    }
+    alert.addAction(cancelAction)
+    topMostController().present(alert, animated: true, completion: nil);
+}

@@ -561,7 +561,7 @@
                                                             <state key="normal" title="Sign Up"/>
                                                             <connections>
                                                                 <action selector="signUp:" destination="jYe-1p-gtD" eventType="touchUpInside" id="4B7-m5-rtV"/>
-                                                                <segue destination="BYZ-38-t0r" kind="show" id="yxz-bN-bNI"/>
+                                                                <segue destination="BYZ-38-t0r" kind="show" identifier="SignUp" id="yxz-bN-bNI"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -620,6 +620,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aR1-sh-A0C"/>
+        <segue reference="yxz-bN-bNI"/>
     </inferredMetricsTieBreakers>
 </document>

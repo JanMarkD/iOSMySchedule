@@ -38,10 +38,42 @@ class SignUpTableViewController: UITableViewController {
         }
     }
     
-    func addAlert(title:String, message:String, action:String){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: action, style: .default, handler: nil))
-        self.present(alert, animated: true,completion: nil)
+    func checkFields() -> Bool {
+        let firstNameX = firstName.text ?? "Nothing"
+        let lastNameX = lastName.text ?? "Nothing"
+        let emailAdressX = emailAdress.text ?? "Nothing"
+        let domainNameX = domainName.text ?? "Nothing"
+        let activationCodeX = activationCode.text ?? ""
+        let userNameX = userName.text ?? "kdjfkj"
+        let password1 = passWord1.text ?? "Nothingx"
+        let password2 = passWord2.text ?? "Nothing"
+        
+        if (firstNameX == "")||(lastNameX == "")||(emailAdressX == "")||(domainNameX == "")||(activationCodeX == "")||(password1 == "")||(password2 == "")||(userNameX == ""){
+            return false
+        }else{
+            return true
+        }
+    }
+    
+    private func presentViewController(alert: UIAlertController, animated flag: Bool, completion: (() -> Void)?) -> Void {
+        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: flag, completion: completion)
+    }
+    
+    func topMostController() -> UIViewController {
+        var topController: UIViewController? = UIApplication.shared.keyWindow?.rootViewController
+        while ((topController?.presentedViewController) != nil) {
+            topController = topController?.presentedViewController
+        }
+        return topController!
+    }
+    
+    func alert(message:String, title:String){
+        let alert=UIAlertController(title: title, message: message, preferredStyle: .alert);
+        let cancelAction: UIAlertAction = UIAlertAction(title: "OK", style: .cancel) { action -> Void in
+            
+        }
+        alert.addAction(cancelAction)
+        topMostController().present(alert, animated: true, completion: nil);
     }
     
     
@@ -51,7 +83,11 @@ class SignUpTableViewController: UITableViewController {
         let password1 = passWord1.text ?? "Geen wachwoord1"
         let password2 = passWord2.text ?? "Geen wachtwoord2"
         let check = checkPasswords(password1: password1, password2: password2)
-        
+        if (check == false){
+            passWord2.backgroundColor = UIColor.red
+        }else{
+            print("Passwords match")
+        }
     }
     
 
@@ -62,18 +98,20 @@ class SignUpTableViewController: UITableViewController {
         let check = checkPasswords(password1: password1, password2: password2)
         
         if (check == true){
+            
             let firstNameX = firstName.text ?? "Nothing"
             let lastNameX = lastName.text ?? "Nothing"
             let emailAdressX = emailAdress.text ?? "Nothing"
             let domainNameX = domainName.text ?? "Nothing"
             let activationCodeX = activationCode.text ?? ""
             let userNameX = userName.text ?? "kdjfkj"
-            print(type(of: userNameX))
-            print(userNameX)
             
-            if (firstNameX == ""){
-                addAlert(title: "Empty Fields", message: "Please fill all fields", action: "OK")
+            if (checkFields() == true) {
+                
+                alert(message: "Please fill in all fields", title: "Empty fields")
+                
             }else{
+                
                 let nameList = [firstNameX,lastNameX]
                 let loginSet = [userNameX, password1]
                 let defaults = UserDefaults.standard
@@ -81,11 +119,14 @@ class SignUpTableViewController: UITableViewController {
                 defaults.set(emailAdressX,forKey: "Emailadress")
                 defaults.set(loginSet,forKey: "Login")
                 defaults.set(domainNameX, forKey: "Domain name")
-                defaults.set(activationCodeX, forKey: "Activation code")}
+                defaults.set(activationCodeX, forKey: "Activation code")
+                
+                performSegue(withIdentifier: "SignUp", sender: nil)
+                
+            }
             
         }else{
-            addAlert(title: "Non-matching Passwords", message: "Passwords do not match", action: "OK")
-            print("Hoi")
+            alert(message: "Passwords don't match", title: "Password")
         }
     }
     
@@ -93,11 +134,32 @@ class SignUpTableViewController: UITableViewController {
     //Functions
 
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "SignUp"{
+            let password1 = passWord1.text ?? "Nothingx"
+            let password2 = passWord2.text ?? "Nothing"
+            if checkFields() == true{
+                if checkPasswords(password1: password1, password2: password2) == true{
+                    return true
+                }else{
+                    return false
+                }
+            }else{
+                return false
+            }
+        }else{
+            return true
+        }
     }
 
     override func didReceiveMemoryWarning() {
