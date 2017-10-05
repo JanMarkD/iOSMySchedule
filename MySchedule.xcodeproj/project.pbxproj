@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3C2CBA9A1F62BADE001C470E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CBA991F62BADE001C470E /* ProfileViewController.swift */; };
-		3C2CBA9E1F62BB44001C470E /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CBA9D1F62BB44001C470E /* NavigationViewController.swift */; };
 		3C2D53D11F7E345000457014 /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2D53D01F7E345000457014 /* SignUpTableViewController.swift */; };
 		3C4CB9311F7BB051001C7705 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CB9301F7BB051001C7705 /* ScheduleTableViewController.swift */; };
 		3C4CB9331F7BB0AF001C7705 /* ClassTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CB9321F7BB0AF001C7705 /* ClassTableViewController.swift */; };
@@ -114,7 +113,6 @@
 
 /* Begin PBXFileReference section */
 		3C2CBA991F62BADE001C470E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		3C2CBA9D1F62BB44001C470E /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		3C2D53D01F7E345000457014 /* SignUpTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
 		3C4CB9301F7BB051001C7705 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		3C4CB9321F7BB0AF001C7705 /* ClassTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTableViewController.swift; sourceTree = "<group>"; };
@@ -191,7 +189,6 @@
 				3C2D53D01F7E345000457014 /* SignUpTableViewController.swift */,
 				3C9314441F62B752003A2BA3 /* HomeViewController.swift */,
 				3C2CBA991F62BADE001C470E /* ProfileViewController.swift */,
-				3C2CBA9D1F62BB44001C470E /* NavigationViewController.swift */,
 				3C4CB9301F7BB051001C7705 /* ScheduleTableViewController.swift */,
 				3C4CB9321F7BB0AF001C7705 /* ClassTableViewController.swift */,
 				3C9314171F62B4AD003A2BA3 /* Main.storyboard */,
@@ -440,7 +437,6 @@
 				3C9314141F62B4AD003A2BA3 /* AppDelegate.swift in Sources */,
 				3C2CBA9A1F62BADE001C470E /* ProfileViewController.swift in Sources */,
 				3C93141C1F62B4AD003A2BA3 /* MySchedule.xcdatamodeld in Sources */,
-				3C2CBA9E1F62BB44001C470E /* NavigationViewController.swift in Sources */,
 				3C4CB9331F7BB0AF001C7705 /* ClassTableViewController.swift in Sources */,
 				3C2D53D11F7E345000457014 /* SignUpTableViewController.swift in Sources */,
 				3C9314451F62B752003A2BA3 /* HomeViewController.swift in Sources */,
