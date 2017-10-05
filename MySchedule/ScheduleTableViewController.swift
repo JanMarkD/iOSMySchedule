@@ -62,6 +62,8 @@ class ScheduleTableViewController: UITableViewController {
         let weeknumber = getWeekNumber()
         weekNumber.text = String(weeknumber)
         
+        //lol
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
