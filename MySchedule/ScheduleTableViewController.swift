@@ -15,6 +15,8 @@ class ScheduleTableViewController: UITableViewController {
     
     @IBOutlet weak var weekNumber: UILabel!
     
+
+    
     
     //Layout Data
     
@@ -26,6 +28,12 @@ class ScheduleTableViewController: UITableViewController {
     
     //Functions
     
+    func getWeekNumber() -> Int{
+        let calendar = Calendar.current
+        let weekNumber = calendar.component(.weekOfYear, from: Date.init(timeIntervalSinceNow: 0))
+        return weekNumber
+    }
+    
     func getClassesDay(weekNumberX:Int)->Array<Int>{
         return [1,1,1,1,1]
     }
@@ -33,8 +41,16 @@ class ScheduleTableViewController: UITableViewController {
     
     //Actions
     
+    @IBAction func nextWeek(_ sender: UIButton) {
+        let nextweek = Int(weekNumber.text!)!
+        weekNumber.text = String(nextweek+1)
+    }
     
     
+    @IBAction func previousWeek(_ sender: UIButton) {
+        let previousweek = Int(weekNumber.text!)!
+        weekNumber.text = String(previousweek-1)
+    }
     
     
     
@@ -43,7 +59,8 @@ class ScheduleTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
+        let weeknumber = getWeekNumber()
+        weekNumber.text = String(weeknumber)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -57,14 +74,18 @@ class ScheduleTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func retrievingSchedule(studentNumber: Int, startTime: String, endTime: String)->String{
+    func retrievingSchedule()->String{
         let domainName = "driestarcollege"
+        let code = 671075443203
+        let startTime = String(1388990000)
+        let endTime = String(1388999999)
+        let studentCode = String(163250)
+        
         let tokenHTTPS = "https://"+domainName+".zportal.nl/api/v3/oauth/token"
-        let token = 0
-        let scheduleHTTPS = 1
+        
         let parameters: Parameters = [
             "grant_type": "authorization_code",
-            "code": 5734890759345
+            "code":"671075443203"
         ]
         
         Alamofire.request(tokenHTTPS, method: .post, parameters: parameters).responseJSON { response in
@@ -72,18 +93,19 @@ class ScheduleTableViewController: UITableViewController {
             print("Response: \(String(describing: response.response))") // http url response
             print("Result: \(response.result)")                         // response serialization result
             
-            if let json = response.result.value {
+            if let json = response.result.value as? [String:Any]{
+                
                 print("JSON: \(json)") // serialized json response
-                // hier fancy shit met token opslaan enzo
             }
+            
             
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                 print("Data: \(utf8Text)") // original server data as UTF8 string; gebeurt alleen als de server iets anders terugstuurt dan JSON
+                let mySchedule = "Niet gelukt"
+                print(mySchedule)
             }
         }
-        
-        let mySchedule = "rooster"
-        return mySchedule
+        return "OK"
     }
     // MARK: - Table view data source
 

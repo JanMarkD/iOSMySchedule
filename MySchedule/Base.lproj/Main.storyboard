@@ -116,43 +116,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" id="jWz-YO-j98">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                        <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" id="Ni8-Xh-UvN">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSU-HX-mCJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
-                                    <state key="normal" title="Button"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsK-e5-DVm">
+                                    <rect key="frame" x="0.0" y="0.0" width="94" height="44"/>
+                                    <state key="normal" title="Previous"/>
+                                    <connections>
+                                        <action selector="previousWeek:" destination="pZX-TO-tbq" eventType="touchUpInside" id="DGg-mT-kWr"/>
+                                    </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Week" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0p-JG-6Lt">
-                                    <rect key="frame" x="125" y="0.0" width="125" height="30"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Week" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOG-bO-F0z">
+                                    <rect key="frame" x="94" y="0.0" width="93.5" height="44"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9D5-Sv-Pti">
-                                    <rect key="frame" x="250" y="0.0" width="125" height="30"/>
-                                    <state key="normal" title="Button"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="52" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5T-cS-Kk7">
+                                    <rect key="frame" x="187.5" y="0.0" width="94" height="44"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLz-4W-tmA">
+                                    <rect key="frame" x="281.5" y="0.0" width="93.5" height="44"/>
+                                    <state key="normal" title="Next"/>
+                                    <connections>
+                                        <action selector="nextWeek:" destination="pZX-TO-tbq" eventType="touchUpInside" id="2qj-er-3BV"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="9D5-Sv-Pti" firstAttribute="leading" secondItem="P0p-JG-6Lt" secondAttribute="trailing" id="1pP-i8-mrD"/>
-                                <constraint firstItem="nSU-HX-mCJ" firstAttribute="leading" secondItem="jWz-YO-j98" secondAttribute="leading" id="Inx-Zl-U4i"/>
-                                <constraint firstAttribute="bottom" secondItem="9D5-Sv-Pti" secondAttribute="bottom" id="LbW-3t-cqe"/>
-                                <constraint firstAttribute="trailing" secondItem="9D5-Sv-Pti" secondAttribute="trailing" id="Mnv-jJ-YQX"/>
-                                <constraint firstItem="P0p-JG-6Lt" firstAttribute="leading" secondItem="nSU-HX-mCJ" secondAttribute="trailing" id="NWq-4q-9r2"/>
-                                <constraint firstItem="nSU-HX-mCJ" firstAttribute="top" secondItem="jWz-YO-j98" secondAttribute="top" id="OEB-eM-5aT"/>
-                                <constraint firstItem="9D5-Sv-Pti" firstAttribute="leading" secondItem="P0p-JG-6Lt" secondAttribute="trailing" id="Q0x-Qa-IQm"/>
-                                <constraint firstAttribute="bottom" secondItem="nSU-HX-mCJ" secondAttribute="bottom" id="Rjh-u4-nh9"/>
-                                <constraint firstItem="9D5-Sv-Pti" firstAttribute="top" secondItem="jWz-YO-j98" secondAttribute="top" id="ej3-Rx-RBM"/>
-                                <constraint firstAttribute="bottom" secondItem="P0p-JG-6Lt" secondAttribute="bottom" id="exh-SJ-Tex"/>
-                                <constraint firstItem="P0p-JG-6Lt" firstAttribute="leading" secondItem="nSU-HX-mCJ" secondAttribute="trailing" id="iLK-pd-R0t"/>
-                                <constraint firstItem="P0p-JG-6Lt" firstAttribute="top" secondItem="jWz-YO-j98" secondAttribute="top" id="zOj-kI-hZ5"/>
+                                <constraint firstItem="Z5T-cS-Kk7" firstAttribute="leading" secondItem="aOG-bO-F0z" secondAttribute="trailing" constant="15" id="68M-5O-77o"/>
                             </constraints>
                         </stackView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="iSL-9d-sgm">
-                                <rect key="frame" x="0.0" y="85.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iSL-9d-sgm" id="bqD-NO-5BG">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -173,7 +174,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="0ns-Im-Qlu"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="weekNumber" destination="P0p-JG-6Lt" id="sMC-ir-euZ"/>
+                        <outlet property="weekNumber" destination="Z5T-cS-Kk7" id="seh-PK-o0I"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gbl-bS-caY" userLabel="First Responder" sceneMemberID="firstResponder"/>
