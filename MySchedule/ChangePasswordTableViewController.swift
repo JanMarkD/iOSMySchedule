@@ -10,9 +10,66 @@ import UIKit
 
 class ChangePasswordTableViewController: UITableViewController {
     
+    let numberOfRows = [3,1,1]
+    
+    //Outlets
+    
+    @IBOutlet weak var oldPassword: UITextField!
+    @IBOutlet weak var newPassword1: UITextField!
+    @IBOutlet weak var newPassword2: UITextField!
     
     
+    //Functions
     
+    func checkOldPassword() -> Bool{
+        if oldPassword.text == oldPassword.text{
+            return true
+        }else{
+            return false
+        }
+    }
+    
+    func checkPasswords() -> Bool{
+        if (newPassword1.text == "")||(newPassword1.text != newPassword2.text){
+            return false
+        }else{
+            return true
+        }
+    }
+    
+    func topMostController() -> UIViewController {
+        var topController: UIViewController? = UIApplication.shared.keyWindow?.rootViewController
+        while ((topController?.presentedViewController) != nil) {
+            topController = topController?.presentedViewController
+        }
+        return topController!
+    }
+    
+    func alert(message:String, title:String){
+        let alert=UIAlertController(title: title, message: message, preferredStyle: .alert);
+        let cancelAction: UIAlertAction = UIAlertAction(title: "OK", style: .cancel) { action -> Void in
+            
+        }
+        alert.addAction(cancelAction)
+        topMostController().present(alert, animated: true, completion: nil);
+    }
+    
+    
+    //Actions
+    
+    @IBAction func changePassword(_ sender: UIButton) {
+        if checkPasswords() == true{
+            if checkOldPassword() == true{
+                // change passwords
+                
+                alert(message: "Changes were succesfully made", title: "Password changed")
+            }else{
+                alert(message: "Please fill in your correct current password", title: "Password not correct")
+            }
+        }else{
+            alert(message: "Your new passwords don't match", title: "Non-matching passwords")
+        }
+    }
     
     
     
@@ -36,12 +93,28 @@ class ChangePasswordTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return numberOfRows.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return numberOfRows[section]
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "changePassword"{
+            if checkPasswords() == true{
+                if checkOldPassword() == true{
+                    return true
+                }else{
+                    return false
+                }
+            }else{
+                return false
+            }
+        }else{
+            return true
+        }
     }
 
     /*

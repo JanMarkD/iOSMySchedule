@@ -447,7 +447,7 @@
                                                     <state key="normal" title="Change Password"/>
                                                     <connections>
                                                         <action selector="changePassword:" destination="syu-0x-qd6" eventType="touchUpInside" id="xyt-Hf-TNY"/>
-                                                        <segue destination="TWm-1f-eOh" kind="show" id="rkl-k7-Tuz"/>
+                                                        <segue destination="TWm-1f-eOh" kind="show" identifier="saveChanges" id="rkl-k7-Tuz"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -951,7 +951,8 @@
                                                             <rect key="frame" x="187.5" y="0.0" width="187.5" height="43.5"/>
                                                             <state key="normal" title="Change"/>
                                                             <connections>
-                                                                <segue destination="syu-0x-qd6" kind="show" id="u7g-KC-thx"/>
+                                                                <action selector="changePassword:" destination="TWm-1f-eOh" eventType="touchUpInside" id="skb-al-0dQ"/>
+                                                                <segue destination="syu-0x-qd6" kind="show" identifier="changePassword" id="u7g-KC-thx"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -1009,6 +1010,11 @@
                             <outlet property="delegate" destination="TWm-1f-eOh" id="uOk-3j-vpX"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="newPassword1" destination="Ue1-ah-iBW" id="7Vp-vk-rjw"/>
+                        <outlet property="newPassword2" destination="JZs-MW-Lo3" id="pDs-Jo-p9l"/>
+                        <outlet property="oldPassword" destination="Z7i-Yg-rOu" id="PTE-hD-qfO"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Cy-uQ-rvR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

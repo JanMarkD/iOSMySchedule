@@ -16,11 +16,20 @@ class LoginViewController: UIViewController {
     
     //Functions
     
-    func checkUsernamePassword(username:String, password: String) -> Bool{
+    func checkUsernamePassword(username:String, password: String) -> Int{
+        let defaults = UserDefaults.standard
+        if let login = defaults.value(forKey: "Login") as? Array<String>{
+            let usernamex = login[0]
+            let passwordx = login[1]
+            if (usernamex == username) && (passwordx == password){
+                return 1
+            }else{
+                return 2
+            }
         
-        
-        
-        return true
+        }else{
+            return 3
+        }
     }
     
     func topMostController() -> UIViewController {
@@ -56,10 +65,11 @@ class LoginViewController: UIViewController {
         
         let check = checkUsernamePassword(username:username, password:password)
         
-        if check == true{
-            // set up new view
-        }else{
-            alert(message: "Please fill in correct username and password", title: "Incorrect password or username")
+        switch(check){
+        case 1: print("Succesful Login")
+        case 2: alert(message: "Please fill in correct username and password", title: "Incorrect password or username")
+        case 3: alert(message: "Please sign up", title: "No Account")
+        default: alert(message: "Something went wrong", title: "Error")
         }
     }
     
@@ -77,7 +87,7 @@ class LoginViewController: UIViewController {
         
             let check = checkUsernamePassword(username: username, password: password)
             
-            if check == true{
+            if check == 1{
                 return true
             }else{
                 return false
