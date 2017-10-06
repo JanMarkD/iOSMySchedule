@@ -22,7 +22,9 @@ class ChangePasswordTableViewController: UITableViewController {
     //Functions
     
     func checkOldPassword() -> Bool{
-        if oldPassword.text == oldPassword.text{
+        let defaults = UserDefaults.standard
+        let passwordx = defaults.value(forKey: "Login")
+        if oldPassword.text == passwordx{
             return true
         }else{
             return false
