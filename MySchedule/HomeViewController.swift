@@ -9,11 +9,41 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    
+    //Outlets
 
+    @IBOutlet weak var logoImage: UIImageView!
+    
+    @IBOutlet weak var welcomeUser: UILabel!
+    
+    @IBOutlet weak var classRightNow: UILabel!
+    
+    
+    //Actions
+    
+    @IBAction func logOut(_ sender: UIButton) {
+        //logout user
+    }
+    
+    
+    
+    //Functions
+    
+    func retrieveSchedule() -> Array<String>{
+        return ["Piet Janssen", "Natuurkunde", "F201"]
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //kkjk
-        // Do any additional setup after loading the view.
+        let schedule = retrieveSchedule()
+        
+        welcomeUser.text = "Welcome, " + schedule[0]
+        classRightNow.text = "You have " + schedule[1] +  ", in" + schedule[2]
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
