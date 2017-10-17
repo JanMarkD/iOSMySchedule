@@ -71,10 +71,10 @@
             </objects>
             <point key="canvasLocation" x="288.80000000000001" y="788.45577211394311"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Home-->
         <scene sceneID="AMQ-JR-X9s">
             <objects>
-                <tabBarController id="f8B-I5-eZF" sceneMemberID="viewController">
+                <tabBarController title="Home" id="f8B-I5-eZF" customClass="UITabBarViewController" customModule="MySchedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iUz-0X-kgs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -478,4 +478,7 @@
         <image name="iOS App Profile icon" width="128" height="128"/>
         <image name="iOS App Schedule icon" width="128" height="128"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="JFQ-HD-Elz"/>
+    </inferredMetricsTieBreakers>
 </document>
