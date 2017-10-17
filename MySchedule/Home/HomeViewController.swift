@@ -40,9 +40,10 @@ class HomeViewController: UIViewController {
         
         
         if let accesToken = (defaults.value(forKey: "Accestoken") as? String){
+            print(accesToken)
             let url = URL(string: "https://"+domainName+".zportal.nl/api/v3/appointments?user="+studentCode+"&start="+startTime+"&end="+endTime+"&access_token="+accesToken)!
             var request = URLRequest(url: url)
-            request.httpMethod = "POST"
+            request.httpMethod = "GET"
             
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data, error == nil else {
@@ -58,7 +59,8 @@ class HomeViewController: UIViewController {
                 }
                 
                 let responseString = String(data: data, encoding: .utf8)
-                print("responseString = \(String(describing: responseString))")
+                let schedule = self.convertToDictionary(text: responseString!)
+                print(schedule!)
                 
             }
             task.resume()
@@ -93,7 +95,7 @@ class HomeViewController: UIViewController {
                     //Accestoken saving
                     defaults.set(accestoken, forKey: "Accestoken")
                     
-                    let url = URL(string: "https://driestarcollege.zportal.nl/api/v3/appointments?user=163250&start=1388998982&end=1389998982&access_token="+accestoken)!
+                    let url = URL(string: "https://driestarcollege.zportal.nl/api/v3/appointments?user="+studentCode+"&start="+startTime+"&end="+endTime+"&access_token="+accestoken)!
                     var request = URLRequest(url: url)
                     request.httpMethod = "POST"
                     let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -141,9 +143,12 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         let schedule = retrieveSchedule()
         
-        let timeRightNow = String(NSDate().timeIntervalSince1970)
+        let timeRightNow = Int(NSDate().timeIntervalSince1970)
         
-        getAllData(studentCode: "163250", startTime: "", endTime: "")
+        let startTime = timeRightNow
+        let endTime = timeRightNow + 21*24*3600
+        
+        getAllData(studentCode: "163250", startTime: String(startTime), endTime: String(endTime))
         
         welcomeUser.text = "Welcome, " + schedule[0]
         classRightNow.text = "You have " + schedule[1] +  ", in " + schedule[2]
