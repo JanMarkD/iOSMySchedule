@@ -23,8 +23,8 @@ class ChangePasswordTableViewController: UITableViewController {
     
     func checkOldPassword() -> Bool{
         let defaults = UserDefaults.standard
-        let passwordx = defaults.value(forKey: "Login") as! String
-        if oldPassword.text == passwordx{
+        let passwordx = defaults.value(forKey: "Login") as! [String]
+        if oldPassword.text == passwordx[1]{
             return true
         }else{
             return false

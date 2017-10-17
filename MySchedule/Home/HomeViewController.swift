@@ -36,7 +36,7 @@ class HomeViewController: UIViewController {
         
         let defaults = UserDefaults.standard
         
-        let domainName = defaults.value(forKey: "Domainname") as! String
+        let domainName = defaults.value(forKey: "Domain name") as! String
         
         
         if let accesToken = (defaults.value(forKey: "Accestoken") as? String){
@@ -64,7 +64,7 @@ class HomeViewController: UIViewController {
             task.resume()
             
         }else{
-            let activationCode = defaults.value(forKey: "Activation Code") as! String
+            let activationCode = defaults.value(forKey: "Activation code") as! String
             let url = URL(string: "https://driestarcollege.zportal.nl/api/v3/oauth/token")!
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
@@ -143,7 +143,7 @@ class HomeViewController: UIViewController {
         
         let timeRightNow = String(NSDate().timeIntervalSince1970)
         
-        getAllData(studentCode: "163250", startTime: "", endTime: <#T##String#>)
+        getAllData(studentCode: "163250", startTime: "", endTime: "")
         
         welcomeUser.text = "Welcome, " + schedule[0]
         classRightNow.text = "You have " + schedule[1] +  ", in " + schedule[2]

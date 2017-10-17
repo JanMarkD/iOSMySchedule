@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="VNU-Lv-2z5">
+            <objects>
+                <viewController storyboardIdentifier="Home" id="AM1-Yf-D8M" customClass="HomeViewController" customModule="MySchedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vtz-bZ-qfk"/>
+                        <viewControllerLayoutGuide type="bottom" id="RIK-i7-Dxs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B0O-BZ-VEu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tX5-xX-Mtn">
+                                <rect key="frame" x="16" y="375" width="343" height="243"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9U-aR-0TN">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="61"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fw-w4-8e9">
+                                        <rect key="frame" x="0.0" y="61" width="343" height="60.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not you?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h3-qL-AGw">
+                                        <rect key="frame" x="0.0" y="121.5" width="343" height="61"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B09-ad-ZmC">
+                                        <rect key="frame" x="0.0" y="182.5" width="343" height="60.5"/>
+                                        <state key="normal" title="Logout"/>
+                                        <connections>
+                                            <action selector="logOut:" destination="AM1-Yf-D8M" eventType="touchUpInside" id="AsV-hk-iCh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="4fw-w4-8e9" firstAttribute="top" secondItem="Y9U-aR-0TN" secondAttribute="bottom" id="0jf-qn-zNl"/>
+                                    <constraint firstItem="Y9U-aR-0TN" firstAttribute="leading" secondItem="tX5-xX-Mtn" secondAttribute="leading" id="31K-E8-ZPK"/>
+                                    <constraint firstItem="Y9U-aR-0TN" firstAttribute="top" secondItem="tX5-xX-Mtn" secondAttribute="top" id="ifz-Ti-ccX"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y9U-aR-0TN" secondAttribute="trailing" id="jP3-c4-KPw"/>
+                                </constraints>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="iOS App logo" translatesAutoresizingMaskIntoConstraints="NO" id="px1-Mw-G9e">
+                                <rect key="frame" x="88" y="76" width="198" height="198"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="375" id="QIy-Vb-6bT"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="px1-Mw-G9e" firstAttribute="centerX" secondItem="tX5-xX-Mtn" secondAttribute="centerX" id="4P0-aa-Huc"/>
+                            <constraint firstItem="px1-Mw-G9e" firstAttribute="top" secondItem="B0O-BZ-VEu" secondAttribute="top" id="9hr-hA-c4s"/>
+                            <constraint firstItem="tX5-xX-Mtn" firstAttribute="top" secondItem="px1-Mw-G9e" secondAttribute="bottom" id="DJ0-PF-coB"/>
+                            <constraint firstItem="px1-Mw-G9e" firstAttribute="leading" secondItem="B0O-BZ-VEu" secondAttribute="leading" id="OGf-qP-2ep"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tX5-xX-Mtn" secondAttribute="trailing" id="bud-l9-fhd"/>
+                            <constraint firstItem="tX5-xX-Mtn" firstAttribute="leading" secondItem="B0O-BZ-VEu" secondAttribute="leadingMargin" id="fKz-WE-HJk"/>
+                            <constraint firstItem="RIK-i7-Dxs" firstAttribute="top" secondItem="tX5-xX-Mtn" secondAttribute="bottom" id="iWi-Of-nur"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7Od-Qw-Cde"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="iOS App Home icon" id="hcU-if-bzU"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="classRightNow" destination="4fw-w4-8e9" id="EV5-xf-toA"/>
+                        <outlet property="logoImage" destination="px1-Mw-G9e" id="Keg-jz-jsn"/>
+                        <outlet property="welcomeUser" destination="Y9U-aR-0TN" id="czf-eW-e44"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ct-Ma-X9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1876" y="750"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="iOS App Home icon" width="75" height="75"/>
+        <image name="iOS App logo" width="175" height="172"/>
+    </resources>
+</document>
