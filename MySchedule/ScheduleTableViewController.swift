@@ -37,11 +37,32 @@ class ScheduleTableViewController: UITableViewController {
         return [1,1,1,1,1]
     }
     
+    func topMostController() -> UIViewController {
+        var topController: UIViewController? = UIApplication.shared.keyWindow?.rootViewController
+        while ((topController?.presentedViewController) != nil) {
+            topController = topController?.presentedViewController
+        }
+        return topController!
+    }
+    
+    func alert(message:String, title:String){
+        let alert=UIAlertController(title: title, message: message, preferredStyle: .alert);
+        let cancelAction: UIAlertAction = UIAlertAction(title: "OK", style: .cancel) { action -> Void in
+            
+        }
+        alert.addAction(cancelAction)
+        topMostController().present(alert, animated: true, completion: nil);
+    }
     
     //Actions
     
     @IBAction func nextWeek(_ sender: UIButton) {
-        let nextweek = Int(weekNumber.text!)!
+        let nextWeek = Int(weekNumber.text!)!
+        
+        if nextWeek == getWeekNumber() + 2{
+            alert(message: "No data found" , title: "None")
+            return
+        }
         if weekNumber.text == "52" {
             weekNumber.text = "1"
         }else{
@@ -52,6 +73,12 @@ class ScheduleTableViewController: UITableViewController {
     
     @IBAction func previousWeek(_ sender: UIButton) {
         let previousWeek = Int(weekNumber.text!)!
+        
+        if previousWeek == getWeekNumber(){
+            alert(message: "No data found" , title: "None")
+            return
+        }
+        
         if weekNumber.text == "1"{
             weekNumber.text = "52"
         }else{

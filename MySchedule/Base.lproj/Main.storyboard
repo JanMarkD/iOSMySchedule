@@ -33,7 +33,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hO-C5-XR7">
                                 <rect key="frame" x="164" y="318" width="46" height="30"/>
@@ -1366,7 +1366,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbc-cG-Acp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="289" y="1539"/>
+            <point key="canvasLocation" x="288.80000000000001" y="1538.2308845577213"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="giF-8S-Vhx">
@@ -1417,6 +1417,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="u7g-KC-thx"/>
-        <segue reference="cps-XW-IUP"/>
+        <segue reference="yxz-bN-bNI"/>
     </inferredMetricsTieBreakers>
 </document>

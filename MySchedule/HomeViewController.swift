@@ -146,7 +146,7 @@ class HomeViewController: UIViewController {
         getAllData(studentCode: "163250", startTime: "", endTime: <#T##String#>)
         
         welcomeUser.text = "Welcome, " + schedule[0]
-        classRightNow.text = "You have " + schedule[1] +  ", in" + schedule[2]
+        classRightNow.text = "You have " + schedule[1] +  ", in " + schedule[2]
         
         
         

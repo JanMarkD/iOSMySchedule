@@ -20,6 +20,7 @@ class SignUpTableViewController: UITableViewController {
     
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
+    
     @IBOutlet weak var emailAdress: UITextField!
     @IBOutlet weak var domainName: UITextField!
     @IBOutlet weak var activationCode: UITextField!
@@ -44,6 +45,7 @@ class SignUpTableViewController: UITableViewController {
         let emailAdressX = emailAdress.text ?? "Nothing"
         let domainNameX = domainName.text ?? "Nothing"
         let activationCodeX = activationCode.text ?? ""
+        //let studentCodeX = studentCode.text ?? "Nothing"
         let userNameX = userName.text ?? "kdjfkj"
         let password1 = passWord1.text ?? "Nothingx"
         let password2 = passWord2.text ?? "Nothing"
