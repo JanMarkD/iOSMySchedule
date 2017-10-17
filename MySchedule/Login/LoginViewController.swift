@@ -80,7 +80,7 @@ class LoginViewController: UIViewController {
         let login = defaults.value(forKey: "Login") as! [String]
         let username = login[0]
         let password = login[1]
-        
+
         self.passwordTextField.text = password
         self.usernameTextField.text = username
         
