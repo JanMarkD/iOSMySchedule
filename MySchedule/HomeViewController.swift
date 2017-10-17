@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
         let schedule = retrieveSchedule()
         
         welcomeUser.text = "Welcome, " + schedule[0]
-        classRightNow.text = "You have " + schedule[1] +  ", in" + schedule[2]
+        classRightNow.text = "You have " + schedule[1] +  ", in " + schedule[2]
         
         
         

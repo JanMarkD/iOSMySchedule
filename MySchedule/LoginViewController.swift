@@ -76,6 +76,15 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let defaults = UserDefaults.standard
+        let login = defaults.value(forKey: "Login") as! [String]
+        let username = login[0]
+        let password = login[1]
+        
+        self.passwordTextField.text = password
+        self.usernameTextField.text = username
+        
+        
         // Do any additional setup after loading the view, typically from a nib.ddd
     }
 
