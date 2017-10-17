@@ -27,6 +27,7 @@ class SignUpTableViewController: UITableViewController {
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var passWord1: UITextField!
     @IBOutlet weak var passWord2: UITextField!
+    @IBOutlet weak var studentCode: UITextField!
     
     
     //Functions
@@ -45,12 +46,12 @@ class SignUpTableViewController: UITableViewController {
         let emailAdressX = emailAdress.text ?? "Nothing"
         let domainNameX = domainName.text ?? "Nothing"
         let activationCodeX = activationCode.text ?? ""
-        //let studentCodeX = studentCode.text ?? "Nothing"
+        let studentCodeX = studentCode.text ?? "Nothing"
         let userNameX = userName.text ?? "kdjfkj"
         let password1 = passWord1.text ?? "Nothingx"
         let password2 = passWord2.text ?? "Nothing"
         
-        if (firstNameX == "")||(lastNameX == "")||(emailAdressX == "")||(domainNameX == "")||(activationCodeX == "")||(password1 == "")||(password2 == "")||(userNameX == ""){
+        if (firstNameX == "")||(lastNameX == "")||(emailAdressX == "")||(domainNameX == "")||(activationCodeX == "")||(password1 == "")||(password2 == "")||(userNameX == "")||(studentCodeX == ""){
             return false
         }else{
             return true
@@ -104,6 +105,7 @@ class SignUpTableViewController: UITableViewController {
             let domainNameX = domainName.text ?? "Nothing"
             let activationCodeX = activationCode.text ?? ""
             let userNameX = userName.text ?? "kdjfkj"
+            let studentCodeX = studentCode.text ?? ""
             
             if (checkFields() == false) {
                 
@@ -119,6 +121,7 @@ class SignUpTableViewController: UITableViewController {
                 defaults.set(loginSet,forKey: "Login")
                 defaults.set(domainNameX, forKey: "Domain name")
                 defaults.set(activationCodeX, forKey: "Activation code")
+                defaults.set(studentCodeX, forKey: "Student code")
                 
                 performSegue(withIdentifier: "SignUp", sender: nil)
                 
