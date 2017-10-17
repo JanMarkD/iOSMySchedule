@@ -149,7 +149,7 @@
             </objects>
             <point key="canvasLocation" x="1805.5999999999999" y="749.7751124437782"/>
         </scene>
-        <!--Schedule Table View Controller-->
+        <!--My Schedule-->
         <scene sceneID="0HU-wS-wBX">
             <objects>
                 <tableViewController id="pZX-TO-tbq" customClass="ScheduleTableViewController" customModule="MySchedule" customModuleProvider="target" sceneMemberID="viewController">
@@ -211,7 +211,7 @@
                             <outlet property="delegate" destination="pZX-TO-tbq" id="uAP-mU-rSX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="VCY-6U-tx5">
+                    <navigationItem key="navigationItem" title="My Schedule" id="VCY-6U-tx5">
                         <barButtonItem key="backBarButtonItem" title="Back" id="0ns-Im-Qlu"/>
                     </navigationItem>
                     <connections>
@@ -448,7 +448,7 @@
                                                     <state key="normal" title="Change Password"/>
                                                     <connections>
                                                         <action selector="changePassword:" destination="syu-0x-qd6" eventType="touchUpInside" id="xyt-Hf-TNY"/>
-                                                        <segue destination="TWm-1f-eOh" kind="show" identifier="saveChanges" id="rkl-k7-Tuz"/>
+                                                        <segue destination="TWm-1f-eOh" kind="show" id="qeI-aC-A8S"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -799,12 +799,11 @@
                             <outlet property="delegate" destination="syu-0x-qd6" id="gyk-ZB-Ech"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Profile" image="iOS App Profile icon" landscapeImage="iOS App Profile icon" selectedImage="iOS App Profile icon" id="xaa-83-2yT">
-                        <inset key="imageInsets" minX="3" minY="3" maxX="3" maxY="3"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="Profile" id="qow-D7-OaT">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="QXP-SS-upV"/>
+                    </navigationItem>
                     <size key="freeformSize" width="375" height="1100"/>
                     <connections>
-                        <outlet property="changePassword" destination="GbL-Tr-Q2j" id="eCg-4o-GRl"/>
                         <outlet property="emailAdress" destination="HNO-C2-sAf" id="1tx-Jw-1V8"/>
                         <outlet property="firstName" destination="fA6-LT-ZY2" id="1u3-v3-J1P"/>
                         <outlet property="friend1" destination="jbt-vP-g2Q" id="b9a-FG-6Io"/>
@@ -813,7 +812,6 @@
                         <outlet property="friend4" destination="Klk-WP-NCR" id="Y8x-yp-Ztg"/>
                         <outlet property="friend5" destination="kzg-SQ-139" id="fqM-1o-Nfq"/>
                         <outlet property="lastName" destination="XMM-9V-uUI" id="ndp-e4-8Xe"/>
-                        <outlet property="saveChanges" destination="SbU-CC-GY6" id="lo9-HZ-ViA"/>
                         <outlet property="studentCode" destination="CFb-hk-n2Y" id="RrQ-pz-4Nh"/>
                         <outlet property="subject1" destination="ezz-Ns-hRQ" id="oRk-EK-aYa"/>
                         <outlet property="subject2" destination="HJr-1E-zdW" id="rFc-6Q-yFE"/>
@@ -823,7 +821,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oUs-mt-djh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1063" y="-185"/>
+            <point key="canvasLocation" x="1400.8" y="-185.30734632683661"/>
         </scene>
         <!--Change Password Table View Controller-->
         <scene sceneID="RQg-gu-bOg">
@@ -943,29 +941,17 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wOm-65-uTJ">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pty-om-hK9">
-                                                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="43.5"/>
-                                                            <state key="normal" title="Cancel"/>
-                                                            <connections>
-                                                                <segue destination="syu-0x-qd6" kind="show" id="3hb-SC-VYa"/>
-                                                            </connections>
-                                                        </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfu-HA-TYe">
-                                                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="43.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                             <state key="normal" title="Change"/>
                                                             <connections>
                                                                 <action selector="changePassword:" destination="TWm-1f-eOh" eventType="touchUpInside" id="skb-al-0dQ"/>
-                                                                <segue destination="syu-0x-qd6" kind="show" identifier="changePassword" id="u7g-KC-thx"/>
+                                                                <segue destination="Mjb-7h-IWU" kind="show" identifier="changePassword" id="u7g-KC-thx"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="pty-om-hK9" secondAttribute="bottom" id="3bh-y9-7ZK"/>
                                                         <constraint firstAttribute="trailing" secondItem="vfu-HA-TYe" secondAttribute="trailing" id="8or-1M-ZsT"/>
-                                                        <constraint firstItem="pty-om-hK9" firstAttribute="leading" secondItem="wOm-65-uTJ" secondAttribute="leading" id="Ce8-aR-OMZ"/>
-                                                        <constraint firstItem="vfu-HA-TYe" firstAttribute="leading" secondItem="pty-om-hK9" secondAttribute="trailing" id="Qf5-zi-OA3"/>
-                                                        <constraint firstItem="vfu-HA-TYe" firstAttribute="leading" secondItem="pty-om-hK9" secondAttribute="trailing" id="Sbg-1w-tjb"/>
-                                                        <constraint firstItem="pty-om-hK9" firstAttribute="top" secondItem="wOm-65-uTJ" secondAttribute="top" id="acJ-wf-aKk"/>
                                                         <constraint firstAttribute="bottom" secondItem="vfu-HA-TYe" secondAttribute="bottom" id="oGf-1g-bVm"/>
                                                         <constraint firstItem="vfu-HA-TYe" firstAttribute="top" secondItem="wOm-65-uTJ" secondAttribute="top" id="s3A-nX-ksV"/>
                                                     </constraints>
@@ -1021,7 +1007,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Cy-uQ-rvR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1773.5999999999999" y="-290.10494752623691"/>
+            <point key="canvasLocation" x="2112.8000000000002" y="-290.10494752623691"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5ix-AC-EmR">
@@ -1036,7 +1022,7 @@
                     <connections>
                         <segue destination="5d0-eJ-QGf" kind="relationship" relationship="viewControllers" id="Ilu-Mp-IwD"/>
                         <segue destination="6b5-ik-t1F" kind="relationship" relationship="viewControllers" id="KGv-ef-RVw"/>
-                        <segue destination="syu-0x-qd6" kind="relationship" relationship="viewControllers" id="bFg-Yy-y6R"/>
+                        <segue destination="Mjb-7h-IWU" kind="relationship" relationship="viewControllers" id="bFg-Yy-y6R"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H1n-va-J2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1401,6 +1387,27 @@
             </objects>
             <point key="canvasLocation" x="1063" y="1516"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="keI-JA-Btk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mjb-7h-IWU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="iOS App Profile icon" landscapeImage="iOS App Profile icon" selectedImage="iOS App Profile icon" id="xaa-83-2yT">
+                        <inset key="imageInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h2b-H4-QcZ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="syu-0x-qd6" kind="relationship" relationship="rootViewController" id="bKY-2b-iZf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vAQ-1z-Qh4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="626" y="-225"/>
+        </scene>
     </scenes>
     <resources>
         <image name="iOS App Home icon" width="75" height="75"/>
@@ -1409,7 +1416,7 @@
         <image name="iOS App logo" width="175" height="172"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bFg-Yy-y6R"/>
+        <segue reference="u7g-KC-thx"/>
         <segue reference="cps-XW-IUP"/>
     </inferredMetricsTieBreakers>
 </document>

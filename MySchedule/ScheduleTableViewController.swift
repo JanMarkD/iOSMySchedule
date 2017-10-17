@@ -42,13 +42,21 @@ class ScheduleTableViewController: UITableViewController {
     
     @IBAction func nextWeek(_ sender: UIButton) {
         let nextweek = Int(weekNumber.text!)!
-        weekNumber.text = String(nextweek+1)
+        if weekNumber.text == "52" {
+            weekNumber.text = "1"
+        }else{
+            weekNumber.text = String(nextWeek+1)
+        }
     }
     
     
     @IBAction func previousWeek(_ sender: UIButton) {
-        let previousweek = Int(weekNumber.text!)!
-        weekNumber.text = String(previousweek-1)
+        let previousWeek = Int(weekNumber.text!)!
+        if weekNumber.text == "1"{
+            weekNumber.text = "52"
+        }else{
+            weekNumber.text = String(previousWeek-1)
+        }
     }
     
     
@@ -83,29 +91,7 @@ class ScheduleTableViewController: UITableViewController {
         let studentCode = String(163250)
         
         let tokenHTTPS = "https://"+domainName+".zportal.nl/api/v3/oauth/token"
-        
-        let parameters: Parameters = [
-            "grant_type": "authorization_code",
-            "code":"671075443203"
-        ]
-        
-        Alamofire.request(tokenHTTPS, method: .post, parameters: parameters).responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
-            
-            if let json = response.result.value as? [String:Any]{
-                
-                print("JSON: \(json)") // serialized json response
-            }
-            
-            
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string; gebeurt alleen als de server iets anders terugstuurt dan JSON
-                let mySchedule = "Niet gelukt"
-                print(mySchedule)
-            }
-        }
+     
         return "OK"
     }
     // MARK: - Table view data source

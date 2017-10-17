@@ -23,7 +23,7 @@ class ChangePasswordTableViewController: UITableViewController {
     
     func checkOldPassword() -> Bool{
         let defaults = UserDefaults.standard
-        let passwordx = defaults.value(forKey: "Login")
+        let passwordx = defaults.value(forKey: "Login") as! String
         if oldPassword.text == passwordx{
             return true
         }else{
@@ -78,6 +78,7 @@ class ChangePasswordTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Change password"
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
