@@ -42,9 +42,7 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginButton:" destination="URc-qe-OXY" eventType="touchUpInside" id="AwA-wT-oP6"/>
-                                    <segue destination="f8B-I5-eZF" kind="popoverPresentation" popoverAnchorView="wmm-pt-f59" id="EFF-a3-0Ad">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <segue destination="f8B-I5-eZF" kind="presentation" id="EFF-a3-0Ad"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlP-ln-C0H">
@@ -479,7 +477,4 @@
         <image name="iOS App Profile icon" width="128" height="128"/>
         <image name="iOS App Schedule icon" width="128" height="128"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="JFQ-HD-Elz"/>
-    </inferredMetricsTieBreakers>
 </document>
