@@ -94,7 +94,7 @@
         <scene sceneID="BzH-m4-6E1">
             <objects>
                 <viewControllerPlaceholder storyboardName="Schedule" referencedIdentifier="Schedule" id="nQB-6L-wC1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Schedule" image="iOS App Schedule icon" id="s9D-xR-BLj"/>
+                    <tabBarItem key="tabBarItem" title="Schedule" image="Schedule2x" landscapeImage="Schedule2x" selectedImage="Schedule2x" id="s9D-xR-BLj"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7I0-UX-irQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -104,7 +104,7 @@
         <scene sceneID="8KO-43-Yju">
             <objects>
                 <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="Home" id="McV-Fr-jAg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="iOS App Home icon" id="9uM-gI-XuU"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home2x" landscapeImage="Home2x" selectedImage="Home2x" id="9uM-gI-XuU"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="euW-4I-gWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -114,7 +114,7 @@
         <scene sceneID="b7p-gF-Cv8">
             <objects>
                 <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="Profile" id="FHw-I7-2MA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="iOS App Profile icon" id="HkM-eK-MDq"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile2x" landscapeImage="Profile2x" selectedImage="Profile2x" id="HkM-eK-MDq"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BXX-nd-uVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -475,11 +475,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="iOS App Home icon" width="75" height="75"/>
-        <image name="iOS App Profile icon" width="128" height="128"/>
-        <image name="iOS App Schedule icon" width="128" height="128"/>
+        <image name="Home2x" width="40" height="40"/>
+        <image name="Profile2x" width="40" height="40"/>
+        <image name="Schedule2x" width="40" height="40"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="JFQ-HD-Elz"/>
-    </inferredMetricsTieBreakers>
 </document>

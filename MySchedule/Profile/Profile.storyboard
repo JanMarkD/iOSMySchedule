@@ -538,7 +538,7 @@
                             <outlet property="delegate" destination="DCs-NS-r0A" id="X4s-Fy-ujU"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Profile" id="6OJ-1c-gqZ"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile2x" landscapeImage="Profile2x" selectedImage="Profile2x" id="6OJ-1c-gqZ"/>
                     <navigationItem key="navigationItem" title="Profile" id="GDq-ZG-68A">
                         <barButtonItem key="backBarButtonItem" title="Back" id="YS8-5R-cPf"/>
                     </navigationItem>
@@ -769,6 +769,9 @@
             <point key="canvasLocation" x="940" y="-186"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Profile2x" width="40" height="40"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="O7m-C9-OF7"/>
         <segue reference="I79-zP-b43"/>

@@ -70,7 +70,7 @@
                             <outlet property="delegate" destination="ptP-9P-lbS" id="JqH-sL-lcm"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Schedule" id="UJI-DF-EUY"/>
+                    <tabBarItem key="tabBarItem" title="Schedule" image="Schedule2x" landscapeImage="Schedule2x" selectedImage="Schedule2x" id="UJI-DF-EUY"/>
                     <navigationItem key="navigationItem" title="My Schedule" id="De6-fx-Xue">
                         <barButtonItem key="backBarButtonItem" title="Back" id="IUV-xX-xfI"/>
                     </navigationItem>
@@ -133,4 +133,7 @@
             <point key="canvasLocation" x="708" y="1273"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Schedule2x" width="40" height="40"/>
+    </resources>
 </document>
