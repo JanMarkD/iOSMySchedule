@@ -187,7 +187,7 @@
                                                     <state key="normal" title="Change Password"/>
                                                     <connections>
                                                         <action selector="changePassword:" destination="DCs-NS-r0A" eventType="touchUpInside" id="Dkh-vH-7UY"/>
-                                                        <segue destination="zaP-sl-Cvx" kind="presentation" id="uRy-DC-55v"/>
+                                                        <segue destination="zaP-sl-Cvx" kind="show" id="O7m-C9-OF7"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -770,6 +770,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="O7m-C9-OF7"/>
         <segue reference="I79-zP-b43"/>
     </inferredMetricsTieBreakers>
 </document>

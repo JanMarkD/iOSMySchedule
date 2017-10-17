@@ -74,7 +74,23 @@ class ProfileTableViewController: UITableViewController {
         if check == true{
             alert(message: "Please fill in all fields", title: "Empty Fields")
         }else{
-            //gegevens opslaan
+            let defaults = UserDefaults.standard
+            
+            let firstname = firstName.text!
+            let lastname = lastName.text!
+            let emailadress = emailAdress.text!
+            let username = userName.text!
+            let studentcode = studentCode.text!
+            
+            let login = defaults.value(forKey: "Login") as! [String]
+            let loginSet = [username, login[1]]
+            
+            defaults.set([firstname, lastname], forKey: "Name")
+            defaults.set(emailadress,forKey: "Emailadress")
+            defaults.set(loginSet,forKey: "Login")
+            defaults.set(studentcode, forKey: "Student code")
+            
+            
             alert(message: "", title: "Changes were made succesful")
         }
     }
@@ -84,6 +100,26 @@ class ProfileTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let defaults = UserDefaults.standard
+        
+        if let name = defaults.value(forKey: "Name") as? [String]{
+            firstName.text = name[0]
+            lastName.text = name[1]
+        }
+        
+        if let login = defaults.value(forKey: "Login") as? [String]{
+            userName.text = login[0]
+        }
+        
+        if let email = defaults.value(forKey: "Emailadress") as? String{
+            emailAdress.text = email
+        }
+        
+        if let studentcode = defaults.value(forKey: "Student code") as? String{
+            studentCode.text = studentcode
+        }
+        
         
         //bestaande gegevens inladen.
 

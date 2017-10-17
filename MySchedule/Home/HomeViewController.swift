@@ -60,7 +60,8 @@ class HomeViewController: UIViewController {
                 
                 let responseString = String(data: data, encoding: .utf8)
                 let schedule = self.convertToDictionary(text: responseString!)
-                print(schedule!)
+                
+                print(schedule!["response"]!)
                 
             }
             task.resume()
@@ -97,7 +98,7 @@ class HomeViewController: UIViewController {
                     
                     let url = URL(string: "https://driestarcollege.zportal.nl/api/v3/appointments?user="+studentCode+"&start="+startTime+"&end="+endTime+"&access_token="+accestoken)!
                     var request = URLRequest(url: url)
-                    request.httpMethod = "POST"
+                    request.httpMethod = "GET"
                     let task = URLSession.shared.dataTask(with: request) { data, response, error in
                         guard let data = data, error == nil else {
                             // check for fundamental networking error
