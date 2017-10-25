@@ -754,7 +754,6 @@
         <scene sceneID="VBx-eB-1ai">
             <objects>
                 <navigationController storyboardIdentifier="Profile" automaticallyAdjustsScrollViewInsets="NO" id="RvY-fl-bAX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="6OJ-1c-gqZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rtk-Ms-JPj">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
