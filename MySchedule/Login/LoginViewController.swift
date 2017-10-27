@@ -85,7 +85,7 @@ class LoginViewController: UIViewController {
         self.usernameTextField.text = username
         
         
-        // Do any additional setup after loading the view, typically from a nib.ddd
+        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {

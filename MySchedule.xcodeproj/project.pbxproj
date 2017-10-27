@@ -27,6 +27,7 @@
 		6333D9C21F96186800BCC45A /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6333D9C11F96186800BCC45A /* Schedule.storyboard */; };
 		6333D9C41F96188700BCC45A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6333D9C31F96188700BCC45A /* Profile.storyboard */; };
 		63B129C21F963E0900C74055 /* UITabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B129C11F963E0900C74055 /* UITabBarViewController.swift */; };
+		8363F1671FA3887B00A4CC69 /* DateHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8363F1661FA3887B00A4CC69 /* DateHelp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		6333D9C11F96186800BCC45A /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		6333D9C31F96188700BCC45A /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		63B129C11F963E0900C74055 /* UITabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarViewController.swift; sourceTree = "<group>"; };
+		8363F1661FA3887B00A4CC69 /* DateHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				3C9314131F62B4AD003A2BA3 /* AppDelegate.swift */,
 				3CCF7B511FA1B8D80033D0C0 /* ScheduleRetriever.swift */,
 				3CCF7B531FA1B8F00033D0C0 /* CreateAlert.swift */,
+				8363F1661FA3887B00A4CC69 /* DateHelp.swift */,
 				6333D9B91F9617C200BCC45A /* Login */,
 				6333D9BA1F9617E600BCC45A /* Home */,
 				6333D9BB1F96180000BCC45A /* Schedule */,
@@ -358,6 +361,7 @@
 				3C9314161F62B4AD003A2BA3 /* LoginViewController.swift in Sources */,
 				3C9314141F62B4AD003A2BA3 /* AppDelegate.swift in Sources */,
 				3C93141C1F62B4AD003A2BA3 /* MySchedule.xcdatamodeld in Sources */,
+				8363F1671FA3887B00A4CC69 /* DateHelp.swift in Sources */,
 				3CCF7B521FA1B8D80033D0C0 /* ScheduleRetriever.swift in Sources */,
 				3C4CB9331F7BB0AF001C7705 /* ClassTableViewController.swift in Sources */,
 				63B129C21F963E0900C74055 /* UITabBarViewController.swift in Sources */,

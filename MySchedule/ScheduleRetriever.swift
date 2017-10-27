@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 class scheduleRetriever: NSObject{
     
-    var mySchedule = Array<Dictionary<String,String>>()
+    let dateHelper = DateHelp()
+
     
     func convertJSON(data: Data, key: String, index: Int) -> Any{
         do{
@@ -33,7 +35,9 @@ class scheduleRetriever: NSObject{
     
     
     
-    func getAllData(studentCode: String, startTime: String, endTime: String) -> Array<Dictionary<String,String>>{
+    func getAllData(studentCode: String, startTime: String, endTime: String, completion:@escaping (_ mySchedule:Array<Dictionary<String,String>>,_ error:Error?) ->()){
+        
+        var mySchedule = Array<Dictionary<String,String>>()
         
         let defaults = UserDefaults.standard
         
@@ -58,8 +62,6 @@ class scheduleRetriever: NSObject{
                     print("response = \(String(describing: response))")
                 }
                 
-                self.mySchedule.removeAll()
-                
                 let json = self.convertJSON(data: scheduleData, key: "response", index: 0)
                 if let schedule = json as? Dictionary<String, Any>{
                     let totalSchedule = schedule["data"]! as! Array<Dictionary<String, Any>>
@@ -68,6 +70,11 @@ class scheduleRetriever: NSObject{
                         var myLesson = Dictionary<String, String>()
                         
                         let lesson = totalSchedule[x]
+                        
+                        let dateInSeconds = lesson["start"] as! Int
+                        
+                        let date = NSDate(timeIntervalSince1970: TimeInterval(dateInSeconds))
+                        let weekNumber = self.dateHelper.getWeekNumber(date: date)
                     
                         let teacher = lesson["teachers"] as! NSArray
                         let subject = lesson["subjects"] as! NSArray
@@ -82,6 +89,10 @@ class scheduleRetriever: NSObject{
                         let new = lesson["new"] as! Int
                         let hour = lesson["endTimeSlot"] as! Int
                         
+                        myLesson["date"] = (String(describing: date))
+                        myLesson["weekNumber"] = String(weekNumber)
+                        myLesson["day"] = String(self.dateHelper.getDayOfWeek(date: date))
+                        
                         myLesson["teacher"] = (teacher[0] as! String)
                         myLesson["subject"] = (subject[0] as! String)
                         myLesson["location"] = (location[0] as! String)
@@ -95,13 +106,12 @@ class scheduleRetriever: NSObject{
                         myLesson["new"] = (String(new))
                         myLesson["hour"] = (String(hour))
                         
-                        print(myLesson)
+                        mySchedule.append(myLesson)
                         
-                        self.mySchedule.append(myLesson)
                     }
+                    completion(mySchedule, nil)
                 }
             }
-            return mySchedule
             task.resume()
         }else{
             let activationCode = defaults.value(forKey: "Activation code") as! String
@@ -148,8 +158,6 @@ class scheduleRetriever: NSObject{
                             print("response = \(String(describing: response))")
                         }
                         
-                        self.mySchedule.removeAll()
-                        
                         let json = self.convertJSON(data: scheduleData, key: "response", index: 0)
                         if let schedule = json as? Dictionary<String, Any>{
                             let totalSchedule = schedule["data"]! as! Array<Dictionary<String, Any>>
@@ -184,19 +192,15 @@ class scheduleRetriever: NSObject{
                                 myLesson["cancelled"] = (String(cancelled))
                                 myLesson["new"] = (String(new))
                                 myLesson["hour"] = (String(hour))
-                                
-                                print(myLesson)
-                                
-                                self.mySchedule.append(myLesson)
 
-                                
+                                mySchedule.append(myLesson)
                             }
+                            completion(mySchedule, nil)
                         }
                     }
                     task.resume()
                 }
             }
-            return mySchedule
             task.resume()
         }
     }

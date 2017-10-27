@@ -10,6 +10,26 @@ import UIKit
 
 class ScheduleTableViewController: UITableViewController {
     
+    var mySchedule = Array<Dictionary<String,String>>()
+    
+    var classesPerDay = [[[String:String]](),[[String:String]](),[[String:String]](),[[String:String]](),[[String:String]]()]
+
+    var classesPerDayWeek1 = [[[String:String]](),[[String:String]](),[[String:String]](),[[String:String]](),[[String:String]]()]
+    
+    var classesPerDayWeek2 = [[[String:String]](),[[String:String]](),[[String:String]](),[[String:String]](),[[String:String]]()]
+    
+    var classesPerDayWeek3 = [[[String:String]](),[[String:String]](),[[String:String]](),[[String:String]](),[[String:String]]()]
+    
+    let headerForSection = ["Monday","Tuesday","Wednesday","Thursday","Friday"]
+    
+    
+    
+    let retriever = scheduleRetriever()
+    
+    let dateHelper = DateHelp()
+    
+    let createAlert = CreateAlert()
+    
     //Outlets
     
     @IBOutlet weak var weekNumber: UILabel!
@@ -17,56 +37,29 @@ class ScheduleTableViewController: UITableViewController {
 
     
     
-    //Layout Data
-    
-    let headerForSection = ["Monday","Tuesday","Wednesday","Thursday","Friday"]
-    
-    var valueToPass:String!
-    
     
     
     //Functions
+
     
-    func getWeekNumber() -> Int{
-        let calendar = Calendar.current
-        let weekNumber = calendar.component(.weekOfYear, from: Date.init(timeIntervalSinceNow: 0))
-        return weekNumber
-    }
     
-    func getClassesDay(weekNumberX:Int)->Array<Int>{
-        return [1,1,1,1,1]
-    }
-    
-    func topMostController() -> UIViewController {
-        var topController: UIViewController? = UIApplication.shared.keyWindow?.rootViewController
-        while ((topController?.presentedViewController) != nil) {
-            topController = topController?.presentedViewController
-        }
-        return topController!
-    }
-    
-    func alert(message:String, title:String){
-        let alert=UIAlertController(title: title, message: message, preferredStyle: .alert);
-        let cancelAction: UIAlertAction = UIAlertAction(title: "OK", style: .cancel) { action -> Void in
-            
-        }
-        alert.addAction(cancelAction)
-        topMostController().present(alert, animated: true, completion: nil);
-    }
     
     //Actions
     
     @IBAction func nextWeek(_ sender: UIButton) {
         let nextWeek = Int(weekNumber.text!)!
         
-        if nextWeek == getWeekNumber() + 2{
-            alert(message: "No data found" , title: "None")
+        if nextWeek == dateHelper.getWeekNumber(date: NSDate()) + 2{
             return
         }
         if weekNumber.text == "52" {
             weekNumber.text = "1"
         }else{
             weekNumber.text = String(nextWeek+1)
+            self.classesPerDay = self.classesPerDayWeek2
+        }
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
     
@@ -74,8 +67,7 @@ class ScheduleTableViewController: UITableViewController {
     @IBAction func previousWeek(_ sender: UIButton) {
         let previousWeek = Int(weekNumber.text!)!
         
-        if previousWeek == getWeekNumber(){
-            alert(message: "No data found" , title: "None")
+        if previousWeek == dateHelper.getWeekNumber(date: NSDate()){
             return
         }
         
@@ -83,6 +75,10 @@ class ScheduleTableViewController: UITableViewController {
             weekNumber.text = "52"
         }else{
             weekNumber.text = String(previousWeek-1)
+            self.classesPerDay = self.classesPerDayWeek1
+        }
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
     
@@ -93,10 +89,78 @@ class ScheduleTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        let weeknumber = getWeekNumber()
+        let weeknumber = dateHelper.getWeekNumber(date: NSDate())
         weekNumber.text = String(weeknumber)
         
-        //lol
+        let startTime = dateHelper.getStartOfCurrentWeek()
+        let endTime = startTime + 3*7*24*3600
+        
+        retriever.getAllData(studentCode: "163250", startTime: String(startTime), endTime: String(endTime), completion: {(schedule, error) in
+            for x in 0..<schedule.count{
+                let lesson = schedule[x]
+                let week = lesson["weekNumber"]
+                if Int(week!) == self.dateHelper.getWeekNumber(date: NSDate())+1{
+                    let day = lesson["day"]
+                    if day == "1"{
+                        print("Sunday")
+                    }else if day == "2"{
+                        self.classesPerDayWeek1[0].append(lesson)
+                    }else if day == "3"{
+                        self.classesPerDayWeek1[1].append(lesson)
+                    }else if day == "4"{
+                        self.classesPerDayWeek1[2].append(lesson)
+                    }else if day == "5"{
+                        self.classesPerDayWeek1[3].append(lesson)
+                    }else if day == "6"{
+                        self.classesPerDayWeek1[4].append(lesson)
+                    }else if day == "7"{
+                        print("Saturday")
+                    }
+                }
+                if Int(week!) == self.dateHelper.getWeekNumber(date: NSDate())+2{
+                    let day = lesson["day"]
+                    if day == "1"{
+                        print("Sunday")
+                    }else if day == "2"{
+                        self.classesPerDayWeek2[0].append(lesson)
+                    }else if day == "3"{
+                        self.classesPerDayWeek2[1].append(lesson)
+                    }else if day == "4"{
+                        self.classesPerDayWeek2[2].append(lesson)
+                    }else if day == "5"{
+                        self.classesPerDayWeek2[3].append(lesson)
+                    }else if day == "6"{
+                        self.classesPerDayWeek2[4].append(lesson)
+                    }else if day == "7"{
+                        print("Saturday")
+                    }
+                }
+                if Int(week!) == self.dateHelper.getWeekNumber(date: NSDate())+3{
+                    let day = lesson["day"]
+                    if day == "1"{
+                        print("Sunday")
+                    }else if day == "2"{
+                        self.classesPerDayWeek3[0].append(lesson)
+                    }else if day == "3"{
+                        self.classesPerDayWeek3[1].append(lesson)
+                    }else if day == "4"{
+                        self.classesPerDayWeek3[2].append(lesson)
+                    }else if day == "5"{
+                        self.classesPerDayWeek3[3].append(lesson)
+                    }else if day == "6"{
+                        self.classesPerDayWeek3[4].append(lesson)
+                    }else if day == "7"{
+                        print("Saturday")
+                    }
+                }
+            }
+            DispatchQueue.main.async {
+                self.classesPerDay = self.classesPerDayWeek1
+                self.tableView.reloadData()
+            }
+        })
+        
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -110,27 +174,15 @@ class ScheduleTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func retrievingSchedule()->String{
-        let domainName = "driestarcollege"
-        let code = 671075443203
-        let startTime = String(1388990000)
-        let endTime = String(1388999999)
-        let studentCode = String(163250)
-        
-        let tokenHTTPS = "https://"+domainName+".zportal.nl/api/v3/oauth/token"
-     
-        return "OK"
-    }
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        let numberOfRowsInSection = getClassesDay(weekNumberX:1)
-        return numberOfRowsInSection.count
+        return classesPerDay.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let numberOfRowsInSection = getClassesDay(weekNumberX:1)
-        return numberOfRowsInSection[section]
+        return classesPerDay[section].count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -140,16 +192,16 @@ class ScheduleTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        // Configure the cell...
+        cell.textLabel?.text = classesPerDay[indexPath.section][indexPath.row]["subject"]
 
         return cell
     }
     
    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let indexPath = tableView.indexPathForSelectedRow
-        let currentCell = tableView.cellForRow(at: indexPath!) as! UITableViewCell
-        
-        let valueToPass = currentCell.textLabel?.text
+    
+    
+    
         performSegue(withIdentifier: "classTapped", sender: self)
     }
     
@@ -194,10 +246,13 @@ class ScheduleTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "classTapped"){
-            var viewController = segue.destination as! ClassTableViewController
-            viewController.classData = valueToPass
+            let viewController = segue.destination as! ClassTableViewController
+
         }
     }
 
 
 }
+
+
+

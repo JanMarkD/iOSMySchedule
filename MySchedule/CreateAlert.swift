@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class createAlert: NSObject{
+class CreateAlert: NSObject{
     
     func topMostController() -> UIViewController {
         var topController: UIViewController? = UIApplication.shared.keyWindow?.rootViewController

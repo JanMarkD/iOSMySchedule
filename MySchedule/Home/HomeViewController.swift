@@ -10,7 +10,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    let Retriever = scheduleRetriever()
+    var mySchedule = Array<Dictionary<String,String>>()
+    
+    let retriever = scheduleRetriever()
     
     
     //Outlets
@@ -31,27 +33,23 @@ class HomeViewController: UIViewController {
     
     //Functions
     
-    func retrieveSchedule() -> Array<String>{
-        return ["Piet Janssen", "Natuurkunde", "F201"]
-    }
+
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let schedule = retrieveSchedule()
         
         let timeRightNow = Int(NSDate().timeIntervalSince1970)
         
         let startTime = timeRightNow
         let endTime = timeRightNow + 21*24*3600
         
-   
+        retriever.getAllData(studentCode: "163250", startTime: String(startTime), endTime: String(endTime), completion: {(schedule, error) in
+            self.mySchedule = schedule
+        })
         
         
-        
-        
-        welcomeUser.text = "Welcome, " + schedule[0]
-        classRightNow.text = "You have " + schedule[1] +  ", in " + schedule[2]
         
         
         
