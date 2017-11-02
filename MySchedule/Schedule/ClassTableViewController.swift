@@ -10,16 +10,66 @@ import UIKit
 
 class ClassTableViewController: UITableViewController {
     
-    var classData = String()
+    var classData = Dictionary<String, String>()
+    
+    //Outlets
+    
+    @IBOutlet weak var subject: UILabel!
+    
+    @IBOutlet weak var location: UILabel!
+    
+    @IBOutlet weak var teacher: UILabel!
+    
+    @IBOutlet weak var hour: UILabel!
+    
+    
+    @IBOutlet weak var remark: UILabel!
+    
+    
+    
+    @IBOutlet weak var change: UILabel!
+    
+    @IBOutlet weak var descriptionChange: UILabel!
+    
+    
+    //Functions
+    
+    
+    
+    
+    //Actions
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        if let subjectString = classData["subject"]{
+            subject.text = subjectString
+        }
+        
+        if let locationString = classData["location"]{
+            location.text = locationString
+        }
+        
+        if let teacherString = classData["teacher"]{
+            teacher.text = teacherString
+        }
+        
+        if let hourString = classData["subject"]{
+            hour.text = hourString
+        }
+        
+        if let remarkString = classData["remark"]{
+            remark.text = remarkString
+        }
+        
+        if let descriptionString = classData["changeDescription"]{
+            descriptionChange.text = descriptionString
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

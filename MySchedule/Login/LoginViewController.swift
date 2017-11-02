@@ -84,7 +84,7 @@ class LoginViewController: UIViewController {
         self.passwordTextField.text = password
         self.usernameTextField.text = username
         
-        
+//        
         // Do any additional setup after loading the view, typically from a nib.
     }
 

@@ -199,11 +199,9 @@ class ScheduleTableViewController: UITableViewController {
     
    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let indexPath = tableView.indexPathForSelectedRow
-    
-    
-    
         performSegue(withIdentifier: "classTapped", sender: self)
     }
+    
     
 
     /*

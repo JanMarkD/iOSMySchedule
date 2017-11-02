@@ -71,6 +71,8 @@ class scheduleRetriever: NSObject{
                         
                         let lesson = totalSchedule[x]
                         
+                        print(lesson)
+                        
                         let dateInSeconds = lesson["start"] as! Int
                         
                         let date = NSDate(timeIntervalSince1970: TimeInterval(dateInSeconds))
@@ -87,7 +89,6 @@ class scheduleRetriever: NSObject{
                         let moved = lesson["moved"] as! Int
                         let cancelled = lesson["cancelled"] as! Int
                         let new = lesson["new"] as! Int
-                        let hour = lesson["endTimeSlot"] as! Int
                         
                         myLesson["date"] = (String(describing: date))
                         myLesson["weekNumber"] = String(weekNumber)
@@ -104,7 +105,7 @@ class scheduleRetriever: NSObject{
                         myLesson["moved"] = (String(moved))
                         myLesson["cancelled"] = (String(cancelled))
                         myLesson["new"] = (String(new))
-                        myLesson["hour"] = (String(hour))
+
                         
                         mySchedule.append(myLesson)
                         
@@ -178,7 +179,6 @@ class scheduleRetriever: NSObject{
                                 let moved = lesson["moved"] as! Int
                                 let cancelled = lesson["cancelled"] as! Int
                                 let new = lesson["new"] as! Int
-                                let hour = lesson["endTimeSlot"] as! Int
                                 
                                 myLesson["teacher"] = (teacher[0] as! String)
                                 myLesson["subject"] = (subject[0] as! String)
@@ -191,7 +191,7 @@ class scheduleRetriever: NSObject{
                                 myLesson["moved"] = (String(moved))
                                 myLesson["cancelled"] = (String(cancelled))
                                 myLesson["new"] = (String(new))
-                                myLesson["hour"] = (String(hour))
+
 
                                 mySchedule.append(myLesson)
                             }
