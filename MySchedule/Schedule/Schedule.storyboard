@@ -17,51 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" id="laz-it-L3I">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfS-Le-XRP">
-                                    <rect key="frame" x="0.0" y="0.0" width="94" height="44"/>
-                                    <state key="normal" title="Previous"/>
-                                    <connections>
-                                        <action selector="previousWeek:" destination="ptP-9P-lbS" eventType="touchUpInside" id="I5U-rE-QpB"/>
-                                    </connections>
-                                </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Week" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="it1-ko-Ub4">
-                                    <rect key="frame" x="94" y="0.0" width="93.5" height="44"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="52" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jpe-N3-Gnm">
-                                    <rect key="frame" x="187.5" y="0.0" width="94" height="44"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vnq-yf-pNj">
-                                    <rect key="frame" x="281.5" y="0.0" width="93.5" height="44"/>
-                                    <state key="normal" title="Next"/>
-                                    <connections>
-                                        <action selector="nextWeek:" destination="ptP-9P-lbS" eventType="touchUpInside" id="Of9-8S-t7n"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <constraints>
-                                <constraint firstItem="Jpe-N3-Gnm" firstAttribute="leading" secondItem="it1-ko-Ub4" secondAttribute="trailing" constant="15" id="wi0-yS-NDg"/>
-                            </constraints>
-                        </stackView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="0sW-gf-r92">
-                                <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0sW-gf-r92" id="VcB-YV-Gna">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="nmG-rv-5uH" kind="show" id="b5Z-Za-dxL"/>
+                                    <segue destination="nmG-rv-5uH" kind="show" identifier="classTapped" id="b5Z-Za-dxL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -74,11 +39,18 @@
                     <tabBarItem key="tabBarItem" title="Schedule" image="Schedule2x" landscapeImage="Schedule2x" selectedImage="Schedule2x" id="UJI-DF-EUY"/>
                     <navigationItem key="navigationItem" title="My Schedule" id="De6-fx-Xue">
                         <barButtonItem key="backBarButtonItem" title="Back" id="IUV-xX-xfI"/>
+                        <barButtonItem key="leftBarButtonItem" title="Previous" id="L8X-Is-xaR">
+                            <connections>
+                                <action selector="previousButton:" destination="ptP-9P-lbS" id="VjU-N6-RFs"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="ukn-pb-P8u">
+                            <connections>
+                                <action selector="nextButton:" destination="ptP-9P-lbS" id="Miy-ng-96b"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="weekNumber" destination="Jpe-N3-Gnm" id="ha1-Rg-nCm"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgq-vX-b9r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

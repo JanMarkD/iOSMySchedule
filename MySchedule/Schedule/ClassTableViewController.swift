@@ -12,6 +12,8 @@ class ClassTableViewController: UITableViewController {
     
     var classData = Dictionary<String, String>()
     
+    let numberOfRowsInSection = [4,1,2]
+    
     //Outlets
     
     @IBOutlet weak var subject: UILabel!
@@ -58,7 +60,7 @@ class ClassTableViewController: UITableViewController {
             teacher.text = teacherString
         }
         
-        if let hourString = classData["subject"]{
+        if let hourString = classData["hour"]{
             hour.text = hourString
         }
         
@@ -81,12 +83,12 @@ class ClassTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return numberOfRowsInSection.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return numberOfRowsInSection[section]
     }
 
     /*

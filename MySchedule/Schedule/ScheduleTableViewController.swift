@@ -22,8 +22,6 @@ class ScheduleTableViewController: UITableViewController {
     
     let headerForSection = ["Monday","Tuesday","Wednesday","Thursday","Friday"]
     
-    
-    
     let retriever = scheduleRetriever()
     
     let dateHelper = DateHelp()
@@ -31,8 +29,7 @@ class ScheduleTableViewController: UITableViewController {
     let createAlert = CreateAlert()
     
     //Outlets
-    
-    @IBOutlet weak var weekNumber: UILabel!
+
     
 
     
@@ -46,16 +43,39 @@ class ScheduleTableViewController: UITableViewController {
     
     //Actions
     
-    @IBAction func nextWeek(_ sender: UIButton) {
-        let nextWeek = Int(weekNumber.text!)!
+    @IBAction func previousButton(_ sender: UIBarButtonItem) {
+        let thisWeek = (self.navigationItem.title?.components(separatedBy: " "))![1]
         
-        if nextWeek == dateHelper.getWeekNumber(date: NSDate()) + 2{
+        if Int(thisWeek) == dateHelper.getWeekNumber(date: NSDate()){
             return
         }
-        if weekNumber.text == "52" {
-            weekNumber.text = "1"
+        if (self.navigationItem.title?.components(separatedBy: " "))![1] == "1" {
+            self.navigationItem.title? = "MySchedule 52"
+            self.classesPerDay = self.classesPerDayWeek2
         }else{
-            weekNumber.text = String(nextWeek+1)
+            let previousWeek = Int(thisWeek)! - 1
+            self.navigationItem.title? = "MySchedule "+String(previousWeek)
+            self.classesPerDay = self.classesPerDayWeek2
+        }
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
+    }
+    
+    
+    @IBAction func nextButton(_ sender: UIBarButtonItem) {
+        let thisWeek = (self.navigationItem.title?.components(separatedBy: " "))![1]
+        
+        if Int(thisWeek) == dateHelper.getWeekNumber(date: NSDate()) + 2{
+            return
+        }
+        if (self.navigationItem.title?.components(separatedBy: " "))![1] == "52" {
+            self.navigationItem.title? = "MySchedule 1"
+            self.classesPerDay = self.classesPerDayWeek2
+        }else{
+            let nextWeek = Int(thisWeek)!+1
+            self.navigationItem.title? = "MySchedule "+String(nextWeek)
             self.classesPerDay = self.classesPerDayWeek2
         }
         DispatchQueue.main.async {
@@ -64,33 +84,13 @@ class ScheduleTableViewController: UITableViewController {
     }
     
     
-    @IBAction func previousWeek(_ sender: UIButton) {
-        let previousWeek = Int(weekNumber.text!)!
-        
-        if previousWeek == dateHelper.getWeekNumber(date: NSDate()){
-            return
-        }
-        
-        if weekNumber.text == "1"{
-            weekNumber.text = "52"
-        }else{
-            weekNumber.text = String(previousWeek-1)
-            self.classesPerDay = self.classesPerDayWeek1
-        }
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-    }
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         let weeknumber = dateHelper.getWeekNumber(date: NSDate())
-        weekNumber.text = String(weeknumber)
+        self.navigationItem.title = "MySchedule " + String(weeknumber)
         
         let startTime = dateHelper.getStartOfCurrentWeek()
         let endTime = startTime + 3*7*24*3600
@@ -174,6 +174,10 @@ class ScheduleTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "classTapped", sender: self)
+    }
+    
 
     // MARK: - Table view data source
 
@@ -190,17 +194,16 @@ class ScheduleTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        var cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
         
         cell.textLabel?.text = classesPerDay[indexPath.section][indexPath.row]["subject"]
+        cell.detailTextLabel?.text = classesPerDay[indexPath.section][indexPath.row]["location"]
 
         return cell
     }
     
-   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let indexPath = tableView.indexPathForSelectedRow
-        performSegue(withIdentifier: "classTapped", sender: self)
-    }
     
     
 
@@ -243,9 +246,18 @@ class ScheduleTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let indexPath = tableView.indexPathForSelectedRow!
+        
         if (segue.identifier == "classTapped"){
             let viewController = segue.destination as! ClassTableViewController
-
+            if Int((self.navigationItem.title?.components(separatedBy: " "))![1]) == dateHelper.getWeekNumber(date: NSDate()){
+                viewController.classData = classesPerDayWeek1[indexPath.section][indexPath.row]
+            }else if Int((self.navigationItem.title?.components(separatedBy: " "))![1]) == dateHelper.getWeekNumber(date: NSDate()) + 1{
+                viewController.classData = classesPerDayWeek2[indexPath.section][indexPath.row]
+            }else if Int((self.navigationItem.title?.components(separatedBy: " "))![1]) == dateHelper.getWeekNumber(date: NSDate()) + 2{
+                viewController.classData = classesPerDayWeek3[indexPath.section][indexPath.row]
+            }
         }
     }
 
