@@ -97,8 +97,6 @@ class scheduleRetriever: NSObject{
                 change = "modified"
             }
             
-            print(change)
-            
             myLesson["time"] = time
             myLesson["date"] = (String(describing: startDate))
             myLesson["hour"] = String(hour)

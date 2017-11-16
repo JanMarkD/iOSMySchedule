@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AM1-Yf-D8M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AM1-Yf-D8M">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -68,15 +67,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="px1-Mw-G9e" firstAttribute="centerX" secondItem="tX5-xX-Mtn" secondAttribute="centerX" id="4P0-aa-Huc"/>
-                            <constraint firstItem="px1-Mw-G9e" firstAttribute="leading" secondItem="7Od-Qw-Cde" secondAttribute="leading" constant="60" id="KKs-n8-Uhl"/>
+                            <constraint firstItem="px1-Mw-G9e" firstAttribute="leading" secondItem="B0O-BZ-VEu" secondAttribute="leading" constant="60" id="KKs-n8-Uhl"/>
                             <constraint firstItem="px1-Mw-G9e" firstAttribute="top" secondItem="Vtz-bZ-qfk" secondAttribute="bottom" constant="10" id="Yra-AB-7qc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tX5-xX-Mtn" secondAttribute="trailing" id="bud-l9-fhd"/>
                             <constraint firstItem="tX5-xX-Mtn" firstAttribute="leading" secondItem="B0O-BZ-VEu" secondAttribute="leadingMargin" id="fKz-WE-HJk"/>
                             <constraint firstItem="RIK-i7-Dxs" firstAttribute="top" secondItem="tX5-xX-Mtn" secondAttribute="bottom" constant="15" id="iWi-Of-nur"/>
                             <constraint firstItem="tX5-xX-Mtn" firstAttribute="top" secondItem="px1-Mw-G9e" secondAttribute="bottom" id="jOE-mb-byV"/>
-                            <constraint firstItem="7Od-Qw-Cde" firstAttribute="trailing" secondItem="px1-Mw-G9e" secondAttribute="trailing" constant="60" id="r33-jT-c3b"/>
+                            <constraint firstAttribute="trailing" secondItem="px1-Mw-G9e" secondAttribute="trailing" constant="60" id="r33-jT-c3b"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="7Od-Qw-Cde"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="homeIcon" landscapeImage="homeIcon" selectedImage="homeIcon" id="hcU-if-bzU"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
