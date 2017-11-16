@@ -40,14 +40,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let timeRightNow = Int(NSDate().timeIntervalSince1970)
         
-        let startTime = timeRightNow
-        let endTime = timeRightNow + 21*24*3600
         
-        retriever.getAllData(studentCode: "163250", startTime: String(startTime), endTime: String(endTime), completion: {(schedule, error) in
-            self.mySchedule = schedule
-        })
         
         
         

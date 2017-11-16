@@ -10,16 +10,68 @@ import UIKit
 
 class ClassTableViewController: UITableViewController {
     
-    var classData = String()
+    var classData = Dictionary<String, String>()
+    
+    let numberOfRowsInSection = [4,1,2]
+    
+    //Outlets
+    
+    @IBOutlet weak var subject: UILabel!
+    
+    @IBOutlet weak var location: UILabel!
+    
+    @IBOutlet weak var teacher: UILabel!
+    
+    @IBOutlet weak var hour: UILabel!
+    
+    
+    @IBOutlet weak var remark: UILabel!
+    
+    
+    
+    @IBOutlet weak var change: UILabel!
+    
+    @IBOutlet weak var descriptionChange: UILabel!
+    
+    
+    //Functions
+    
+    
+    
+    
+    //Actions
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        if let subjectString = classData["subject"]{
+            subject.text = subjectString
+        }
+        
+        if let locationString = classData["location"]{
+            location.text = locationString
+        }
+        
+        if let teacherString = classData["teacher"]{
+            teacher.text = teacherString
+        }
+        
+        if let hourString = classData["hour"]{
+            hour.text = hourString
+        }
+        
+        if let remarkString = classData["remark"]{
+            remark.text = remarkString
+        }
+        
+        if let descriptionString = classData["changeDescription"]{
+            descriptionChange.text = descriptionString
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,12 +83,12 @@ class ClassTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return numberOfRowsInSection.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return numberOfRowsInSection[section]
     }
 
     /*
