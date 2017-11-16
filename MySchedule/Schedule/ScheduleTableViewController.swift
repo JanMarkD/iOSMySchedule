@@ -227,29 +227,16 @@ class ScheduleTableViewController: UITableViewController {
             cell.textLabel?.text = noClassesToday["subject"]
             cell.detailTextLabel?.text = noClassesToday["location"]
         }else{
-            var one = #imageLiteral(resourceName: "1hourFilled")
-            var two = #imageLiteral(resourceName: "2hourFilled")
-            var three = #imageLiteral(resourceName: "3hourFilled")
-            var four = #imageLiteral(resourceName: "4hourFilled")
-            var five = #imageLiteral(resourceName: "5hourFilled")
-            var six = #imageLiteral(resourceName: "6hourFilled")
-            var seven = #imageLiteral(resourceName: "7hourFilled")
-            var eight = #imageLiteral(resourceName: "8hourFilled")
-            var cancelled = #imageLiteral(resourceName: "cancelled")
-            var modified = #imageLiteral(resourceName: "modifiedClass")
-            
-            if indexPath.section == 1 || indexPath.section == 3{
-                one = #imageLiteral(resourceName: "1hour")
-                two = #imageLiteral(resourceName: "2hour")
-                three = #imageLiteral(resourceName: "3hour")
-                four = #imageLiteral(resourceName: "4hour")
-                five = #imageLiteral(resourceName: "5hour")
-                six = #imageLiteral(resourceName: "6hour")
-                seven = #imageLiteral(resourceName: "7hour")
-                eight = #imageLiteral(resourceName: "8hour")
-                cancelled = #imageLiteral(resourceName: "cancelledFilled")
-                modified = #imageLiteral(resourceName: "modifiedClassFilled")
-            }
+            let one = #imageLiteral(resourceName: "1hour")
+            let two = #imageLiteral(resourceName: "2hour")
+            let three = #imageLiteral(resourceName: "3hour")
+            let four = #imageLiteral(resourceName: "4hour")
+            let five = #imageLiteral(resourceName: "5hour")
+            let six = #imageLiteral(resourceName: "6hour")
+            let seven = #imageLiteral(resourceName: "7hour")
+            let eight = #imageLiteral(resourceName: "8hour")
+            let cancelled = #imageLiteral(resourceName: "cancelledFilled")
+            let modified = #imageLiteral(resourceName: "modifiedClassFilled")
             
             if let favouriteSubjects = defaults.value(forKey: "Favourite Subjects") as? [String]{
                 for i in 0..<favouriteSubjects.count{

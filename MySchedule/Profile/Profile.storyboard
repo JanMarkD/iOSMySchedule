@@ -485,24 +485,27 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zfn-U5-za7">
                                                     <rect key="frame" x="31" y="11" width="106" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="106" id="wKe-QW-Lip"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6c-nd-wh8">
+                                                    <rect key="frame" x="154" y="11" width="205" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nyo-Mi-YSo">
-                                                    <rect key="frame" x="152" y="11" width="207" height="22"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Y6c-nd-wh8" firstAttribute="leading" secondItem="Zfn-U5-za7" secondAttribute="trailing" constant="17" id="0Wa-C0-qkp"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Y6c-nd-wh8" secondAttribute="trailing" id="2ZN-om-G71"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Zfn-U5-za7" secondAttribute="bottom" id="330-jf-P1i"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Nyo-Mi-YSo" secondAttribute="bottom" id="4Px-HJ-P8L"/>
-                                                <constraint firstItem="Nyo-Mi-YSo" firstAttribute="leading" secondItem="Zfn-U5-za7" secondAttribute="trailing" constant="15" id="8BU-OX-lkK"/>
-                                                <constraint firstItem="Nyo-Mi-YSo" firstAttribute="top" secondItem="a4K-zl-kH3" secondAttribute="topMargin" id="8QC-3A-M0E"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Nyo-Mi-YSo" secondAttribute="trailing" id="BKY-5I-LE5"/>
                                                 <constraint firstItem="Zfn-U5-za7" firstAttribute="leading" secondItem="a4K-zl-kH3" secondAttribute="leadingMargin" constant="15" id="LBJ-hr-wCD"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Y6c-nd-wh8" secondAttribute="bottom" id="McM-O2-2Gf"/>
+                                                <constraint firstItem="Y6c-nd-wh8" firstAttribute="top" secondItem="a4K-zl-kH3" secondAttribute="topMargin" id="PXu-Tn-Yci"/>
                                                 <constraint firstItem="Zfn-U5-za7" firstAttribute="top" secondItem="a4K-zl-kH3" secondAttribute="topMargin" id="Qcn-gM-J8c"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -641,7 +644,7 @@
                         <outlet property="emailAdress" destination="6hE-vv-bXR" id="tdg-4z-e42"/>
                         <outlet property="firstName" destination="hg7-GN-LLL" id="gc8-Qv-a5F"/>
                         <outlet property="lastName" destination="65y-oJ-j48" id="Ysq-wq-F3P"/>
-                        <outlet property="studentCode" destination="Nyo-Mi-YSo" id="Zwb-EE-6h2"/>
+                        <outlet property="studentCode" destination="Y6c-nd-wh8" id="sdp-sb-NiG"/>
                         <outlet property="subject1" destination="BOO-Cd-MVd" id="fCa-mM-5Qq"/>
                         <outlet property="subject2" destination="d2f-YS-v7J" id="BM7-Hq-M7a"/>
                         <outlet property="subject3" destination="SLX-TW-5gR" id="8RG-cv-6jy"/>
