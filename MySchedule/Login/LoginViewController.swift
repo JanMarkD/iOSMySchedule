@@ -12,6 +12,9 @@ class LoginViewController: UIViewController {
     
     //Layout data
     
+    let alertHelp = CreateAlert()
+    
+    let defaults = UserDefaults.standard
     
     
     //Functions
@@ -26,50 +29,32 @@ class LoginViewController: UIViewController {
             }else{
                 return 2
             }
-        
         }else{
             return 3
         }
     }
     
-    func topMostController() -> UIViewController {
-        var topController: UIViewController? = UIApplication.shared.keyWindow?.rootViewController
-        while ((topController?.presentedViewController) != nil) {
-            topController = topController?.presentedViewController
-        }
-        return topController!
-    }
-    
-    func alert(message:String, title:String){
-        let alert=UIAlertController(title: title, message: message, preferredStyle: .alert);
-        let cancelAction: UIAlertAction = UIAlertAction(title: "OK", style: .cancel) { action -> Void in
-            
-        }
-        alert.addAction(cancelAction)
-        topMostController().present(alert, animated: true, completion: nil);
-    }
-    
-    
     //Outlets
     
     @IBOutlet weak var usernameTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginView: UIView!
     
     //Actions
     
+    @IBAction func unwindToLogin(segue: UIStoryboardSegue) {
+    }
+    
+    
     @IBAction func loginButton(_ sender: UIButton) {
-        
         let username = usernameTextField.text ?? ""
         let password = passwordTextField.text ?? ""
-        
         let check = checkUsernamePassword(username:username, password:password)
-        
         switch(check){
         case 1: print("Succesful Login")
-        case 2: alert(message: "Please fill in correct username and password", title: "Incorrect password or username")
-        case 3: alert(message: "Please sign up", title: "No Account")
-        default: alert(message: "Something went wrong", title: "Error")
+        case 2: alertHelp.alert(message: "Please fill in correct username and password", title: "Incorrect password or username")
+        case 3: alertHelp.alert(message: "Please sign up", title: "No Account")
+        default: alertHelp.alert(message: "Something went wrong", title: "Error")
         }
     }
     
@@ -84,18 +69,30 @@ class LoginViewController: UIViewController {
         //self.passwordTextField.text = password
         //self.usernameTextField.text = username
         
-//        
-        // Do any additional setup after loading the view, typically from a nib.
+        if let login = defaults.value(forKey: "Login") as? [String]{
+            usernameTextField.text = login[0]
+            passwordTextField.text = login[1]
+            
+            loginView.layer.borderColor = UIColor.black.cgColor
+            loginView.layer.borderWidth = 2
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        
         if identifier == "Login"{
             let username = usernameTextField.text ?? ""
             let password = passwordTextField.text ?? ""
-        
             let check = checkUsernamePassword(username: username, password: password)
-            
             if check == 1{
                 return true
             }else{
@@ -108,9 +105,6 @@ class LoginViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
 }
 
