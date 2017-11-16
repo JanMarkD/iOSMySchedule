@@ -28,6 +28,7 @@
 		6333D9C41F96188700BCC45A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6333D9C31F96188700BCC45A /* Profile.storyboard */; };
 		63B129C21F963E0900C74055 /* UITabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B129C11F963E0900C74055 /* UITabBarViewController.swift */; };
 		8363F1671FA3887B00A4CC69 /* DateHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8363F1661FA3887B00A4CC69 /* DateHelp.swift */; };
+		83B9D22F1FBC775A00E0EDBB /* ChangeProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B9D22E1FBC775A00E0EDBB /* ChangeProfileTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		6333D9C31F96188700BCC45A /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		63B129C11F963E0900C74055 /* UITabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarViewController.swift; sourceTree = "<group>"; };
 		8363F1661FA3887B00A4CC69 /* DateHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelp.swift; sourceTree = "<group>"; };
+		83B9D22E1FBC775A00E0EDBB /* ChangeProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				3C6D92141F876D9E00A452B0 /* ProfileTableViewController.swift */,
+				83B9D22E1FBC775A00E0EDBB /* ChangeProfileTableViewController.swift */,
 				3C6D92161F876E5900A452B0 /* ChangePasswordTableViewController.swift */,
 				6333D9C31F96188700BCC45A /* Profile.storyboard */,
 			);
@@ -361,6 +364,7 @@
 				3C9314161F62B4AD003A2BA3 /* LoginViewController.swift in Sources */,
 				3C9314141F62B4AD003A2BA3 /* AppDelegate.swift in Sources */,
 				3C93141C1F62B4AD003A2BA3 /* MySchedule.xcdatamodeld in Sources */,
+				83B9D22F1FBC775A00E0EDBB /* ChangeProfileTableViewController.swift in Sources */,
 				8363F1671FA3887B00A4CC69 /* DateHelp.swift in Sources */,
 				3CCF7B521FA1B8D80033D0C0 /* ScheduleRetriever.swift in Sources */,
 				3C4CB9331F7BB0AF001C7705 /* ClassTableViewController.swift in Sources */,
@@ -517,7 +521,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5X95DTBS35;
 				INFOPLIST_FILE = MySchedule/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JMD-RU.MySchedule";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -533,7 +537,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5X95DTBS35;
 				INFOPLIST_FILE = MySchedule/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JMD-RU.MySchedule";
 				PRODUCT_NAME = "$(TARGET_NAME)";

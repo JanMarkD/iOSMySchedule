@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AM1-Yf-D8M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AM1-Yf-D8M">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,31 +23,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tX5-xX-Mtn">
-                                <rect key="frame" x="16" y="515" width="343" height="103"/>
+                                <rect key="frame" x="16" y="355" width="343" height="248"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9U-aR-0TN">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="26"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9U-aR-0TN">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="62"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fw-w4-8e9">
-                                        <rect key="frame" x="0.0" y="26" width="343" height="25.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have a lesson right now." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fw-w4-8e9">
+                                        <rect key="frame" x="0.0" y="62" width="343" height="62"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not you?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h3-qL-AGw">
-                                        <rect key="frame" x="0.0" y="51.5" width="343" height="26"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No upcoming classes today." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h3-qL-AGw">
+                                        <rect key="frame" x="0.0" y="124" width="343" height="62"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B09-ad-ZmC">
-                                        <rect key="frame" x="0.0" y="77.5" width="343" height="25.5"/>
+                                        <rect key="frame" x="0.0" y="186" width="343" height="62"/>
                                         <state key="normal" title="Logout"/>
                                         <connections>
-                                            <action selector="logOut:" destination="AM1-Yf-D8M" eventType="touchUpInside" id="AsV-hk-iCh"/>
+                                            <segue destination="uNB-KI-NS6" kind="show" id="Zjl-qj-PFT"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -58,29 +58,30 @@
                                     <constraint firstAttribute="trailing" secondItem="Y9U-aR-0TN" secondAttribute="trailing" id="jP3-c4-KPw"/>
                                 </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iOS App logo" translatesAutoresizingMaskIntoConstraints="NO" id="px1-Mw-G9e">
-                                <rect key="frame" x="60" y="80" width="255" height="375"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="px1-Mw-G9e">
+                                <rect key="frame" x="60" y="30" width="255" height="325"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="375" id="QIy-Vb-6bT"/>
+                                    <constraint firstAttribute="height" constant="325" id="QIy-Vb-6bT"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="px1-Mw-G9e" firstAttribute="centerX" secondItem="tX5-xX-Mtn" secondAttribute="centerX" id="4P0-aa-Huc"/>
                             <constraint firstItem="px1-Mw-G9e" firstAttribute="leading" secondItem="7Od-Qw-Cde" secondAttribute="leading" constant="60" id="KKs-n8-Uhl"/>
-                            <constraint firstItem="px1-Mw-G9e" firstAttribute="top" secondItem="Vtz-bZ-qfk" secondAttribute="bottom" constant="60" id="Yra-AB-7qc"/>
+                            <constraint firstItem="px1-Mw-G9e" firstAttribute="top" secondItem="Vtz-bZ-qfk" secondAttribute="bottom" constant="10" id="Yra-AB-7qc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tX5-xX-Mtn" secondAttribute="trailing" id="bud-l9-fhd"/>
                             <constraint firstItem="tX5-xX-Mtn" firstAttribute="leading" secondItem="B0O-BZ-VEu" secondAttribute="leadingMargin" id="fKz-WE-HJk"/>
-                            <constraint firstItem="RIK-i7-Dxs" firstAttribute="top" secondItem="tX5-xX-Mtn" secondAttribute="bottom" id="iWi-Of-nur"/>
-                            <constraint firstItem="tX5-xX-Mtn" firstAttribute="top" secondItem="px1-Mw-G9e" secondAttribute="bottom" constant="60" id="jOE-mb-byV"/>
+                            <constraint firstItem="RIK-i7-Dxs" firstAttribute="top" secondItem="tX5-xX-Mtn" secondAttribute="bottom" constant="15" id="iWi-Of-nur"/>
+                            <constraint firstItem="tX5-xX-Mtn" firstAttribute="top" secondItem="px1-Mw-G9e" secondAttribute="bottom" id="jOE-mb-byV"/>
                             <constraint firstItem="7Od-Qw-Cde" firstAttribute="trailing" secondItem="px1-Mw-G9e" secondAttribute="trailing" constant="60" id="r33-jT-c3b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Od-Qw-Cde"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="Home2x" landscapeImage="Home2x" selectedImage="Home2x" id="hcU-if-bzU"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="homeIcon" landscapeImage="homeIcon" selectedImage="homeIcon" id="hcU-if-bzU"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="classNext" destination="1h3-qL-AGw" id="LmU-7E-mS1"/>
                         <outlet property="classRightNow" destination="4fw-w4-8e9" id="EV5-xf-toA"/>
                         <outlet property="logoImage" destination="px1-Mw-G9e" id="Keg-jz-jsn"/>
                         <outlet property="welcomeUser" destination="Y9U-aR-0TN" id="czf-eW-e44"/>
@@ -90,9 +91,16 @@
             </objects>
             <point key="canvasLocation" x="1876" y="750"/>
         </scene>
+        <!--Login-->
+        <scene sceneID="7Xt-eS-nyR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="Login" id="uNB-KI-NS6" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GwB-Wl-Zju" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2452" y="749"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="Home2x" width="40" height="40"/>
-        <image name="iOS App logo" width="175" height="172"/>
+        <image name="homeIcon" width="30" height="30"/>
     </resources>
 </document>

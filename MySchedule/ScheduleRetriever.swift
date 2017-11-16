@@ -20,7 +20,6 @@ class scheduleRetriever: NSObject{
             if let object = json as? [String: Any]{
                 return object[key]!
             }else if let object = json as? [Any]{
-                print(object[index])
                 return object[index]
             }else{
                 print("JSON Invalid")
@@ -30,14 +29,96 @@ class scheduleRetriever: NSObject{
             print(error)
             return "Oops"
         }
-        
     }
     
+    func nullToNil(value : AnyObject?) -> AnyObject? {
+        if value is NSNull {
+            return nil
+        } else {
+            return value
+        }
+    }
+
     
+    func unwrapSchedule(totalSchedule: Array<Dictionary<String, Any>>) -> Array<Dictionary<String,String>>{
+        var mySchedule = Array<Dictionary<String,String>>()
+        for x in 0..<totalSchedule.count{
+            var myLesson = Dictionary<String, String>()
+            let lesson = totalSchedule[x]
+            
+            let startInSeconds = lesson["start"] as! Int
+            let endInSeconds = lesson["end"] as! Int
+            let startDate = Date(timeIntervalSince1970: TimeInterval(startInSeconds))
+            let endDate = Date(timeIntervalSince1970: TimeInterval(endInSeconds))
+            let startTime = dateHelper.minutesAndHoursFromDate(date: startDate)
+            let endTime = dateHelper.minutesAndHoursFromDate(date: endDate)
+            let startTimeHours = String(describing: startTime["hours"]!)
+            var startTimeMinutes = String(describing: startTime["minutes"]!)
+            let endTimeHours = String(describing: endTime["hours"]!)
+            var endTimeMinutes = String(describing: endTime["minutes"]!)
+            
+            if startTimeMinutes.count == 1{
+                startTimeMinutes = "0" + startTimeMinutes
+            }
+            if endTimeMinutes.count == 1{
+                endTimeMinutes = "0" + endTimeMinutes
+            }
+            
+            let time = startTimeHours + ":" + startTimeMinutes + "-" + endTimeHours + ":" + endTimeMinutes
+            
+            let weekNumber = self.dateHelper.getWeekNumber(date: startDate as NSDate)
+            
+            var hour = Int()
+            if (nullToNil(value: lesson["endTimeSlot"] as AnyObject) != nil){
+                hour = lesson["endTimeSlot"] as! Int
+            }else{
+                hour = self.dateHelper.timeToHour(date: Date(timeIntervalSince1970: TimeInterval(startInSeconds)))
+            }
+            
+            let teacher = lesson["teachers"] as! NSArray
+            let subject = lesson["subjects"] as! NSArray
+            let location = lesson["locations"] as! NSArray
+            
+            let remark = lesson["remark"] as! String
+            let changeDescription = lesson["changeDescription"] as! String
+            
+            let modified = lesson["modified"] as! Int
+            let moved = lesson["moved"] as! Int
+            let cancelled = lesson["cancelled"] as! Int
+            let new = lesson["new"] as! Int
+            var change = String()
+            if new == 1{
+                change = "new"
+            }else if moved == 1{
+                change = "moved"
+            }else if cancelled == 1{
+                change = "cancelled"
+            }else if modified == 1{
+                change = "modified"
+            }
+            
+            print(change)
+            
+            myLesson["time"] = time
+            myLesson["date"] = (String(describing: startDate))
+            myLesson["hour"] = String(hour)
+            myLesson["weekNumber"] = String(weekNumber)
+            myLesson["day"] = String(self.dateHelper.getDayOfWeek(date: startDate as NSDate))
+            
+            myLesson["teacher"] = (teacher[0] as! String)
+            myLesson["subject"] = (subject[0] as! String)
+            myLesson["location"] = (location[0] as! String).uppercased()
+            
+            myLesson["remark"] = remark
+            myLesson["change"] = change
+            myLesson["changeDescription"] = changeDescription
+        
+            mySchedule.append(myLesson)
+        }
+        return mySchedule
+    }
     
     func getAllData(studentCode: String, startTime: String, endTime: String, completion:@escaping (_ mySchedule:Array<Dictionary<String,String>>,_ error:Error?) ->()){
-        
-        var mySchedule = Array<Dictionary<String,String>>()
         
         let defaults = UserDefaults.standard
         
@@ -51,13 +132,11 @@ class scheduleRetriever: NSObject{
             
             let task = URLSession.shared.dataTask(with: request) { scheduleData, response, error in
                 guard let scheduleData = scheduleData, error == nil else {
-                    // check for fundamental networking error
                     print("error=\(String(describing: error))")
                     return
                 }
                 
                 if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
-                    // check for http errors
                     print("statusCode should be 200, but is \(httpStatus.statusCode)")
                     print("response = \(String(describing: response))")
                 }
@@ -65,51 +144,7 @@ class scheduleRetriever: NSObject{
                 let json = self.convertJSON(data: scheduleData, key: "response", index: 0)
                 if let schedule = json as? Dictionary<String, Any>{
                     let totalSchedule = schedule["data"]! as! Array<Dictionary<String, Any>>
-                    for x in 0..<totalSchedule.count{
-                        
-                        var myLesson = Dictionary<String, String>()
-                        
-                        let lesson = totalSchedule[x]
-                        
-                        print(lesson)
-                        
-                        let dateInSeconds = lesson["start"] as! Int
-                        
-                        let date = NSDate(timeIntervalSince1970: TimeInterval(dateInSeconds))
-                        let weekNumber = self.dateHelper.getWeekNumber(date: date)
-                    
-                        let teacher = lesson["teachers"] as! NSArray
-                        let subject = lesson["subjects"] as! NSArray
-                        let location = lesson["locations"] as! NSArray
-                        
-                        let remark = lesson["remark"] as! String
-                        let changeDescription = lesson["changeDescription"] as! String
-                        
-                        let modified = lesson["modified"] as! Int
-                        let moved = lesson["moved"] as! Int
-                        let cancelled = lesson["cancelled"] as! Int
-                        let new = lesson["new"] as! Int
-                        
-                        myLesson["date"] = (String(describing: date))
-                        myLesson["weekNumber"] = String(weekNumber)
-                        myLesson["day"] = String(self.dateHelper.getDayOfWeek(date: date))
-                        
-                        myLesson["teacher"] = (teacher[0] as! String)
-                        myLesson["subject"] = (subject[0] as! String)
-                        myLesson["location"] = (location[0] as! String)
-                        
-                        myLesson["remark"] = (remark)
-                        myLesson["changeDescription"] = (changeDescription)
-                        
-                        myLesson["modified"] = (String(modified))
-                        myLesson["moved"] = (String(moved))
-                        myLesson["cancelled"] = (String(cancelled))
-                        myLesson["new"] = (String(new))
-
-                        
-                        mySchedule.append(myLesson)
-                        
-                    }
+                    let mySchedule = self.unwrapSchedule(totalSchedule: totalSchedule)
                     completion(mySchedule, nil)
                 }
             }
@@ -124,22 +159,17 @@ class scheduleRetriever: NSObject{
             
             let task = URLSession.shared.dataTask(with: request) { tokenData, response, error in
                 guard let tokenData = tokenData, error == nil else {
-                    // check for fundamental networking error
                     print("error=\(String(describing: error))")
                     return
                 }
                 
                 if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
-                    // check for http errors
                     print("statusCode should be 200, but is \(httpStatus.statusCode)")
                     print("response = \(String(describing: response))")
                 }
                 
-               
-                
                 if let accestoken = self.convertJSON(data: tokenData, key: "access_token", index: 0) as? String{
                     
-                    //Accestoken saving
                     defaults.set(accestoken, forKey: "Accestoken")
                     
                     let url = URL(string: "https://driestarcollege.zportal.nl/api/v3/appointments?user="+studentCode+"&start="+startTime+"&end="+endTime+"&access_token="+accestoken)!
@@ -148,13 +178,11 @@ class scheduleRetriever: NSObject{
                     
                     let task = URLSession.shared.dataTask(with: request) { scheduleData, response, error in
                         guard let scheduleData = scheduleData, error == nil else {
-                            // check for fundamental networking error
                             print("error=\(String(describing: error))")
                             return
                         }
                         
                         if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
-                            // check for http errors
                             print("statusCode should be 200, but is \(httpStatus.statusCode)")
                             print("response = \(String(describing: response))")
                         }
@@ -162,39 +190,7 @@ class scheduleRetriever: NSObject{
                         let json = self.convertJSON(data: scheduleData, key: "response", index: 0)
                         if let schedule = json as? Dictionary<String, Any>{
                             let totalSchedule = schedule["data"]! as! Array<Dictionary<String, Any>>
-                            for x in 0..<totalSchedule.count{
-                                
-                                var myLesson = Dictionary<String, String>()
-                                
-                                let lesson = totalSchedule[x]
-                                
-                                let teacher = lesson["teachers"] as! NSArray
-                                let subject = lesson["subjects"] as! NSArray
-                                let location = lesson["locations"] as! NSArray
-                                
-                                let remark = lesson["remark"] as! String
-                                let changeDescription = lesson["changeDescription"] as! String
-                                
-                                let modified = lesson["modified"] as! Int
-                                let moved = lesson["moved"] as! Int
-                                let cancelled = lesson["cancelled"] as! Int
-                                let new = lesson["new"] as! Int
-                                
-                                myLesson["teacher"] = (teacher[0] as! String)
-                                myLesson["subject"] = (subject[0] as! String)
-                                myLesson["location"] = (location[0] as! String)
-                                
-                                myLesson["remark"] = (remark)
-                                myLesson["changeDescription"] = (changeDescription)
-                                
-                                myLesson["modified"] = (String(modified))
-                                myLesson["moved"] = (String(moved))
-                                myLesson["cancelled"] = (String(cancelled))
-                                myLesson["new"] = (String(new))
-
-
-                                mySchedule.append(myLesson)
-                            }
+                            let mySchedule = self.unwrapSchedule(totalSchedule: totalSchedule)
                             completion(mySchedule, nil)
                         }
                     }

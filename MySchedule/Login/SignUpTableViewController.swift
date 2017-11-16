@@ -15,12 +15,13 @@ class SignUpTableViewController: UITableViewController {
     
     let numberOfRows = [3,3,3,1]
     
+    let alertHelp = CreateAlert()
+    
     
     //Outlets
     
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
-    
     @IBOutlet weak var emailAdress: UITextField!
     @IBOutlet weak var domainName: UITextField!
     @IBOutlet weak var activationCode: UITextField!
@@ -50,32 +51,13 @@ class SignUpTableViewController: UITableViewController {
         let userNameX = userName.text ?? "kdjfkj"
         let password1 = passWord1.text ?? "Nothingx"
         let password2 = passWord2.text ?? "Nothing"
-        
         if (firstNameX == "")||(lastNameX == "")||(emailAdressX == "")||(domainNameX == "")||(activationCodeX == "")||(password1 == "")||(password2 == "")||(userNameX == "")||(studentCodeX == ""){
             return false
         }else{
             return true
         }
     }
-    
-    
-    func topMostController() -> UIViewController {
-        var topController: UIViewController? = UIApplication.shared.keyWindow?.rootViewController
-        while ((topController?.presentedViewController) != nil) {
-            topController = topController?.presentedViewController
-        }
-        return topController!
-    }
-    
-    func alert(message:String, title:String){
-        let alert=UIAlertController(title: title, message: message, preferredStyle: .alert);
-        let cancelAction: UIAlertAction = UIAlertAction(title: "OK", style: .cancel) { action -> Void in
-            
-        }
-        alert.addAction(cancelAction)
-        topMostController().present(alert, animated: true, completion: nil);
-    }
-    
+
     
     //Actions
     
@@ -92,13 +74,10 @@ class SignUpTableViewController: UITableViewController {
     
 
     @IBAction func signUp(_ sender: UIButton) {
-        
         let password1 = passWord1.text ?? "Nothingx"
         let password2 = passWord2.text ?? "Nothing"
         let check = checkPasswords(password1: password1, password2: password2)
-        
         if (check == true){
-            
             let firstNameX = firstName.text ?? "Nothing"
             let lastNameX = lastName.text ?? "Nothing"
             let emailAdressX = emailAdress.text ?? "Nothing"
@@ -106,13 +85,9 @@ class SignUpTableViewController: UITableViewController {
             let activationCodeX = activationCode.text ?? ""
             let userNameX = userName.text ?? "kdjfkj"
             let studentCodeX = studentCode.text ?? ""
-            
             if (checkFields() == false) {
-                
-                alert(message: "Please fill in all fields", title: "Empty fields")
-                
+                alertHelp.alert(message: "Please fill in all fields", title: "Empty fields")
             }else{
-                
                 let nameList = [firstNameX,lastNameX]
                 let loginSet = [userNameX, password1]
                 let defaults = UserDefaults.standard
@@ -122,23 +97,20 @@ class SignUpTableViewController: UITableViewController {
                 defaults.set(domainNameX, forKey: "Domain name")
                 defaults.set(activationCodeX, forKey: "Activation code")
                 defaults.set(studentCodeX, forKey: "Student code")
-                
                 performSegue(withIdentifier: "SignUp", sender: nil)
-                
             }
-            
         }else{
-            alert(message: "Passwords don't match", title: "Password")
+            alertHelp.alert(message: "Passwords don't match", title: "Password")
         }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableView.delegate = self
         tableView.dataSource = self
-        
+        self.navigationItem.title = "Sign Up"
+        self.tableView.allowsSelection = false
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -161,65 +133,14 @@ class SignUpTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return numberOfRows.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return numberOfRows[section]
     }
-
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
