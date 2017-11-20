@@ -27,7 +27,31 @@
 		6333D9C21F96186800BCC45A /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6333D9C11F96186800BCC45A /* Schedule.storyboard */; };
 		6333D9C41F96188700BCC45A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6333D9C31F96188700BCC45A /* Profile.storyboard */; };
 		63B129C21F963E0900C74055 /* UITabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B129C11F963E0900C74055 /* UITabBarViewController.swift */; };
+		8340AB311FBE2C2200CCF464 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8340AB2F1FBE2C2200CCF464 /* Interface.storyboard */; };
+		8340AB331FBE2C2200CCF464 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8340AB321FBE2C2200CCF464 /* Assets.xcassets */; };
+		8340AB3A1FBE2C2200CCF464 /* MyScheduleWK Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8340AB391FBE2C2200CCF464 /* MyScheduleWK Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8340AB3F1FBE2C2200CCF464 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340AB3E1FBE2C2200CCF464 /* InterfaceController.swift */; };
+		8340AB411FBE2C2200CCF464 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340AB401FBE2C2200CCF464 /* ExtensionDelegate.swift */; };
+		8340AB431FBE2C2200CCF464 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340AB421FBE2C2200CCF464 /* NotificationController.swift */; };
+		8340AB451FBE2C2200CCF464 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340AB441FBE2C2200CCF464 /* ComplicationController.swift */; };
+		8340AB471FBE2C2200CCF464 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8340AB461FBE2C2200CCF464 /* Assets.xcassets */; };
+		8340AB4C1FBE2C2200CCF464 /* MyScheduleWK.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8340AB2D1FBE2C2200CCF464 /* MyScheduleWK.app */; };
+		8340AB561FBE2E7000CCF464 /* DetailsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340AB551FBE2E7000CCF464 /* DetailsInterfaceController.swift */; };
+		8340AB581FBE2E9F00CCF464 /* ClassTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340AB571FBE2E9F00CCF464 /* ClassTableRow.swift */; };
 		8363F1671FA3887B00A4CC69 /* DateHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8363F1661FA3887B00A4CC69 /* DateHelp.swift */; };
+		83ACE2BF1FBF2D8A00E26329 /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = 3C93141D1F62B4AD003A2BA3 /* Assets.xcassets */; };
+		83ACE2C51FBF42AC00E26329 /* WeekInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ACE2C41FBF42AC00E26329 /* WeekInterfaceController.swift */; };
+		83ACE2CA1FBF437900E26329 /* DayTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ACE2C91FBF437900E26329 /* DayTableRow.swift */; };
+		83ACE2CC1FBF439000E26329 /* SubjectRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ACE2CB1FBF439000E26329 /* SubjectRow.swift */; };
+		83ACE2CE1FBF439C00E26329 /* LocationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ACE2CD1FBF439C00E26329 /* LocationRow.swift */; };
+		83ACE2D01FBF43B300E26329 /* TeacherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ACE2CF1FBF43B300E26329 /* TeacherRow.swift */; };
+		83ACE2D21FBF43DB00E26329 /* HourRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ACE2D11FBF43DB00E26329 /* HourRow.swift */; };
+		83ACE2D41FBF43E600E26329 /* TimeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ACE2D31FBF43E600E26329 /* TimeRow.swift */; };
+		83ACE2D61FBF43F600E26329 /* RemarksRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ACE2D51FBF43F600E26329 /* RemarksRow.swift */; };
+		83ACE2D81FBF440200E26329 /* ChangesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ACE2D71FBF440200E26329 /* ChangesRow.swift */; };
+		83ACE2DA1FBF5B5100E26329 /* NoClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ACE2D91FBF5B5100E26329 /* NoClass.swift */; };
+		83ACE2DC1FC0B75600E26329 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ACE2DB1FC0B75500E26329 /* Reachability.swift */; };
+		83ACE2DE1FC0B87400E26329 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ACE2DD1FC0B87400E26329 /* CoreData.swift */; };
 		83B9D22F1FBC775A00E0EDBB /* ChangeProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B9D22E1FBC775A00E0EDBB /* ChangeProfileTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +70,20 @@
 			remoteGlobalIDString = 3C93140F1F62B4AD003A2BA3;
 			remoteInfo = MySchedule;
 		};
+		8340AB3B1FBE2C2200CCF464 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C9314081F62B4AD003A2BA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8340AB381FBE2C2200CCF464;
+			remoteInfo = "MyScheduleWK Extension";
+		};
+		8340AB4A1FBE2C2200CCF464 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C9314081F62B4AD003A2BA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8340AB2C1FBE2C2200CCF464;
+			remoteInfo = MyScheduleWK;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +95,28 @@
 			files = (
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8340AB521FBE2C2200CCF464 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8340AB3A1FBE2C2200CCF464 /* MyScheduleWK Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8340AB541FBE2C2200CCF464 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				8340AB4C1FBE2C2200CCF464 /* MyScheduleWK.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -88,7 +148,33 @@
 		6333D9C11F96186800BCC45A /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		6333D9C31F96188700BCC45A /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		63B129C11F963E0900C74055 /* UITabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarViewController.swift; sourceTree = "<group>"; };
+		8340AB2D1FBE2C2200CCF464 /* MyScheduleWK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyScheduleWK.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8340AB301FBE2C2200CCF464 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		8340AB321FBE2C2200CCF464 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8340AB341FBE2C2200CCF464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8340AB391FBE2C2200CCF464 /* MyScheduleWK Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MyScheduleWK Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8340AB3E1FBE2C2200CCF464 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		8340AB401FBE2C2200CCF464 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		8340AB421FBE2C2200CCF464 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		8340AB441FBE2C2200CCF464 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		8340AB461FBE2C2200CCF464 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8340AB481FBE2C2200CCF464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8340AB491FBE2C2200CCF464 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		8340AB551FBE2E7000CCF464 /* DetailsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInterfaceController.swift; sourceTree = "<group>"; };
+		8340AB571FBE2E9F00CCF464 /* ClassTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTableRow.swift; sourceTree = "<group>"; };
 		8363F1661FA3887B00A4CC69 /* DateHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelp.swift; sourceTree = "<group>"; };
+		83ACE2C41FBF42AC00E26329 /* WeekInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekInterfaceController.swift; sourceTree = "<group>"; };
+		83ACE2C91FBF437900E26329 /* DayTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableRow.swift; sourceTree = "<group>"; };
+		83ACE2CB1FBF439000E26329 /* SubjectRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectRow.swift; sourceTree = "<group>"; };
+		83ACE2CD1FBF439C00E26329 /* LocationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRow.swift; sourceTree = "<group>"; };
+		83ACE2CF1FBF43B300E26329 /* TeacherRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherRow.swift; sourceTree = "<group>"; };
+		83ACE2D11FBF43DB00E26329 /* HourRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourRow.swift; sourceTree = "<group>"; };
+		83ACE2D31FBF43E600E26329 /* TimeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRow.swift; sourceTree = "<group>"; };
+		83ACE2D51FBF43F600E26329 /* RemarksRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarksRow.swift; sourceTree = "<group>"; };
+		83ACE2D71FBF440200E26329 /* ChangesRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangesRow.swift; sourceTree = "<group>"; };
+		83ACE2D91FBF5B5100E26329 /* NoClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoClass.swift; sourceTree = "<group>"; };
+		83ACE2DB1FC0B75500E26329 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		83ACE2DD1FC0B87400E26329 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		83B9D22E1FBC775A00E0EDBB /* ChangeProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +200,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8340AB361FBE2C2200CCF464 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -123,6 +216,8 @@
 				3C9314121F62B4AD003A2BA3 /* MySchedule */,
 				3C93142A1F62B4AD003A2BA3 /* MyScheduleTests */,
 				3C9314351F62B4AE003A2BA3 /* MyScheduleUITests */,
+				8340AB2E1FBE2C2200CCF464 /* MyScheduleWK */,
+				8340AB3D1FBE2C2200CCF464 /* MyScheduleWK Extension */,
 				3C9314111F62B4AD003A2BA3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -133,6 +228,8 @@
 				3C9314101F62B4AD003A2BA3 /* MySchedule.app */,
 				3C9314271F62B4AD003A2BA3 /* MyScheduleTests.xctest */,
 				3C9314321F62B4AE003A2BA3 /* MyScheduleUITests.xctest */,
+				8340AB2D1FBE2C2200CCF464 /* MyScheduleWK.app */,
+				8340AB391FBE2C2200CCF464 /* MyScheduleWK Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,8 +239,10 @@
 			children = (
 				3C9314131F62B4AD003A2BA3 /* AppDelegate.swift */,
 				3CCF7B511FA1B8D80033D0C0 /* ScheduleRetriever.swift */,
+				83ACE2DD1FC0B87400E26329 /* CoreData.swift */,
 				3CCF7B531FA1B8F00033D0C0 /* CreateAlert.swift */,
 				8363F1661FA3887B00A4CC69 /* DateHelp.swift */,
+				83ACE2DB1FC0B75500E26329 /* Reachability.swift */,
 				6333D9B91F9617C200BCC45A /* Login */,
 				6333D9BA1F9617E600BCC45A /* Home */,
 				6333D9BB1F96180000BCC45A /* Schedule */,
@@ -215,6 +314,66 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		8340AB2E1FBE2C2200CCF464 /* MyScheduleWK */ = {
+			isa = PBXGroup;
+			children = (
+				8340AB2F1FBE2C2200CCF464 /* Interface.storyboard */,
+				8340AB321FBE2C2200CCF464 /* Assets.xcassets */,
+				8340AB341FBE2C2200CCF464 /* Info.plist */,
+			);
+			path = MyScheduleWK;
+			sourceTree = "<group>";
+		};
+		8340AB3D1FBE2C2200CCF464 /* MyScheduleWK Extension */ = {
+			isa = PBXGroup;
+			children = (
+				83ACE2C61FBF430E00E26329 /* Week */,
+				83ACE2C71FBF432500E26329 /* Day */,
+				83ACE2C81FBF434600E26329 /* Class */,
+				8340AB401FBE2C2200CCF464 /* ExtensionDelegate.swift */,
+				8340AB421FBE2C2200CCF464 /* NotificationController.swift */,
+				8340AB441FBE2C2200CCF464 /* ComplicationController.swift */,
+				8340AB461FBE2C2200CCF464 /* Assets.xcassets */,
+				8340AB481FBE2C2200CCF464 /* Info.plist */,
+				8340AB491FBE2C2200CCF464 /* PushNotificationPayload.apns */,
+			);
+			path = "MyScheduleWK Extension";
+			sourceTree = "<group>";
+		};
+		83ACE2C61FBF430E00E26329 /* Week */ = {
+			isa = PBXGroup;
+			children = (
+				83ACE2C41FBF42AC00E26329 /* WeekInterfaceController.swift */,
+				83ACE2C91FBF437900E26329 /* DayTableRow.swift */,
+			);
+			path = Week;
+			sourceTree = "<group>";
+		};
+		83ACE2C71FBF432500E26329 /* Day */ = {
+			isa = PBXGroup;
+			children = (
+				8340AB3E1FBE2C2200CCF464 /* InterfaceController.swift */,
+				8340AB571FBE2E9F00CCF464 /* ClassTableRow.swift */,
+				83ACE2D91FBF5B5100E26329 /* NoClass.swift */,
+			);
+			path = Day;
+			sourceTree = "<group>";
+		};
+		83ACE2C81FBF434600E26329 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				8340AB551FBE2E7000CCF464 /* DetailsInterfaceController.swift */,
+				83ACE2CB1FBF439000E26329 /* SubjectRow.swift */,
+				83ACE2CD1FBF439C00E26329 /* LocationRow.swift */,
+				83ACE2CF1FBF43B300E26329 /* TeacherRow.swift */,
+				83ACE2D11FBF43DB00E26329 /* HourRow.swift */,
+				83ACE2D31FBF43E600E26329 /* TimeRow.swift */,
+				83ACE2D51FBF43F600E26329 /* RemarksRow.swift */,
+				83ACE2D71FBF440200E26329 /* ChangesRow.swift */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -226,10 +385,12 @@
 				3C93140D1F62B4AD003A2BA3 /* Frameworks */,
 				3C93140E1F62B4AD003A2BA3 /* Resources */,
 				3C5507D11F83AE6C00860E69 /* Embed Frameworks */,
+				8340AB541FBE2C2200CCF464 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8340AB4B1FBE2C2200CCF464 /* PBXTargetDependency */,
 			);
 			name = MySchedule;
 			productName = MySchedule;
@@ -272,13 +433,47 @@
 			productReference = 3C9314321F62B4AE003A2BA3 /* MyScheduleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		8340AB2C1FBE2C2200CCF464 /* MyScheduleWK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8340AB531FBE2C2200CCF464 /* Build configuration list for PBXNativeTarget "MyScheduleWK" */;
+			buildPhases = (
+				8340AB2B1FBE2C2200CCF464 /* Resources */,
+				8340AB521FBE2C2200CCF464 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8340AB3C1FBE2C2200CCF464 /* PBXTargetDependency */,
+			);
+			name = MyScheduleWK;
+			productName = MyScheduleWK;
+			productReference = 8340AB2D1FBE2C2200CCF464 /* MyScheduleWK.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		8340AB381FBE2C2200CCF464 /* MyScheduleWK Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8340AB511FBE2C2200CCF464 /* Build configuration list for PBXNativeTarget "MyScheduleWK Extension" */;
+			buildPhases = (
+				8340AB351FBE2C2200CCF464 /* Sources */,
+				8340AB361FBE2C2200CCF464 /* Frameworks */,
+				8340AB371FBE2C2200CCF464 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MyScheduleWK Extension";
+			productName = "MyScheduleWK Extension";
+			productReference = 8340AB391FBE2C2200CCF464 /* MyScheduleWK Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		3C9314081F62B4AD003A2BA3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Jan-Mark Dannenberg";
 				TargetAttributes = {
@@ -302,6 +497,16 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 3C93140F1F62B4AD003A2BA3;
 					};
+					8340AB2C1FBE2C2200CCF464 = {
+						CreatedOnToolsVersion = 9.1;
+						DevelopmentTeam = 5X95DTBS35;
+						ProvisioningStyle = Automatic;
+					};
+					8340AB381FBE2C2200CCF464 = {
+						CreatedOnToolsVersion = 9.1;
+						DevelopmentTeam = 5X95DTBS35;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 3C93140B1F62B4AD003A2BA3 /* Build configuration list for PBXProject "MySchedule" */;
@@ -320,6 +525,8 @@
 				3C93140F1F62B4AD003A2BA3 /* MySchedule */,
 				3C9314261F62B4AD003A2BA3 /* MyScheduleTests */,
 				3C9314311F62B4AE003A2BA3 /* MyScheduleUITests */,
+				8340AB2C1FBE2C2200CCF464 /* MyScheduleWK */,
+				8340AB381FBE2C2200CCF464 /* MyScheduleWK Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -352,6 +559,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8340AB2B1FBE2C2200CCF464 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8340AB331FBE2C2200CCF464 /* Assets.xcassets in Resources */,
+				8340AB311FBE2C2200CCF464 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8340AB371FBE2C2200CCF464 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8340AB471FBE2C2200CCF464 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -367,9 +591,11 @@
 				83B9D22F1FBC775A00E0EDBB /* ChangeProfileTableViewController.swift in Sources */,
 				8363F1671FA3887B00A4CC69 /* DateHelp.swift in Sources */,
 				3CCF7B521FA1B8D80033D0C0 /* ScheduleRetriever.swift in Sources */,
+				83ACE2DC1FC0B75600E26329 /* Reachability.swift in Sources */,
 				3C4CB9331F7BB0AF001C7705 /* ClassTableViewController.swift in Sources */,
 				63B129C21F963E0900C74055 /* UITabBarViewController.swift in Sources */,
 				3CCF7B541FA1B8F00033D0C0 /* CreateAlert.swift in Sources */,
+				83ACE2DE1FC0B87400E26329 /* CoreData.swift in Sources */,
 				3C2D53D11F7E345000457014 /* SignUpTableViewController.swift in Sources */,
 				3C9314451F62B752003A2BA3 /* HomeViewController.swift in Sources */,
 				3C6D92171F876E5900A452B0 /* ChangePasswordTableViewController.swift in Sources */,
@@ -392,6 +618,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8340AB351FBE2C2200CCF464 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83ACE2BF1FBF2D8A00E26329 /* Assets.xcassets in Sources */,
+				83ACE2CC1FBF439000E26329 /* SubjectRow.swift in Sources */,
+				83ACE2C51FBF42AC00E26329 /* WeekInterfaceController.swift in Sources */,
+				83ACE2D61FBF43F600E26329 /* RemarksRow.swift in Sources */,
+				8340AB581FBE2E9F00CCF464 /* ClassTableRow.swift in Sources */,
+				83ACE2CE1FBF439C00E26329 /* LocationRow.swift in Sources */,
+				8340AB431FBE2C2200CCF464 /* NotificationController.swift in Sources */,
+				8340AB561FBE2E7000CCF464 /* DetailsInterfaceController.swift in Sources */,
+				83ACE2D41FBF43E600E26329 /* TimeRow.swift in Sources */,
+				83ACE2D21FBF43DB00E26329 /* HourRow.swift in Sources */,
+				83ACE2D01FBF43B300E26329 /* TeacherRow.swift in Sources */,
+				83ACE2DA1FBF5B5100E26329 /* NoClass.swift in Sources */,
+				8340AB451FBE2C2200CCF464 /* ComplicationController.swift in Sources */,
+				83ACE2D81FBF440200E26329 /* ChangesRow.swift in Sources */,
+				8340AB411FBE2C2200CCF464 /* ExtensionDelegate.swift in Sources */,
+				83ACE2CA1FBF437900E26329 /* DayTableRow.swift in Sources */,
+				8340AB3F1FBE2C2200CCF464 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -405,6 +655,16 @@
 			target = 3C93140F1F62B4AD003A2BA3 /* MySchedule */;
 			targetProxy = 3C9314331F62B4AE003A2BA3 /* PBXContainerItemProxy */;
 		};
+		8340AB3C1FBE2C2200CCF464 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8340AB381FBE2C2200CCF464 /* MyScheduleWK Extension */;
+			targetProxy = 8340AB3B1FBE2C2200CCF464 /* PBXContainerItemProxy */;
+		};
+		8340AB4B1FBE2C2200CCF464 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8340AB2C1FBE2C2200CCF464 /* MyScheduleWK */;
+			targetProxy = 8340AB4A1FBE2C2200CCF464 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -414,6 +674,14 @@
 				3C9314201F62B4AD003A2BA3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8340AB2F1FBE2C2200CCF464 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8340AB301FBE2C2200CCF464 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -620,6 +888,92 @@
 			};
 			name = Release;
 		};
+		8340AB4D1FBE2C2200CCF464 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5X95DTBS35;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IBSC_MODULE = MyScheduleWK_Extension;
+				INFOPLIST_FILE = MyScheduleWK/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JMD-RU.MySchedule.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Debug;
+		};
+		8340AB4E1FBE2C2200CCF464 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5X95DTBS35;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IBSC_MODULE = MyScheduleWK_Extension;
+				INFOPLIST_FILE = MyScheduleWK/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JMD-RU.MySchedule.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Release;
+		};
+		8340AB4F1FBE2C2200CCF464 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5X95DTBS35;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "MyScheduleWK Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JMD-RU.MySchedule.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Debug;
+		};
+		8340AB501FBE2C2200CCF464 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5X95DTBS35;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "MyScheduleWK Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JMD-RU.MySchedule.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -655,6 +1009,24 @@
 			buildConfigurations = (
 				3C9314421F62B4AE003A2BA3 /* Debug */,
 				3C9314431F62B4AE003A2BA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8340AB511FBE2C2200CCF464 /* Build configuration list for PBXNativeTarget "MyScheduleWK Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8340AB4F1FBE2C2200CCF464 /* Debug */,
+				8340AB501FBE2C2200CCF464 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8340AB531FBE2C2200CCF464 /* Build configuration list for PBXNativeTarget "MyScheduleWK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8340AB4D1FBE2C2200CCF464 /* Debug */,
+				8340AB4E1FBE2C2200CCF464 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

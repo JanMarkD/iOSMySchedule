@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13529" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="i7Z-gJ-f6U">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13507"/>
+    </dependencies>
+    <scenes>
+        <!--Week Interface Controller-->
+        <scene sceneID="yXe-hW-mEQ">
+            <objects>
+                <controller id="i7Z-gJ-f6U" customClass="WeekInterfaceController" customModule="MyScheduleWK_Extension">
+                    <items>
+                        <table alignment="left" id="MGJ-59-jgQ">
+                            <items>
+                                <tableRow identifier="DayTableRow" id="BDn-8k-B8H" customClass="DayTableRow" customModule="MyScheduleWK_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="xln-Ew-3Mo">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Label" id="f1E-dX-hz6"/>
+                                            <label alignment="right" verticalAlignment="center" text="Label" id="FfC-hy-vkI"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="dayLable" destination="f1E-dX-hz6" id="B41-Kf-Rmg"/>
+                                        <outlet property="hoursLabel" destination="FfC-hy-vkI" id="W1z-pn-mP9"/>
+                                        <segue destination="AgC-eL-Hgc" kind="push" identifier="dayTapped" id="rJR-WY-or0"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableView" destination="MGJ-59-jgQ" id="XJH-WI-AAy"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MyScheduleWK_Extension">
+                    <items>
+                        <table alignment="left" id="YZX-0A-ghN">
+                            <items>
+                                <tableRow identifier="ClassTableRow" id="Bi9-x6-Dez" customClass="ClassTableRow" customModule="MyScheduleWK_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="Jgk-Wd-0tZ">
+                                        <items>
+                                            <imageView width="40" alignment="left" verticalAlignment="center" contentMode="scaleAspectFit" id="tXQ-FI-qk8"/>
+                                            <group width="50" alignment="center" verticalAlignment="center" layout="vertical" id="qVs-8S-A1k">
+                                                <items>
+                                                    <label alignment="left" text="Label" textAlignment="left" id="sw3-bo-2Iy"/>
+                                                    <label alignment="left" text="Label" id="jB7-Xe-SD3"/>
+                                                </items>
+                                            </group>
+                                            <imageView width="37" alignment="right" verticalAlignment="center" contentMode="scaleAspectFit" id="oh3-U4-nPB"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="alertImageView" destination="oh3-U4-nPB" id="2pR-g5-yHz"/>
+                                        <outlet property="hourImageView" destination="tXQ-FI-qk8" id="lH8-Bf-bMW"/>
+                                        <outlet property="locationLabel" destination="jB7-Xe-SD3" id="sgd-i1-kdN"/>
+                                        <outlet property="subjectLabel" destination="sw3-bo-2Iy" id="Yf8-sR-7bt"/>
+                                        <segue destination="Q7d-mD-FGs" kind="push" identifier="classTapped" id="Wmi-9n-SYd"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="NoClass" id="sgs-xt-EhD" customClass="NoClass" customModule="MyScheduleWK_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="FEd-ZI-agG">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Label" id="ZY1-tQ-YRp"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="noClass" destination="ZY1-tQ-YRp" id="Qp9-rB-IHQ"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableView" destination="YZX-0A-ghN" id="leh-Ux-3Bn"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Details Interface Controller-->
+        <scene sceneID="u0v-FR-rhh">
+            <objects>
+                <controller id="Q7d-mD-FGs" customClass="DetailsInterfaceController" customModule="MyScheduleWK_Extension">
+                    <items>
+                        <table alignment="left" id="REt-9H-vag">
+                            <items>
+                                <tableRow identifier="SubjectRow" id="7wW-bm-Nh0" customClass="SubjectRow" customModule="MyScheduleWK_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="BKd-BL-VkP">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Subject" id="mrm-Mj-6OP"/>
+                                            <label alignment="right" verticalAlignment="center" text="Label" id="Xi4-aC-9ok"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="subjectLabel" destination="Xi4-aC-9ok" id="yjP-L0-0SL"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="LocationRow" id="lI1-w2-TTC" customClass="LocationRow" customModule="MyScheduleWK_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="hv9-cU-Ba3">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Location" id="d03-Nv-0Y0"/>
+                                            <label alignment="right" verticalAlignment="center" text="Label" id="dcP-v6-L4d"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="locationLabel" destination="dcP-v6-L4d" id="4QQ-OT-F7K"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="TeacherRow" id="akx-Jn-egY" customClass="TeacherRow" customModule="MyScheduleWK_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="bHC-VN-prZ">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Teacher" id="unY-6z-XHT"/>
+                                            <label alignment="right" verticalAlignment="center" text="Label" id="62d-Zl-LOu"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="teacherLabel" destination="62d-Zl-LOu" id="elm-2b-FLQ"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="HourRow" id="qI5-2y-Fvv" customClass="HourRow" customModule="MyScheduleWK_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="kV2-ps-Vf3">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Hour" id="RSM-kd-s3l"/>
+                                            <label alignment="right" verticalAlignment="center" text="Label" id="nap-Sv-74c"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="hourLabel" destination="nap-Sv-74c" id="2Ff-wS-Egw"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="TimeRow" id="2be-Er-V5T" customClass="TimeRow" customModule="MyScheduleWK_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="T99-9o-MIS">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Time" id="Oaa-zJ-5rA"/>
+                                            <label alignment="right" verticalAlignment="center" text="Label" id="v6E-o8-RHF"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="timeLabel" destination="v6E-o8-RHF" id="rpC-fn-pb4"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="RemarksRow" id="QDD-Sb-7TH" customClass="RemarksRow" customModule="MyScheduleWK_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="b97-Lf-LzU">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="No remarks." numberOfLines="3" id="aHC-ru-3X5"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="remarksLabel" destination="aHC-ru-3X5" id="2Ev-Ys-m5T"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="ChangesRow" id="sBS-lx-VxP" customClass="ChangesRow" customModule="MyScheduleWK_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="O6G-CE-BBT">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="No changes." numberOfLines="3" id="u8T-WR-xST"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="changesLabel" destination="u8T-WR-xST" id="gvG-ym-1cU"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableView" destination="REt-9H-vag" id="FCZ-h0-t9E"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="772" y="277"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="MyScheduleWK" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>

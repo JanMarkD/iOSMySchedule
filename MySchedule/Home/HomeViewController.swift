@@ -6,7 +6,7 @@
 //  Copyright © 2017 Jan-Mark Dannenberg. All rights reserved.
 //
 import UIKit
-
+import CoreData
 
 class HomeViewController: UIViewController {
     
@@ -22,6 +22,7 @@ class HomeViewController: UIViewController {
     
     
     //Outlets
+    
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var welcomeUser: UILabel!
     @IBOutlet weak var classRightNow: UILabel!
@@ -30,60 +31,47 @@ class HomeViewController: UIViewController {
     
     //Functions
     
-    func refreshData(){
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
         let startTime = dateHelper.getStartOfCurrentWeek()
         let endTime = startTime + 3*7*24*3600
         let studentCode = defaults.value(forKey: "Student code") as! String
         
-        retriever.getAllData(studentCode: studentCode, startTime: String(startTime), endTime: String(endTime), completion: {(schedule, error) in
-            for x in 0..<schedule.count{
-                let lesson = schedule[x]
-                let week = lesson["weekNumber"]
-                if Int(week!) == self.dateHelper.getWeekNumber(date: NSDate()){
-                    let day = lesson["day"]
-                    if day == "1"{
-                        print("Sunday")
-                    }else if day == "2"{
-                        self.classesPerDayWeek1[0].append(lesson)
-                    }else if day == "3"{
-                        self.classesPerDayWeek1[1].append(lesson)
-                    }else if day == "4"{
-                        self.classesPerDayWeek1[2].append(lesson)
-                    }else if day == "5"{
-                        self.classesPerDayWeek1[3].append(lesson)
-                    }else if day == "6"{
-                        self.classesPerDayWeek1[4].append(lesson)
-                    }else if day == "7"{
-                        print("Saturday")
-                    }
-                }
-            }
-        })
-        let currentHour = dateHelper.timeToHour(date: Date())
-        let dayNumber = dateHelper.getDayOfWeek(date: NSDate())
-        if dayNumber != 0 && dayNumber != 1 {
-            let currentDay = classesPerDayWeek1[dayNumber-2]
-            for i in 0..<currentDay.count{
-                let lesson = currentDay[i]
-                if Int(lesson["hour"]!)! == currentHour{
-                    let currentLocation = lesson["location"]
-                    let currentSubject = lesson["subject"]
+        if Reachability.isConnectedToNetwork(){
+            retriever.getAllData(studentCode: studentCode, startTime: String(startTime), endTime: String(endTime))
+        }
+        
+        let fetchRequest: NSFetchRequest<Lesson> = Lesson.fetchRequest()
+        
+        do {
+            let lessons = try CoreData.context.fetch(fetchRequest)
+            
+            for i in 0..<lessons.count{
+                let weekNumber = lessons[i].weekNumber
+                let dayNumber = lessons[i].dayNumber
+                let hour = lessons[i].hour
+                let currentWeek = String(dateHelper.getWeekNumber(date: NSDate()))
+                let currentDay = String(dateHelper.getDayOfWeek(date: NSDate()) - 2)
+                let currentHour = dateHelper.timeToHour(date: Date())
+                let nextHour = currentHour + 1
+                
+                if weekNumber == currentWeek && dayNumber == currentDay && String(currentHour) == hour{
+                    let currentLocation = lessons[i].location
+                    let currentSubject = lessons[i].subject
                     classRightNow.text = "You have " + currentSubject! + ", in " + currentLocation!
-                }else if Int(lesson["hour"]!)! == currentHour + 1{
-                    let nextLocation = lesson["location"]
-                    let nextSubject = lesson["subject"]
+                }
+                if weekNumber == currentWeek && dayNumber == currentDay && String(nextHour) == hour{
+                    let nextLocation = lessons[i].location
+                    let nextSubject = lessons[i].subject
                     classNext.text = "Your next lesson is " + nextSubject! + ", in " + nextLocation!
                 }
             }
-        }else{
-            classNext.text = "No upcoming classes today."
-            classRightNow.text = "You don't have a lesson right now."
-        }
-    }
-
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+            
+        } catch {}
+        
         if let loginSet = defaults.value(forKey: "Login") as? [String]{
             welcomeUser.text = "Welcome, " + loginSet[0] + "!"
         }
@@ -91,12 +79,10 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        refreshData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        refreshData()
     }
 
     override func didReceiveMemoryWarning() {

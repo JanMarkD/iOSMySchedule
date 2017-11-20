@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
 class ClassTableViewController: UITableViewController {
     
     
     //Setup Data
     
-    var classData = Dictionary<String, String>()
+    var classData = Lesson()
     
     let numberOfRowsInSection = [5,1,1]
     
@@ -42,38 +43,38 @@ class ClassTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let subjectString = classData["subject"]{
+        if let subjectString = classData.subject{
             if subjectString != ""{
                 subject.text = subjectString
             }
             self.navigationItem.title = subjectString
         }
-        if let locationString = classData["location"]{
+        if let locationString = classData.location{
             if locationString != ""{
                 location.text = locationString
             }
         }
-        if let teacherString = classData["teacher"]{
+        if let teacherString = classData.teacher{
             if teacherString != ""{
                 teacher.text = teacherString
             }
         }
-        if let hourString = classData["hour"]{
+        if let hourString = classData.hour{
             if hourString != ""{
                 hour.text = hourString
             }
         }
-        if let timeString = classData["time"]{
+        if let timeString = classData.time{
             if timeString != ""{
                 time.text = timeString
             }
         }
-        if let remarkString = classData["remark"]{
+        if let remarkString = classData.remarks{
             if remarkString != ""{
                 remark.text = remarkString
             }
         }
-        if let descriptionString = classData["changeDescription"]{
+        if let descriptionString = classData.changeDescription{
             if descriptionString != ""{
                 descriptionChange.text = descriptionString
             }

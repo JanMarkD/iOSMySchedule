@@ -7,18 +7,18 @@
 //
 
 import UIKit
+import CoreData
+
 
 class ScheduleTableViewController: UITableViewController {
     
-    var mySchedule = Array<Dictionary<String,String>>()
+    var lessonsThisWeek = [[Lesson](),[Lesson](),[Lesson](),[Lesson](),[Lesson]()]
     
-    var classesPerDay = [[[String:String]](),[[String:String]](),[[String:String]](),[[String:String]](),[[String:String]]()]
-
-    var classesPerDayWeek1 = [[[String:String]](),[[String:String]](),[[String:String]](),[[String:String]](),[[String:String]]()]
+    var lessonsWeek1 = [[Lesson](),[Lesson](),[Lesson](),[Lesson](),[Lesson]()]
     
-    var classesPerDayWeek2 = [[[String:String]](),[[String:String]](),[[String:String]](),[[String:String]](),[[String:String]]()]
+    var lessonsWeek2 = [[Lesson](),[Lesson](),[Lesson](),[Lesson](),[Lesson]()]
     
-    var classesPerDayWeek3 = [[[String:String]](),[[String:String]](),[[String:String]](),[[String:String]](),[[String:String]]()]
+    var lessonsWeek3 = [[Lesson](),[Lesson](),[Lesson](),[Lesson](),[Lesson]()]
     
     let noClassesToday = ["subject": "No classes.", "Location": " "]
     
@@ -47,20 +47,20 @@ class ScheduleTableViewController: UITableViewController {
         if (self.navigationItem.title?.components(separatedBy: " "))![1] == "1" {
             self.navigationItem.title? = "MySchedule 52"
             if whichWeek == 2{
-                self.classesPerDay = self.classesPerDayWeek1
+                self.lessonsThisWeek = self.lessonsWeek1
                 whichWeek = 1
             }else if whichWeek == 3{
-                self.classesPerDay = self.classesPerDayWeek2
+                self.lessonsThisWeek = self.lessonsWeek2
                 whichWeek = 2
             }
         }else{
             let previousWeek = Int(thisWeek)! - 1
             self.navigationItem.title? = "MySchedule "+String(previousWeek)
             if whichWeek == 2{
-                self.classesPerDay = self.classesPerDayWeek1
+                self.lessonsThisWeek = self.lessonsWeek1
                 whichWeek = 1
             }else if whichWeek == 3{
-                self.classesPerDay = self.classesPerDayWeek2
+                self.lessonsThisWeek = self.lessonsWeek2
                 whichWeek = 2
             }
         }
@@ -80,20 +80,20 @@ class ScheduleTableViewController: UITableViewController {
         if (self.navigationItem.title?.components(separatedBy: " "))![1] == "52" {
             self.navigationItem.title? = "MySchedule 1"
             if whichWeek == 1{
-                self.classesPerDay = self.classesPerDayWeek2
+                self.lessonsThisWeek = self.lessonsWeek2
                 whichWeek = 2
             }else if whichWeek == 2{
-                self.classesPerDay = self.classesPerDayWeek3
+                self.lessonsThisWeek = self.lessonsWeek3
                 whichWeek = 3
             }
         }else{
             let nextWeek = Int(thisWeek)!+1
             self.navigationItem.title? = "MySchedule "+String(nextWeek)
             if whichWeek == 1{
-                self.classesPerDay = self.classesPerDayWeek2
+                self.lessonsThisWeek = self.lessonsWeek2
                 whichWeek = 2
             }else if whichWeek == 2{
-                self.classesPerDay = self.classesPerDayWeek3
+                self.lessonsThisWeek = self.lessonsWeek3
                 whichWeek = 3
             }
         }
@@ -111,83 +111,45 @@ class ScheduleTableViewController: UITableViewController {
         let weeknumber = dateHelper.getWeekNumber(date: NSDate())
         self.navigationItem.title = "MySchedule " + String(weeknumber)
         
-        let startTime = dateHelper.getStartOfCurrentWeek()
-        let endTime = startTime + 3*7*24*3600
+        let fetchRequest: NSFetchRequest<Lesson> = Lesson.fetchRequest()
         
-        let studentCode = defaults.value(forKey: "Student code") as! String
-        
-        retriever.getAllData(studentCode: studentCode, startTime: String(startTime), endTime: String(endTime), completion: {(schedule, error) in
-            for x in 0..<schedule.count{
-                let lesson = schedule[x]
-                if lesson["change"] == "" && lesson["changeDescription"] != ""{
+        do {
+            let lessons = try CoreData.context.fetch(fetchRequest)
+            
+            for i in 0..<lessons.count{
+                let lesson = lessons[i]
+                
+                if lesson.change == "" && lesson.changeDescription != ""{
                     continue
                 }
-                let week = lesson["weekNumber"]
-                if Int(week!) == self.dateHelper.getWeekNumber(date: NSDate()){
-                    let day = lesson["day"]
-                    if day == "2"{
-                        self.classesPerDayWeek1[0].append(lesson)
-                    }else if day == "3"{
-                        self.classesPerDayWeek1[1].append(lesson)
-                    }else if day == "4"{
-                        self.classesPerDayWeek1[2].append(lesson)
-                    }else if day == "5"{
-                        self.classesPerDayWeek1[3].append(lesson)
-                    }else if day == "6"{
-                        self.classesPerDayWeek1[4].append(lesson)
-                    }
-                }
-                if Int(week!) == self.dateHelper.getWeekNumber(date: NSDate())+1{
-                    let day = lesson["day"]
-                    if day == "2"{
-                        self.classesPerDayWeek2[0].append(lesson)
-                    }else if day == "3"{
-                        self.classesPerDayWeek2[1].append(lesson)
-                    }else if day == "4"{
-                        self.classesPerDayWeek2[2].append(lesson)
-                    }else if day == "5"{
-                        self.classesPerDayWeek2[3].append(lesson)
-                    }else if day == "6"{
-                        self.classesPerDayWeek2[4].append(lesson)
-                    }
-                }
-                if Int(week!) == self.dateHelper.getWeekNumber(date: NSDate())+2{
-                    let day = lesson["day"]
-                    if day == "2"{
-                        self.classesPerDayWeek3[0].append(lesson)
-                    }else if day == "3"{
-                        self.classesPerDayWeek3[1].append(lesson)
-                    }else if day == "4"{
-                        self.classesPerDayWeek3[2].append(lesson)
-                    }else if day == "5"{
-                        self.classesPerDayWeek3[3].append(lesson)
-                    }else if day == "6"{
-                        self.classesPerDayWeek3[4].append(lesson)
-                    }
-                }
-                self.classesPerDayWeek1[0].sort {$0["date"]! < $1["date"]!}
-                self.classesPerDayWeek1[1].sort {$0["date"]! < $1["date"]!}
-                self.classesPerDayWeek1[2].sort {$0["date"]! < $1["date"]!}
-                self.classesPerDayWeek1[3].sort {$0["date"]! < $1["date"]!}
-                self.classesPerDayWeek1[4].sort {$0["date"]! < $1["date"]!}
                 
-                self.classesPerDayWeek2[0].sort {$0["date"]! < $1["date"]!}
-                self.classesPerDayWeek2[1].sort {$0["date"]! < $1["date"]!}
-                self.classesPerDayWeek2[2].sort {$0["date"]! < $1["date"]!}
-                self.classesPerDayWeek2[3].sort {$0["date"]! < $1["date"]!}
-                self.classesPerDayWeek2[4].sort {$0["date"]! < $1["date"]!}
+                let weekNumber = dateHelper.getWeekNumber(date: NSDate())
                 
-                self.classesPerDayWeek3[0].sort {$0["date"]! < $1["date"]!}
-                self.classesPerDayWeek3[1].sort {$0["date"]! < $1["date"]!}
-                self.classesPerDayWeek3[2].sort {$0["date"]! < $1["date"]!}
-                self.classesPerDayWeek3[3].sort {$0["date"]! < $1["date"]!}
-                self.classesPerDayWeek3[4].sort {$0["date"]! < $1["date"]!}
+                if lesson.weekNumber == String(weekNumber){
+                    lessonsWeek1[Int(lesson.dayNumber!)! - 2].append(lesson)
+                }else if lesson.weekNumber == String(weekNumber + 1){
+                    lessonsWeek2[Int(lesson.dayNumber!)! - 2].append(lesson)
+                }else if lesson.weekNumber == String(weekNumber + 2){
+                    lessonsWeek3[Int(lesson.dayNumber!)! - 2].append(lesson)
+                }
             }
+            
+            for i in 0..<lessonsWeek1.count{
+                lessonsWeek1[i].sort { $0.hour! < $1.hour! }
+            }
+            for i in 0..<lessonsWeek3.count{
+                lessonsWeek2[i].sort { $0.hour! < $1.hour! }
+            }
+            for i in 0..<lessonsWeek3.count{
+                lessonsWeek3[i].sort { $0.hour! < $1.hour! }
+            }
+            
             DispatchQueue.main.async {
-                self.classesPerDay = self.classesPerDayWeek1
+                self.lessonsThisWeek = self.lessonsWeek1
                 self.tableView.reloadData()
             }
-        })
+            
+        } catch {}
     }
 
     override func didReceiveMemoryWarning() {
@@ -204,14 +166,14 @@ class ScheduleTableViewController: UITableViewController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return classesPerDay.count
+        return lessonsThisWeek.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if classesPerDay[section].count == 0{
+        if lessonsThisWeek[section].count == 0{
             return 1
         }else{
-            return classesPerDay[section].count
+            return lessonsThisWeek[section].count
         }
     }
     
@@ -223,7 +185,7 @@ class ScheduleTableViewController: UITableViewController {
         var cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
         
-        if classesPerDay[indexPath.section].count == 0{
+        if lessonsThisWeek[indexPath.section].count == 0{
             cell.textLabel?.text = noClassesToday["subject"]
             cell.detailTextLabel?.text = noClassesToday["location"]
         }else{
@@ -241,7 +203,7 @@ class ScheduleTableViewController: UITableViewController {
             if let favouriteSubjects = defaults.value(forKey: "Favourite Subjects") as? [String]{
                 for i in 0..<favouriteSubjects.count{
                     let subject = favouriteSubjects[i]
-                    if classesPerDay[indexPath.section][indexPath.row]["subject"] == subject{
+                    if lessonsThisWeek[indexPath.section][indexPath.row].subject == subject{
                         switch(i){
                         case 0: cell.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
                         case 1: cell.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
@@ -251,9 +213,9 @@ class ScheduleTableViewController: UITableViewController {
                     }
                 }
             }
-            cell.textLabel?.text = classesPerDay[indexPath.section][indexPath.row]["subject"]
-            cell.detailTextLabel?.text = classesPerDay[indexPath.section][indexPath.row]["location"]
-            switch(Int(classesPerDay[indexPath.section][indexPath.row]["hour"]!)){
+            cell.textLabel?.text = lessonsThisWeek[indexPath.section][indexPath.row].subject
+            cell.detailTextLabel?.text = lessonsThisWeek[indexPath.section][indexPath.row].location
+            switch(Int(lessonsThisWeek[indexPath.section][indexPath.row].hour!)){
             case 1?: cell.imageView?.image = one
             case 2?: cell.imageView?.image = two
             case 3?: cell.imageView?.image = three
@@ -264,7 +226,7 @@ class ScheduleTableViewController: UITableViewController {
             case 8?: cell.imageView?.image = eight
             default: print("")
             }
-            switch(classesPerDay[indexPath.section][indexPath.row]["change"]){
+            switch(lessonsThisWeek[indexPath.section][indexPath.row].change){
             case "new"?, "modified"?, "moved"?: cell.accessoryView = UIImageView(image: modified)
             case "cancelled"?: cell.accessoryView = UIImageView(image: cancelled); cell.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
             default: print("")
@@ -279,11 +241,11 @@ class ScheduleTableViewController: UITableViewController {
         if (segue.identifier == "classTapped"){
             let viewController = segue.destination as! ClassTableViewController
             if Int((self.navigationItem.title?.components(separatedBy: " "))![1]) == dateHelper.getWeekNumber(date: NSDate()){
-                viewController.classData = classesPerDayWeek1[indexPath.section][indexPath.row]
+                viewController.classData = lessonsThisWeek[indexPath.section][indexPath.row]
             }else if Int((self.navigationItem.title?.components(separatedBy: " "))![1]) == dateHelper.getWeekNumber(date: NSDate()) + 1{
-                viewController.classData = classesPerDayWeek2[indexPath.section][indexPath.row]
+                viewController.classData = lessonsThisWeek[indexPath.section][indexPath.row]
             }else if Int((self.navigationItem.title?.components(separatedBy: " "))![1]) == dateHelper.getWeekNumber(date: NSDate()) + 2{
-                viewController.classData = classesPerDayWeek3[indexPath.section][indexPath.row]
+                viewController.classData = lessonsThisWeek[indexPath.section][indexPath.row]
             }
         }
     }
