@@ -39,7 +39,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="username"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oFQ-wU-sE8">
                                         <rect key="frame" x="23" y="160" width="179" height="30"/>
@@ -48,7 +48,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8k1-3Z-JhC">
                                         <rect key="frame" x="0.0" y="210" width="225" height="56.5"/>
@@ -201,7 +201,7 @@
                                                     <rect key="frame" x="131.5" y="11" width="227.5" height="22"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" textContentType="name"/>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" red="0.89096776870000005" green="0.89096776870000005" blue="0.89096776870000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -237,7 +237,7 @@
                                                     <rect key="frame" x="131.5" y="11" width="227.5" height="22"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" textContentType="family-name"/>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" red="0.89096776870000005" green="0.89096776870000005" blue="0.89096776870000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -273,7 +273,7 @@
                                                     <rect key="frame" x="131.5" y="11" width="227.5" height="22"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" red="0.89096776870000005" green="0.89096776870000005" blue="0.89096776870000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -304,7 +304,7 @@
                                                     <rect key="frame" x="32" y="11" width="327" height="22"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -327,7 +327,7 @@
                                                     <rect key="frame" x="32" y="11" width="327" height="22"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -350,7 +350,7 @@
                                                     <rect key="frame" x="32" y="11" width="327" height="22"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -386,7 +386,7 @@
                                                     <rect key="frame" x="131.5" y="11" width="227.5" height="22"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="username"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -421,7 +421,7 @@
                                                     <rect key="frame" x="131.5" y="11" width="227.5" height="22"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -456,7 +456,7 @@
                                                     <rect key="frame" x="131.5" y="11" width="227.5" height="22"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
                                                     <connections>
                                                         <action selector="passwordEditingDidEnd:" destination="SeA-ac-Rnd" eventType="editingDidEnd" id="Vc3-Xh-IoV"/>
                                                     </connections>
