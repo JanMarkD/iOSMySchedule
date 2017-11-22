@@ -8,7 +8,7 @@
 
 import WatchKit
 import Foundation
-
+import CoreData
 
 class WeekInterfaceController: WKInterfaceController {
     
@@ -27,6 +27,7 @@ class WeekInterfaceController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        
         populateData()
     }
     

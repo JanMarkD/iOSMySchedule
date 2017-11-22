@@ -20,7 +20,7 @@ class ScheduleTableViewController: UITableViewController {
     
     var lessonsWeek3 = [[Lesson](),[Lesson](),[Lesson](),[Lesson](),[Lesson]()]
     
-    let noClassesToday = ["subject": "No classes.", "Location": " "]
+    let noClassesToday = ["subject": "No classes", "Location": " "]
     
     let headerForSection = ["Monday","Tuesday","Wednesday","Thursday","Friday"]
     

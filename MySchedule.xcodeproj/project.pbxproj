@@ -52,6 +52,7 @@
 		83ACE2DA1FBF5B5100E26329 /* NoClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ACE2D91FBF5B5100E26329 /* NoClass.swift */; };
 		83ACE2DC1FC0B75600E26329 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ACE2DB1FC0B75500E26329 /* Reachability.swift */; };
 		83ACE2DE1FC0B87400E26329 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ACE2DD1FC0B87400E26329 /* CoreData.swift */; };
+		83ACE2DF1FC34B9600E26329 /* MySchedule.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C93141A1F62B4AD003A2BA3 /* MySchedule.xcdatamodeld */; };
 		83B9D22F1FBC775A00E0EDBB /* ChangeProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B9D22E1FBC775A00E0EDBB /* ChangeProfileTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -622,6 +623,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83ACE2DF1FC34B9600E26329 /* MySchedule.xcdatamodeld in Sources */,
 				83ACE2BF1FBF2D8A00E26329 /* Assets.xcassets in Sources */,
 				83ACE2CC1FBF439000E26329 /* SubjectRow.swift in Sources */,
 				83ACE2C51FBF42AC00E26329 /* WeekInterfaceController.swift in Sources */,
