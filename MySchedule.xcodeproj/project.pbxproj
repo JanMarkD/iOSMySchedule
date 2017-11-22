@@ -38,6 +38,8 @@
 		8340AB4C1FBE2C2200CCF464 /* MyScheduleWK.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8340AB2D1FBE2C2200CCF464 /* MyScheduleWK.app */; };
 		8340AB561FBE2E7000CCF464 /* DetailsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340AB551FBE2E7000CCF464 /* DetailsInterfaceController.swift */; };
 		8340AB581FBE2E9F00CCF464 /* ClassTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340AB571FBE2E9F00CCF464 /* ClassTableRow.swift */; };
+		835274D71FC614C0005AA76A /* Lesson+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835274D51FC614C0005AA76A /* Lesson+CoreDataClass.swift */; };
+		835274D81FC614C0005AA76A /* Lesson+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835274D61FC614C0005AA76A /* Lesson+CoreDataProperties.swift */; };
 		8363F1671FA3887B00A4CC69 /* DateHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8363F1661FA3887B00A4CC69 /* DateHelp.swift */; };
 		83ACE2BF1FBF2D8A00E26329 /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = 3C93141D1F62B4AD003A2BA3 /* Assets.xcassets */; };
 		83ACE2C51FBF42AC00E26329 /* WeekInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ACE2C41FBF42AC00E26329 /* WeekInterfaceController.swift */; };
@@ -163,6 +165,8 @@
 		8340AB491FBE2C2200CCF464 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		8340AB551FBE2E7000CCF464 /* DetailsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInterfaceController.swift; sourceTree = "<group>"; };
 		8340AB571FBE2E9F00CCF464 /* ClassTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTableRow.swift; sourceTree = "<group>"; };
+		835274D51FC614C0005AA76A /* Lesson+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lesson+CoreDataClass.swift"; sourceTree = "<group>"; };
+		835274D61FC614C0005AA76A /* Lesson+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lesson+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8363F1661FA3887B00A4CC69 /* DateHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelp.swift; sourceTree = "<group>"; };
 		83ACE2C41FBF42AC00E26329 /* WeekInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekInterfaceController.swift; sourceTree = "<group>"; };
 		83ACE2C91FBF437900E26329 /* DayTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableRow.swift; sourceTree = "<group>"; };
@@ -214,6 +218,8 @@
 		3C9314071F62B4AD003A2BA3 = {
 			isa = PBXGroup;
 			children = (
+				835274D51FC614C0005AA76A /* Lesson+CoreDataClass.swift */,
+				835274D61FC614C0005AA76A /* Lesson+CoreDataProperties.swift */,
 				3C9314121F62B4AD003A2BA3 /* MySchedule */,
 				3C93142A1F62B4AD003A2BA3 /* MyScheduleTests */,
 				3C9314351F62B4AE003A2BA3 /* MyScheduleUITests */,
@@ -584,10 +590,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				835274D71FC614C0005AA76A /* Lesson+CoreDataClass.swift in Sources */,
 				3C6D92151F876D9E00A452B0 /* ProfileTableViewController.swift in Sources */,
 				3C4CB9311F7BB051001C7705 /* ScheduleTableViewController.swift in Sources */,
 				3C9314161F62B4AD003A2BA3 /* LoginViewController.swift in Sources */,
 				3C9314141F62B4AD003A2BA3 /* AppDelegate.swift in Sources */,
+				835274D81FC614C0005AA76A /* Lesson+CoreDataProperties.swift in Sources */,
 				3C93141C1F62B4AD003A2BA3 /* MySchedule.xcdatamodeld in Sources */,
 				83B9D22F1FBC775A00E0EDBB /* ChangeProfileTableViewController.swift in Sources */,
 				8363F1671FA3887B00A4CC69 /* DateHelp.swift in Sources */,
