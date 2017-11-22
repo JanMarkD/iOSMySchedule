@@ -32,7 +32,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a1N-SU-5Qt">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a1N-SU-5Qt">
                                         <rect key="frame" x="23" y="110" width="179" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="mcL-zM-BAd"/>
@@ -41,7 +41,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="username"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oFQ-wU-sE8">
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oFQ-wU-sE8">
                                         <rect key="frame" x="23" y="160" width="179" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="bfn-q9-3AV"/>
@@ -291,7 +291,7 @@
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="School Information" id="xM0-eW-0Gg">
-                                <string key="footerTitle">To retrieve you schedule, we need to know your schools domain name and your activation code. You can find these at https://blabla. We also need your student code, which is used by your school to refer to you.</string>
+                                <string key="footerTitle">To retrieve your schedule we need your student code, which is used by your school to refer to you. We also need to know your schools domain name and your activation code. You can find these at:</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="X04-B4-IGQ">
                                         <rect key="frame" x="0.0" y="251" width="375" height="44"/>
