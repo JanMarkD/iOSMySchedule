@@ -78,7 +78,7 @@ class DateHelp: NSObject{
                 return getUnixTime(date: startDate as NSDate)
             }
         }
-        return getUnixTime(date: NSDate())
+        return getUnixTime(date: date! as NSDate)
     }
     
     
