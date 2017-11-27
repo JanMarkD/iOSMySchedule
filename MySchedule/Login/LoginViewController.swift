@@ -8,13 +8,18 @@
 
 import UIKit
 
+
 class LoginViewController: UIViewController {
+    
     
     //Layout data
     
     let alertHelp = CreateAlert()
     
     let defaults = UserDefaults.standard
+    
+    var keyboardAdjusted = false
+    var lastKeyboardOffset: CGFloat = 0.0
     
     
     //Functions
@@ -38,13 +43,16 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var loginView: UIView!
+    
     
     //Actions
     
     @IBAction func unwindToLogin(segue: UIStoryboardSegue) {
     }
     
+    @objc func resignKeyboard(){
+        self.view.endEditing(true)
+    }
     
     @IBAction func loginButton(_ sender: UIButton) {
         let username = usernameTextField.text ?? ""
@@ -62,20 +70,51 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let defaults = UserDefaults.standard
-        //let login = defaults.value(forKey: "Login") as! [String]
-        //let username = login[0]
-        //let password = login[1]
-
-        //self.passwordTextField.text = password
-        //self.usernameTextField.text = username
         
         if let login = defaults.value(forKey: "Login") as? [String]{
             usernameTextField.text = login[0]
             passwordTextField.text = login[1]
-            
-            loginView.layer.borderColor = UIColor.black.cgColor
-            loginView.layer.borderWidth = 2
         }
+        
+        let keyboardToolBar = UIToolbar()
+        keyboardToolBar.barStyle = UIBarStyle.default
+        keyboardToolBar.isTranslucent = true;
+        let doneBtn = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target:self, action: #selector(resignKeyboard))
+        keyboardToolBar.setItems([doneBtn], animated: true)
+        keyboardToolBar.sizeToFit()
+        
+        usernameTextField.inputAccessoryView = keyboardToolBar
+        passwordTextField.inputAccessoryView = keyboardToolBar
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if keyboardAdjusted == false {
+            lastKeyboardOffset = getKeyboardHeight(notification: notification)
+            view.frame.origin.y -= lastKeyboardOffset
+            keyboardAdjusted = true
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if keyboardAdjusted == true {
+            view.frame.origin.y += lastKeyboardOffset
+            keyboardAdjusted = false
+        }
+    }
+    
+    func getKeyboardHeight(notification: NSNotification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
+        return keyboardSize.cgRectValue.height - 125
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -107,8 +107,10 @@ class SignUpTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
+        
+        tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "pexels-photo-210896"))
+        
+        
         self.navigationItem.title = "Sign Up"
         self.tableView.allowsSelection = false
     }
