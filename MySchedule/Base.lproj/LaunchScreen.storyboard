@@ -18,14 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pexels-photo-210896" translatesAutoresizingMaskIntoConstraints="NO" id="uRQ-dd-7Em">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="uRQ-dd-7Em">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.68562215569999996" green="0.7243064642" blue="0.83906835319999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="uRQ-dd-7Em" firstAttribute="leading" secondItem="FBO-hS-Xhy" secondAttribute="leading" id="S9k-Q2-B1G"/>
-                            <constraint firstItem="uRQ-dd-7Em" firstAttribute="top" secondItem="FBO-hS-Xhy" secondAttribute="top" id="XlZ-tS-3yC"/>
                             <constraint firstItem="FBO-hS-Xhy" firstAttribute="bottom" secondItem="uRQ-dd-7Em" secondAttribute="bottom" id="tRw-wl-ddH"/>
                             <constraint firstItem="FBO-hS-Xhy" firstAttribute="trailing" secondItem="uRQ-dd-7Em" secondAttribute="trailing" id="yWE-zy-nyb"/>
                         </constraints>
@@ -34,10 +33,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
     <resources>
-        <image name="pexels-photo-210896" width="1000" height="1500"/>
+        <image name="Background" width="375" height="667"/>
     </resources>
 </document>
