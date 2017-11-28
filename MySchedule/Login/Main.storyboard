@@ -37,7 +37,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Login" backgroundImage="Rectangle Login blue"/>
                                 <connections>
-                                    <segue destination="f8B-I5-eZF" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="0Qg-vG-4F2"/>
+                                    <segue destination="f8B-I5-eZF" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="0Qg-vG-4F2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fph-1B-1OA">
