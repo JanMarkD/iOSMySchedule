@@ -22,30 +22,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background2" translatesAutoresizingMaskIntoConstraints="NO" id="xRC-kz-bdM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tX5-xX-Mtn">
                                 <rect key="frame" x="16" y="355" width="343" height="248"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9U-aR-0TN">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="62"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have a lesson right now." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fw-w4-8e9">
                                         <rect key="frame" x="0.0" y="62" width="343" height="62"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No upcoming classes today." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h3-qL-AGw">
                                         <rect key="frame" x="0.0" y="124" width="343" height="62"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B09-ad-ZmC">
                                         <rect key="frame" x="0.0" y="186" width="343" height="62"/>
-                                        <state key="normal" title="Logout"/>
+                                        <state key="normal" title="Logout">
+                                            <color key="titleColor" red="0.32755842804908752" green="0.45757114887237549" blue="0.6982613205909729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="uNB-KI-NS6" kind="show" id="Zjl-qj-PFT"/>
                                         </connections>
@@ -67,7 +72,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="xRC-kz-bdM" firstAttribute="leading" secondItem="B0O-BZ-VEu" secondAttribute="leading" id="2j0-Wl-wEb"/>
                             <constraint firstItem="px1-Mw-G9e" firstAttribute="centerX" secondItem="tX5-xX-Mtn" secondAttribute="centerX" id="4P0-aa-Huc"/>
+                            <constraint firstItem="RIK-i7-Dxs" firstAttribute="top" secondItem="xRC-kz-bdM" secondAttribute="bottom" id="Cgv-6R-xxh"/>
+                            <constraint firstAttribute="trailing" secondItem="xRC-kz-bdM" secondAttribute="trailing" id="FuM-UB-c9R"/>
+                            <constraint firstItem="RIK-i7-Dxs" firstAttribute="top" secondItem="xRC-kz-bdM" secondAttribute="bottom" id="Id1-wA-xeY"/>
                             <constraint firstItem="px1-Mw-G9e" firstAttribute="leading" secondItem="B0O-BZ-VEu" secondAttribute="leading" constant="60" id="KKs-n8-Uhl"/>
                             <constraint firstItem="px1-Mw-G9e" firstAttribute="top" secondItem="Vtz-bZ-qfk" secondAttribute="bottom" constant="10" id="Yra-AB-7qc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tX5-xX-Mtn" secondAttribute="trailing" id="bud-l9-fhd"/>
@@ -75,6 +84,7 @@
                             <constraint firstItem="RIK-i7-Dxs" firstAttribute="top" secondItem="tX5-xX-Mtn" secondAttribute="bottom" constant="15" id="iWi-Of-nur"/>
                             <constraint firstItem="tX5-xX-Mtn" firstAttribute="top" secondItem="px1-Mw-G9e" secondAttribute="bottom" id="jOE-mb-byV"/>
                             <constraint firstAttribute="trailing" secondItem="px1-Mw-G9e" secondAttribute="trailing" constant="60" id="r33-jT-c3b"/>
+                            <constraint firstItem="xRC-kz-bdM" firstAttribute="top" secondItem="B0O-BZ-VEu" secondAttribute="top" id="yty-h7-4L8"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="homeIcon" landscapeImage="homeIcon" selectedImage="homeIcon" id="hcU-if-bzU"/>
@@ -88,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ct-Ma-X9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1876" y="750"/>
+            <point key="canvasLocation" x="1876" y="749.7751124437782"/>
         </scene>
         <!--Login-->
         <scene sceneID="7Xt-eS-nyR">
@@ -100,6 +110,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Background2" width="375" height="667"/>
         <image name="Logo" width="1000" height="1000"/>
         <image name="homeIcon" width="30" height="30"/>
     </resources>
