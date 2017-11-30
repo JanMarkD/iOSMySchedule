@@ -56,7 +56,7 @@
                                     <segue destination="psV-TX-Vbi" kind="show" id="SJ8-We-H2q"/>
                                 </connections>
                             </button>
-                            <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Username" clearsOnBeginEditing="YES" minimumFontSize="17" background="Rectangle Login" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Hkm-Tg-1PS">
+                            <textField contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Username" clearsOnBeginEditing="YES" minimumFontSize="17" background="Rectangle Login" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Hkm-Tg-1PS">
                                 <rect key="frame" x="75" y="266" width="225" height="43"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -70,7 +70,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo Login" translatesAutoresizingMaskIntoConstraints="NO" id="62F-sS-mpq">
                                 <rect key="frame" x="105" y="82" width="165" height="165"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" background="Rectangle Login" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4B0-cW-dEf">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" background="Rectangle Login" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4B0-cW-dEf">
                                 <rect key="frame" x="75" y="313" width="225" height="43"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
