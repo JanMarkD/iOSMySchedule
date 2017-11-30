@@ -114,7 +114,7 @@ class LoginViewController: UIViewController {
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
-        return keyboardSize.cgRectValue.height - 125
+        return keyboardSize.cgRectValue.height - 200
     }
     
     override func viewWillAppear(_ animated: Bool) {
