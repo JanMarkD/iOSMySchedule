@@ -18,15 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="uRQ-dd-7Em">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background1" translatesAutoresizingMaskIntoConstraints="NO" id="uRQ-dd-7Em">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.68562215569999996" green="0.7243064642" blue="0.83906835319999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="uRQ-dd-7Em" firstAttribute="leading" secondItem="FBO-hS-Xhy" secondAttribute="leading" id="S9k-Q2-B1G"/>
-                            <constraint firstItem="FBO-hS-Xhy" firstAttribute="bottom" secondItem="uRQ-dd-7Em" secondAttribute="bottom" id="tRw-wl-ddH"/>
-                            <constraint firstItem="FBO-hS-Xhy" firstAttribute="trailing" secondItem="uRQ-dd-7Em" secondAttribute="trailing" id="yWE-zy-nyb"/>
+                            <constraint firstItem="uRQ-dd-7Em" firstAttribute="bottom" secondItem="FBO-hS-Xhy" secondAttribute="bottom" id="75h-6h-aDf"/>
+                            <constraint firstItem="uRQ-dd-7Em" firstAttribute="leading" secondItem="FBO-hS-Xhy" secondAttribute="leading" id="BQl-qX-9A8"/>
+                            <constraint firstItem="uRQ-dd-7Em" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="E9K-Uj-vxn"/>
+                            <constraint firstItem="uRQ-dd-7Em" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="EhN-pK-Yev"/>
+                            <constraint firstItem="uRQ-dd-7Em" firstAttribute="trailing" secondItem="FBO-hS-Xhy" secondAttribute="trailing" id="Xt2-fg-aed"/>
+                            <constraint firstItem="uRQ-dd-7Em" firstAttribute="bottom" secondItem="FBO-hS-Xhy" secondAttribute="bottom" id="kGp-De-3Zh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FBO-hS-Xhy"/>
                     </view>
@@ -37,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="375" height="667"/>
+        <image name="Background1" width="375" height="667"/>
     </resources>
 </document>
