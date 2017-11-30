@@ -75,6 +75,7 @@
                                     <constraint firstAttribute="height" constant="43" id="q6I-SG-kY0"/>
                                 </constraints>
                                 <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
