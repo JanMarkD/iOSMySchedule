@@ -45,7 +45,7 @@ class ScheduleTableViewController: UITableViewController {
             return
         }
         if (self.navigationItem.title?.components(separatedBy: " "))![1] == "1" {
-            self.navigationItem.title? = "MySchedule 52"
+            self.navigationItem.title? = "Week 52"
             if whichWeek == 2{
                 self.lessonsThisWeek = self.lessonsWeek1
                 whichWeek = 1
@@ -55,7 +55,7 @@ class ScheduleTableViewController: UITableViewController {
             }
         }else{
             let previousWeek = Int(thisWeek)! - 1
-            self.navigationItem.title? = "MySchedule "+String(previousWeek)
+            self.navigationItem.title? = "Week "+String(previousWeek)
             if whichWeek == 2{
                 self.lessonsThisWeek = self.lessonsWeek1
                 whichWeek = 1
@@ -78,7 +78,7 @@ class ScheduleTableViewController: UITableViewController {
             return
         }
         if (self.navigationItem.title?.components(separatedBy: " "))![1] == "52" {
-            self.navigationItem.title? = "MySchedule 1"
+            self.navigationItem.title? = "Week 1"
             if whichWeek == 1{
                 self.lessonsThisWeek = self.lessonsWeek2
                 whichWeek = 2
@@ -88,7 +88,7 @@ class ScheduleTableViewController: UITableViewController {
             }
         }else{
             let nextWeek = Int(thisWeek)!+1
-            self.navigationItem.title? = "MySchedule "+String(nextWeek)
+            self.navigationItem.title? = "Week "+String(nextWeek)
             if whichWeek == 1{
                 self.lessonsThisWeek = self.lessonsWeek2
                 whichWeek = 2

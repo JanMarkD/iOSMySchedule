@@ -59,9 +59,6 @@ class HomeViewController: UIViewController {
                 let currentHour = dateHelper.timeToHour(date: Date())
                 let nextHour = currentHour + 1
                 
-                print(weekNumber)
-                print(currentWeek)
-                
                 if weekNumber == currentWeek && dayNumber == currentDay && String(currentHour) == hour{
                     let currentLocation = lessons[i].location
                     let currentSubject = lessons[i].subject
