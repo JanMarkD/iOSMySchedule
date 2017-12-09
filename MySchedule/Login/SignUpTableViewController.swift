@@ -108,10 +108,19 @@ class SignUpTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "Background1"))
+        func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+            if let view = view as? UITableViewHeaderFooterView {
+                view.textLabel?.textColor = UIColor.white
+                view.textLabel?.backgroundColor = UIColor.white
+                view.backgroundView = UIImageView(image: #imageLiteral(resourceName: "Background1"))
+        
 
         self.navigationItem.title = "Sign Up"
         self.tableView.allowsSelection = false
+        
+        
+        }
+        }
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
