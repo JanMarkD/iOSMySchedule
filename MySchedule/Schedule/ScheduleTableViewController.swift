@@ -109,7 +109,7 @@ class ScheduleTableViewController: UITableViewController {
         tableView.dataSource = self
         
         let weeknumber = dateHelper.getWeekNumber(date: NSDate())
-        self.navigationItem.title = "MySchedule " + String(weeknumber)
+        self.navigationItem.title = "Week " + String(weeknumber)
         
         let fetchRequest: NSFetchRequest<Lesson> = Lesson.fetchRequest()
         

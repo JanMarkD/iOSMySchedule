@@ -50,13 +50,17 @@ class HomeViewController: UIViewController {
             let lessons = try CoreData.context.fetch(fetchRequest)
             
             for i in 0..<lessons.count{
+                
                 let weekNumber = lessons[i].weekNumber
                 let dayNumber = lessons[i].dayNumber
                 let hour = lessons[i].hour
                 let currentWeek = String(dateHelper.getWeekNumber(date: NSDate()))
-                let currentDay = String(dateHelper.getDayOfWeek(date: NSDate()) - 2)
+                let currentDay = String(dateHelper.getDayOfWeek(date: NSDate()))
                 let currentHour = dateHelper.timeToHour(date: Date())
                 let nextHour = currentHour + 1
+                
+                print(weekNumber)
+                print(currentWeek)
                 
                 if weekNumber == currentWeek && dayNumber == currentDay && String(currentHour) == hour{
                     let currentLocation = lessons[i].location
