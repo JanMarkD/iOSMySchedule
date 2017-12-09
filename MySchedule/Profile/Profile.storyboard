@@ -536,7 +536,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="6me-VE-ptk" secondAttribute="trailing" id="qS7-yw-X84"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.8189766839" green="0.8189766839" blue="0.8189766839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -782,29 +782,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KKd-9x-KSx">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMw-Zp-13S">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                                            <state key="normal" title="Change"/>
-                                                            <connections>
-                                                                <action selector="changePassword:" destination="zaP-sl-Cvx" eventType="touchUpInside" id="PcG-c1-FOC"/>
-                                                            </connections>
-                                                        </button>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="dMw-Zp-13S" secondAttribute="bottom" id="7oD-PY-9JR"/>
-                                                        <constraint firstItem="dMw-Zp-13S" firstAttribute="top" secondItem="KKd-9x-KSx" secondAttribute="top" id="J6k-Ql-uz8"/>
-                                                        <constraint firstAttribute="trailing" secondItem="dMw-Zp-13S" secondAttribute="trailing" id="kya-W2-heC"/>
-                                                    </constraints>
-                                                </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMw-Zp-13S">
+                                                    <rect key="frame" x="75" y="0.0" width="225" height="43"/>
+                                                    <state key="normal" title="Change" backgroundImage="Rectangle Login blue">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="changePassword:" destination="zaP-sl-Cvx" eventType="touchUpInside" id="PcG-c1-FOC"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="KKd-9x-KSx" secondAttribute="bottom" id="6DM-tz-wLj"/>
-                                                <constraint firstAttribute="trailing" secondItem="KKd-9x-KSx" secondAttribute="trailing" id="7MZ-Yr-GkT"/>
-                                                <constraint firstItem="KKd-9x-KSx" firstAttribute="top" secondItem="apy-D3-CEX" secondAttribute="top" id="MS9-VW-GEF"/>
-                                                <constraint firstItem="KKd-9x-KSx" firstAttribute="leading" secondItem="apy-D3-CEX" secondAttribute="leading" id="lRR-zY-E58"/>
+                                                <constraint firstAttribute="bottom" secondItem="dMw-Zp-13S" secondAttribute="bottom" constant="0.5" id="Fh6-tv-o0B"/>
+                                                <constraint firstItem="dMw-Zp-13S" firstAttribute="leading" secondItem="apy-D3-CEX" secondAttribute="leading" constant="75" id="gNM-Wf-bks"/>
+                                                <constraint firstItem="dMw-Zp-13S" firstAttribute="top" secondItem="apy-D3-CEX" secondAttribute="top" id="uEM-ur-xTz"/>
+                                                <constraint firstAttribute="trailing" secondItem="dMw-Zp-13S" secondAttribute="trailing" constant="75" id="w34-KO-7rp"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -848,6 +840,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Rectangle Login blue" width="225" height="43"/>
         <image name="profileIcon" width="30" height="30"/>
     </resources>
 </document>
