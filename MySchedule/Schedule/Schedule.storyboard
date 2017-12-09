@@ -57,7 +57,9 @@
                         <color key="badgeColor" red="0.32755842804908752" green="0.45757114887237549" blue="0.6982613205909729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="My Schedule" id="De6-fx-Xue">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="IUV-xX-xfI"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="IUV-xX-xfI">
+                            <color key="tintColor" red="0.32755842804908752" green="0.45757114887237549" blue="0.6982613205909729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
                         <barButtonItem key="leftBarButtonItem" title="Previous" id="L8X-Is-xaR">
                             <color key="tintColor" red="0.32755842804908752" green="0.45757114887237549" blue="0.6982613205909729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>

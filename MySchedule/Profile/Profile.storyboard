@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -307,8 +307,11 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Profile" image="profileIcon" landscapeImage="profileIcon" selectedImage="profileIcon" id="Xot-uS-fe5"/>
                     <navigationItem key="navigationItem" title="Profile" id="Lik-8V-YdN">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="MQI-bN-TdI"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="MQI-bN-TdI">
+                            <color key="tintColor" red="0.32755842800000001" green="0.4575711489" blue="0.69826132060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Ffc-5v-CbI">
+                            <color key="tintColor" red="0.32755842800000001" green="0.4575711489" blue="0.69826132060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="hIH-X7-jn1" kind="show" id="fKQ-l7-oJp"/>
                             </connections>

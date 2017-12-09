@@ -79,6 +79,9 @@ class ClassTableViewController: UITableViewController {
                 descriptionChange.text = descriptionString
             }
         }
+        
+        tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "Background home"))
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -92,5 +95,17 @@ class ClassTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numberOfRowsInSection[section]
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let view = view as? UITableViewHeaderFooterView {
+            view.textLabel?.textColor = UIColor.white
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        if let view = view as? UITableViewHeaderFooterView {
+            view.textLabel?.textColor = UIColor.white
+        }
     }
 }

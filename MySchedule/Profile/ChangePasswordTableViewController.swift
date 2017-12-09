@@ -73,6 +73,8 @@ class ChangePasswordTableViewController: UITableViewController {
         self.navigationItem.title = "Change password"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.done, target:self, action: #selector(changePasswords))
         self.tableView.allowsSelection = false
+        
+        tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "Background home"))
     }
 
     override func didReceiveMemoryWarning() {
@@ -101,6 +103,18 @@ class ChangePasswordTableViewController: UITableViewController {
             }
         }else{
             return true
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let view = view as? UITableViewHeaderFooterView {
+            view.textLabel?.textColor = UIColor.white
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        if let view = view as? UITableViewHeaderFooterView {
+            view.textLabel?.textColor = UIColor.white
         }
     }
 }

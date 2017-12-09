@@ -108,6 +108,8 @@ class ScheduleTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "Background home"))
+        
         let weeknumber = dateHelper.getWeekNumber(date: NSDate())
         self.navigationItem.title = "MySchedule " + String(weeknumber)
         
@@ -247,6 +249,18 @@ class ScheduleTableViewController: UITableViewController {
             }else if Int((self.navigationItem.title?.components(separatedBy: " "))![1]) == dateHelper.getWeekNumber(date: NSDate()) + 2{
                 viewController.classData = lessonsThisWeek[indexPath.section][indexPath.row]
             }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let view = view as? UITableViewHeaderFooterView {
+            view.textLabel?.textColor = UIColor.white
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        if let view = view as? UITableViewHeaderFooterView {
+            view.textLabel?.textColor = UIColor.white
         }
     }
 }

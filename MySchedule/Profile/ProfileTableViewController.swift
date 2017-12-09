@@ -57,6 +57,8 @@ class ProfileTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.allowsSelection = false
+        
+        tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "Background home"))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -106,6 +108,18 @@ class ProfileTableViewController: UITableViewController {
             }
         }else{
             return true
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let view = view as? UITableViewHeaderFooterView {
+            view.textLabel?.textColor = UIColor.white
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        if let view = view as? UITableViewHeaderFooterView {
+            view.textLabel?.textColor = UIColor.white
         }
     }
 }
