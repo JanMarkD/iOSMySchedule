@@ -13,7 +13,6 @@ import CoreData
 class scheduleRetriever: NSObject{
     
     let dateHelper = DateHelp()
-
     
     func convertJSON(data: Data, key: String, index: Int) -> Any{
         do{
@@ -65,32 +64,32 @@ class scheduleRetriever: NSObject{
                 var startTimeMinutes = String(describing: startTime["minutes"]!)
                 let endTimeHours = String(describing: endTime["hours"]!)
                 var endTimeMinutes = String(describing: endTime["minutes"]!)
-                
+
                 if startTimeMinutes.count == 1{
                     startTimeMinutes = "0" + startTimeMinutes
                 }
                 if endTimeMinutes.count == 1{
                     endTimeMinutes = "0" + endTimeMinutes
                 }
-                
+
                 let time = startTimeHours + ":" + startTimeMinutes + "-" + endTimeHours + ":" + endTimeMinutes
-                
+
                 let weekNumber = self.dateHelper.getWeekNumber(date: startDate as NSDate)
-                
+
                 var hour = Int()
                 if (nullToNil(value: lesson["endTimeSlot"] as AnyObject) != nil){
                     hour = lesson["endTimeSlot"] as! Int
                 }else{
                     hour = self.dateHelper.timeToHour(date: Date(timeIntervalSince1970: TimeInterval(startInSeconds)))
                 }
-                
+
                 let teacher = lesson["teachers"] as! NSArray
                 let subject = lesson["subjects"] as! NSArray
                 let location = lesson["locations"] as! NSArray
-                
+
                 let remark = lesson["remark"] as! String
                 let changeDescription = lesson["changeDescription"] as! String
-                
+
                 let modified = lesson["modified"] as! Int
                 let moved = lesson["moved"] as! Int
                 let cancelled = lesson["cancelled"] as! Int
@@ -107,21 +106,27 @@ class scheduleRetriever: NSObject{
                 }
                 
                 let myLesson = Lesson(context: CoreData.context)
-                
+
                 myLesson.time = time
                 myLesson.date = (String(describing: startDate))
                 myLesson.hour = String(hour)
                 myLesson.weekNumber = String(weekNumber)
                 myLesson.dayNumber = String(self.dateHelper.getDayOfWeek(date: startDate as NSDate))
-                
-                myLesson.teacher = (teacher[0] as! String)
-                myLesson.subject = (subject[0] as! String)
-                myLesson.location = (location[0] as! String).uppercased()
-                
+
+                if teacher.count != 0{
+                    myLesson.teacher = (teacher[0] as! String)
+                }
+                if subject.count != 0{
+                    myLesson.subject = (subject[0] as! String)
+                }
+                if location.count != 0{
+                    myLesson.location = (location[0] as! String).uppercased()
+                }
+
                 myLesson.remarks = remark
                 myLesson.change = change
                 myLesson.changeDescription = changeDescription
-                
+
                 CoreData.saveContext()
             }
         } catch {}
