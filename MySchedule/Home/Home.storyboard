@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AM1-Yf-D8M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AM1-Yf-D8M">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,7 +29,7 @@
                                 <rect key="frame" x="39" y="84" width="297" height="451"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9U-aR-0TN">
-                                <rect key="frame" x="84" y="352" width="208" height="30"/>
+                                <rect key="frame" x="51" y="352" width="273" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="UX3-Wx-fbM"/>
                                 </constraints>
@@ -76,6 +76,7 @@
                         <constraints>
                             <constraint firstItem="4fw-w4-8e9" firstAttribute="leading" secondItem="B0O-BZ-VEu" secondAttribute="leadingMargin" constant="35" id="3vl-wM-rkp"/>
                             <constraint firstItem="px1-Mw-G9e" firstAttribute="top" secondItem="Vtz-bZ-qfk" secondAttribute="bottom" constant="84" id="3xs-yA-eQ3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Y9U-aR-0TN" secondAttribute="trailing" constant="35" id="689-3F-hYa"/>
                             <constraint firstItem="1h3-qL-AGw" firstAttribute="centerX" secondItem="B09-ad-ZmC" secondAttribute="centerX" id="7NE-B8-dh0"/>
                             <constraint firstItem="4fw-w4-8e9" firstAttribute="centerX" secondItem="1h3-qL-AGw" secondAttribute="centerX" id="7qb-x8-pP3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xL7-tF-72K" secondAttribute="trailing" constant="23" id="BaV-Qv-rQu"/>
@@ -83,6 +84,7 @@
                             <constraint firstItem="RIK-i7-Dxs" firstAttribute="top" secondItem="B09-ad-ZmC" secondAttribute="bottom" constant="97" id="HGg-Si-mUm"/>
                             <constraint firstItem="xRC-kz-bdM" firstAttribute="leading" secondItem="B0O-BZ-VEu" secondAttribute="leading" id="IRg-Ar-I4H"/>
                             <constraint firstItem="xL7-tF-72K" firstAttribute="top" secondItem="Vtz-bZ-qfk" secondAttribute="bottom" constant="64" id="Kb2-JA-Adc"/>
+                            <constraint firstItem="Y9U-aR-0TN" firstAttribute="leading" secondItem="B0O-BZ-VEu" secondAttribute="leadingMargin" constant="35" id="LYa-Qh-sQf"/>
                             <constraint firstAttribute="bottom" secondItem="xRC-kz-bdM" secondAttribute="bottom" id="N94-Ub-R1L"/>
                             <constraint firstItem="1h3-qL-AGw" firstAttribute="top" secondItem="4fw-w4-8e9" secondAttribute="bottom" constant="15" id="UQV-GX-UUJ"/>
                             <constraint firstItem="px1-Mw-G9e" firstAttribute="centerX" secondItem="xL7-tF-72K" secondAttribute="centerX" id="eAl-Wm-3zP"/>
@@ -95,7 +97,6 @@
                             <constraint firstItem="4fw-w4-8e9" firstAttribute="top" secondItem="Y9U-aR-0TN" secondAttribute="bottom" constant="35" id="pk6-qG-EpJ"/>
                             <constraint firstItem="B09-ad-ZmC" firstAttribute="top" secondItem="1h3-qL-AGw" secondAttribute="bottom" constant="23" id="sxR-en-Csh"/>
                             <constraint firstAttribute="trailing" secondItem="xRC-kz-bdM" secondAttribute="trailing" id="ul1-I9-tUu"/>
-                            <constraint firstItem="Y9U-aR-0TN" firstAttribute="leading" secondItem="B0O-BZ-VEu" secondAttribute="leadingMargin" constant="68" id="umS-Xh-aPT"/>
                             <constraint firstItem="px1-Mw-G9e" firstAttribute="centerX" secondItem="Y9U-aR-0TN" secondAttribute="centerX" id="w4W-NX-ra4"/>
                         </constraints>
                     </view>

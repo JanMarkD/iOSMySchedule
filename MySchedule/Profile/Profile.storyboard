@@ -522,18 +522,22 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6me-VE-ptk">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                                    <state key="normal" title="Change Password"/>
+                                                    <rect key="frame" x="75" y="0.0" width="225" height="43"/>
+                                                    <state key="normal" title="Change Password" backgroundImage="Rectangle Login blue">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
                                                     <connections>
                                                         <segue destination="zaP-sl-Cvx" kind="show" id="pKd-89-Qr3"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="6me-VE-ptk" firstAttribute="leading" secondItem="S8T-QA-Y33" secondAttribute="leading" id="O0N-JK-A22"/>
+                                                <constraint firstItem="6me-VE-ptk" firstAttribute="top" secondItem="S8T-QA-Y33" secondAttribute="top" id="av7-6O-Oag"/>
+                                                <constraint firstAttribute="trailing" secondItem="6me-VE-ptk" secondAttribute="trailing" constant="75" id="lAD-Lz-nMS"/>
                                                 <constraint firstAttribute="bottom" secondItem="6me-VE-ptk" secondAttribute="bottom" id="ndN-P7-UEq"/>
                                                 <constraint firstItem="6me-VE-ptk" firstAttribute="top" secondItem="S8T-QA-Y33" secondAttribute="top" id="nrS-VM-YlT"/>
-                                                <constraint firstAttribute="trailing" secondItem="6me-VE-ptk" secondAttribute="trailing" id="qS7-yw-X84"/>
+                                                <constraint firstAttribute="bottom" secondItem="6me-VE-ptk" secondAttribute="bottom" constant="0.5" id="vXf-RR-D14"/>
+                                                <constraint firstItem="6me-VE-ptk" firstAttribute="leading" secondItem="S8T-QA-Y33" secondAttribute="leading" constant="75" id="wlZ-7M-2cl"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
