@@ -108,7 +108,6 @@ class SignUpTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "Background1"))
         
 
@@ -139,8 +138,6 @@ class SignUpTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
-
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return numberOfRows.count
     }
