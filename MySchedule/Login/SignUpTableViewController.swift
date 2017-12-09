@@ -108,20 +108,13 @@ class SignUpTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-            if let view = view as? UITableViewHeaderFooterView {
-                view.textLabel?.textColor = UIColor.white
-                view.textLabel?.backgroundColor = UIColor.white
-                view.backgroundView = UIImageView(image: #imageLiteral(resourceName: "Background1"))
+        tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "Background1"))
         
 
         self.navigationItem.title = "Sign Up"
         self.tableView.allowsSelection = false
         
-        
         }
-        }
-    }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "SignUp"{
@@ -144,13 +137,24 @@ class SignUpTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return numberOfRows.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numberOfRows[section]
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let view = view as? UITableViewHeaderFooterView {
+            view.textLabel?.textColor = UIColor.white
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        if let view = view as? UITableViewHeaderFooterView {
+            view.textLabel?.textColor = UIColor.white
+        }
     }
 }

@@ -99,6 +99,8 @@ class ChangeProfileTableViewController: UITableViewController {
         self.navigationItem.title = "Change Profile"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.done, target:self, action: #selector(changeProfile))
         self.tableView.allowsSelection = false
+        
+        tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "Background home"))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -135,5 +137,17 @@ class ChangeProfileTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numberOfRowsInSection[section]
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let view = view as? UITableViewHeaderFooterView {
+            view.textLabel?.textColor = UIColor.white
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        if let view = view as? UITableViewHeaderFooterView {
+            view.textLabel?.textColor = UIColor.white
+        }
     }
 }

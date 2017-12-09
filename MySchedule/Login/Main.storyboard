@@ -295,7 +295,7 @@
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="School Information" id="xM0-eW-0Gg">
-                                <string key="footerTitle">To retrieve your schedule we need your student code, which is used by your school to refer to you. We also need to know your schools domain name and your activation code. You can find these at:</string>
+                                <string key="footerTitle">To retrieve your schedule we need your student code, which is used by your school to refer to you. We also need to know your schools domain name and your activation code. You can find these by going to driestarcollege.zportal.nl, login to your account and going to "Koppel App" at the "Koppelingen" tab on the right side of your screen</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="X04-B4-IGQ">
                                         <rect key="frame" x="0.0" y="251" width="375" height="44"/>
@@ -371,7 +371,7 @@
                             <tableViewSection headerTitle="Username &amp; Password" id="2SU-AW-azD">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="r6k-pZ-Sk1">
-                                        <rect key="frame" x="0.0" y="499" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="547" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r6k-pZ-Sk1" id="2C5-1c-y1Z">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -406,7 +406,7 @@
                                         <color key="backgroundColor" red="0.89096776870000005" green="0.89096776870000005" blue="0.89096776870000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Rxq-Uo-zs9">
-                                        <rect key="frame" x="0.0" y="543" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="591" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rxq-Uo-zs9" id="TYJ-78-zOi">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -441,7 +441,7 @@
                                         <color key="backgroundColor" red="0.89096776870000005" green="0.89096776870000005" blue="0.89096776870000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cbb-vs-9gJ">
-                                        <rect key="frame" x="0.0" y="587" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="635" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cbb-vs-9gJ" id="nmV-ZF-KOG">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -483,36 +483,33 @@
                             <tableViewSection id="nsa-q4-XGZ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="60" id="REj-kc-9Ve">
-                                        <rect key="frame" x="0.0" y="667" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="715" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="REj-kc-9Ve" id="c2C-vm-ocf">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cq4-U5-uqA">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C04-Ug-WLP">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
-                                                            <state key="normal" title="Sign Up">
-                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="signUp:" destination="SeA-ac-Rnd" eventType="touchUpInside" id="kY3-9L-TNh"/>
-                                                                <segue destination="KTE-vr-1hE" kind="unwind" identifier="SignUp" unwindAction="unwindToLoginWithSegue:" id="ikN-Zu-JQo"/>
-                                                            </connections>
-                                                        </button>
-                                                    </subviews>
-                                                </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C04-Ug-WLP">
+                                                    <rect key="frame" x="75" y="0.0" width="225" height="43"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" title="Sign Up" backgroundImage="Rectangle Login blue">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="signUp:" destination="SeA-ac-Rnd" eventType="touchUpInside" id="kY3-9L-TNh"/>
+                                                        <segue destination="KTE-vr-1hE" kind="unwind" identifier="SignUp" unwindAction="unwindToLoginWithSegue:" id="ikN-Zu-JQo"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="cq4-U5-uqA" firstAttribute="leading" secondItem="c2C-vm-ocf" secondAttribute="leading" id="6f2-1y-shp"/>
-                                                <constraint firstItem="cq4-U5-uqA" firstAttribute="top" secondItem="c2C-vm-ocf" secondAttribute="top" id="KjU-Zu-F7D"/>
-                                                <constraint firstAttribute="bottom" secondItem="cq4-U5-uqA" secondAttribute="bottom" id="hLB-vm-zye"/>
-                                                <constraint firstAttribute="trailing" secondItem="cq4-U5-uqA" secondAttribute="trailing" id="ukD-8p-WQp"/>
+                                                <constraint firstItem="C04-Ug-WLP" firstAttribute="top" secondItem="c2C-vm-ocf" secondAttribute="top" id="7sH-Lb-JAP"/>
+                                                <constraint firstAttribute="bottom" secondItem="C04-Ug-WLP" secondAttribute="bottom" constant="16.5" id="Kvu-YU-Tgt"/>
+                                                <constraint firstAttribute="trailing" secondItem="C04-Ug-WLP" secondAttribute="trailing" constant="75" id="N1z-pN-LYs"/>
+                                                <constraint firstItem="C04-Ug-WLP" firstAttribute="leading" secondItem="c2C-vm-ocf" secondAttribute="leading" constant="75" id="c0f-7J-4U2"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.3548979163" green="0.45612227919999998" blue="0.67818123100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -545,7 +542,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iSo-4q-iac" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="KTE-vr-1hE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="372" y="1632"/>
+            <point key="canvasLocation" x="372" y="1630.8845577211396"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PwL-Av-pqc">
