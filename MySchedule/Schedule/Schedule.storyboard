@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -52,15 +53,19 @@
                             <outlet property="delegate" destination="ptP-9P-lbS" id="JqH-sL-lcm"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Schedule" image="scheduleIcon" landscapeImage="scheduleIcon" selectedImage="scheduleIcon" id="UJI-DF-EUY"/>
+                    <tabBarItem key="tabBarItem" title="Schedule" image="scheduleIcon" landscapeImage="scheduleIcon" selectedImage="scheduleIcon" id="UJI-DF-EUY">
+                        <color key="badgeColor" red="0.32755842804908752" green="0.45757114887237549" blue="0.6982613205909729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title="My Schedule" id="De6-fx-Xue">
                         <barButtonItem key="backBarButtonItem" title="Back" id="IUV-xX-xfI"/>
                         <barButtonItem key="leftBarButtonItem" title="Previous" id="L8X-Is-xaR">
+                            <color key="tintColor" red="0.32755842804908752" green="0.45757114887237549" blue="0.6982613205909729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="previousButton:" destination="ptP-9P-lbS" id="VjU-N6-RFs"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="ukn-pb-P8u">
+                            <color key="tintColor" red="0.32755842804908752" green="0.45757114887237549" blue="0.6982613205909729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="nextButton:" destination="ptP-9P-lbS" id="Miy-ng-96b"/>
                             </connections>
