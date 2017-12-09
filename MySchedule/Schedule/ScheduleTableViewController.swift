@@ -160,7 +160,7 @@ class ScheduleTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentCell = tableView.cellForRow(at: indexPath)
-        if currentCell?.textLabel?.text != "No classes."{
+        if currentCell?.textLabel?.text != "No classes"{
             performSegue(withIdentifier: "classTapped", sender: self)
         }else{
             tableView.deselectRow(at: indexPath, animated: true)
