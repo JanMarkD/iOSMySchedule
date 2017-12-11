@@ -25,7 +25,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background2" translatesAutoresizingMaskIntoConstraints="NO" id="xRC-kz-bdM">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle home" translatesAutoresizingMaskIntoConstraints="NO" id="xL7-tF-72K">
+                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle Home background" translatesAutoresizingMaskIntoConstraints="NO" id="xL7-tF-72K">
                                 <rect key="frame" x="39" y="84" width="297" height="451"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9U-aR-0TN">
@@ -125,7 +125,7 @@
     <resources>
         <image name="Background2" width="375" height="667"/>
         <image name="Logo" width="1000" height="1000"/>
-        <image name="Rectangle home" width="297" height="451"/>
+        <image name="Rectangle Home background" width="297" height="451"/>
         <image name="homeIcon" width="30" height="30"/>
     </resources>
 </document>

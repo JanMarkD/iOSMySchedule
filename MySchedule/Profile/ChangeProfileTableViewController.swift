@@ -12,7 +12,7 @@ class ChangeProfileTableViewController: UITableViewController {
     
     //Setup Data
     
-    let numberOfRowsInSection = [6,1,3]
+    let numberOfRowsInSection = [5,1,1,3]
     
     let alertHelp = CreateAlert()
     

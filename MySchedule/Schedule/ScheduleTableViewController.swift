@@ -164,6 +164,7 @@ class ScheduleTableViewController: UITableViewController {
             performSegue(withIdentifier: "classTapped", sender: self)
         }else{
             tableView.deselectRow(at: indexPath, animated: true)
+        
         }
     }
 
@@ -187,6 +188,8 @@ class ScheduleTableViewController: UITableViewController {
         var cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
         
+        cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8)
+        
         if lessonsThisWeek[indexPath.section].count == 0{
             cell.textLabel?.text = noClassesToday["subject"]
             cell.detailTextLabel?.text = noClassesToday["location"]
@@ -207,9 +210,9 @@ class ScheduleTableViewController: UITableViewController {
                     let subject = favouriteSubjects[i]
                     if lessonsThisWeek[indexPath.section][indexPath.row].subject == subject{
                         switch(i){
-                        case 0: cell.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
-                        case 1: cell.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
-                        case 2: cell.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+                        case 0: cell.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 0.8)
+                        case 1: cell.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 0.8)
+                        case 2: cell.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 0.8)
                         default: cell.textLabel?.textColor = UIColor.black
                         }
                     }
@@ -230,7 +233,7 @@ class ScheduleTableViewController: UITableViewController {
             }
             switch(lessonsThisWeek[indexPath.section][indexPath.row].change){
             case "new"?, "modified"?, "moved"?: cell.accessoryView = UIImageView(image: modified)
-            case "cancelled"?: cell.accessoryView = UIImageView(image: cancelled); cell.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+            case "cancelled"?: cell.accessoryView = UIImageView(image: cancelled); cell.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 0.8)
             default: print("")
             }
         }

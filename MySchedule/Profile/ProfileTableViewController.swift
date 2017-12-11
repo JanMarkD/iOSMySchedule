@@ -78,11 +78,11 @@ class ProfileTableViewController: UITableViewController {
         }
         if let favouriteSubjects = defaults.value(forKey: "Favourite Subjects") as? [String]{
             subject1.text = favouriteSubjects[0]
-            subject1.textColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+            subject1.textColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 0.8)
             subject2.text = favouriteSubjects[1]
-            subject2.textColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+            subject2.textColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 0.8)
             subject3.text = favouriteSubjects[2]
-            subject3.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+            subject3.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 0.8)
         }
     }
 
