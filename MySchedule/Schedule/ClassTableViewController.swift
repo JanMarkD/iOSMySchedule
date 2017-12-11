@@ -82,8 +82,8 @@ class ClassTableViewController: UITableViewController {
         
         tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "Background home"))
 
-    }
-
+    }    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

@@ -235,6 +235,8 @@ class ScheduleTableViewController: UITableViewController {
             case "new"?, "modified"?, "moved"?: cell.accessoryView = UIImageView(image: modified)
             case "cancelled"?: cell.accessoryView = UIImageView(image: cancelled); cell.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 0.8)
             default: print("")
+            cell.textLabel?.textColor = #colorLiteral(red: 0.327558428, green: 0.4575711489, blue: 0.6982613206, alpha: 1)
+            cell.detailTextLabel?.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             }
         }
         return cell

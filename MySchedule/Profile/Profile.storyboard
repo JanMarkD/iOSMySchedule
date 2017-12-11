@@ -311,7 +311,6 @@
                             <color key="tintColor" red="0.32755842800000001" green="0.4575711489" blue="0.69826132060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Ffc-5v-CbI">
-                            <color key="tintColor" red="0.32755842800000001" green="0.4575711489" blue="0.69826132060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="hIH-X7-jn1" kind="show" id="fKQ-l7-oJp"/>
                             </connections>
@@ -518,7 +517,7 @@
                             </tableViewSection>
                             <tableViewSection id="i9U-BS-J0R" userLabel="Change Password">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="changePasswordButton" id="Cyq-yk-KLX">
+                                    <tableViewCell clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="changePasswordButton" id="Cyq-yk-KLX">
                                         <rect key="frame" x="0.0" y="311.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cyq-yk-KLX" id="S8T-QA-Y33">
