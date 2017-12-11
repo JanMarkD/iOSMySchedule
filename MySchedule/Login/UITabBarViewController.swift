@@ -13,6 +13,8 @@ class UITabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.selectedIndex = 1
+        
+        tabBar.isTranslucent = true
     }
 
     override func didReceiveMemoryWarning() {
