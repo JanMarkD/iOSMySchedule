@@ -41,7 +41,7 @@ class ScheduleTableViewController: UITableViewController {
         let thisWeek = (self.navigationItem.title?.components(separatedBy: " "))![1]
         
         if Int(thisWeek) == dateHelper.getWeekNumber(date: NSDate()){
-            alertHelp.alert(message: "Can't fetch data from past.", title: "No Data")
+            alertHelp.alert(message: "Can't load data from the past.", title: "No Data")
             return
         }
         if (self.navigationItem.title?.components(separatedBy: " "))![1] == "1" {
@@ -74,7 +74,7 @@ class ScheduleTableViewController: UITableViewController {
     @IBAction func nextButton(_ sender: UIBarButtonItem) {
         let thisWeek = (self.navigationItem.title?.components(separatedBy: " "))![1]
         if Int(thisWeek) == dateHelper.getWeekNumber(date: NSDate()) + 2{
-            alertHelp.alert(message: "Can't fetch data in more than three weeks in advance.", title: "No Data")
+            alertHelp.alert(message: "Can't load data from more than three weeks in advance.", title: "No Data")
             return
         }
         if (self.navigationItem.title?.components(separatedBy: " "))![1] == "52" {
