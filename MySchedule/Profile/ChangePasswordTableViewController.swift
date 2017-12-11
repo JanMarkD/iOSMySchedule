@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class ChangePasswordTableViewController: UITableViewController {
+class ChangePasswordTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     
     //Setup Data
     
@@ -46,21 +47,39 @@ class ChangePasswordTableViewController: UITableViewController {
         }
     }
     
-    @objc func changePasswords(){
+    func sendEmail(sender: UIViewController) {
+        let mailComposeViewController = mailNewPassWord()
+        if MFMailComposeViewController.canSendMail() {
+            sender.present(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            alertHelp.alert(message: "Something went wrong, try again later.", title: "Error")
+        }
+    }
+    
+    func mailNewPassWord() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
         
-        //changepassword
+        let name = defaults.value(forKey: "Name") as! [String]
         
+        mailComposerVC.mailComposeDelegate = self
+        mailComposerVC.setToRecipients([(defaults.value(forKey: "Emailadress") as! String)])
+        mailComposerVC.setSubject("New Password")
+        mailComposerVC.setMessageBody("Dear " + name[0] + " " +  name[1] + ",\n\n" + "Recently you changed your password, your new password is now:\n\n" + newPassword1.text! + "\n\n" + "Greetings,\n\nMySchedule" , isHTML: false)
+        return mailComposerVC
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "changePassword", sender: self)
     }
     
-    
-    //Actions
-    
-    @IBAction func changePassword(_ sender: UIButton) {
+    @objc func changePasswords(){
         if checkPasswords() == true{
             if checkOldPassword() == true{
-                changePasswords()
-                alertHelp.alert(message: "Changes were succesfully made", title: "Password changed")
+                let username = (defaults.value(forKey: "Login") as! [String])[0]
+                let newLogin = [username, newPassword1.text!]
+                defaults.set(newLogin, forKey: "Login")
+                sendEmail(sender: self)
             }else{
                 alertHelp.alert(message: "Please fill in your correct current password", title: "Password not correct")
             }
@@ -68,7 +87,7 @@ class ChangePasswordTableViewController: UITableViewController {
             alertHelp.alert(message: "Your new passwords don't match", title: "Non-matching passwords")
         }
     }
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
