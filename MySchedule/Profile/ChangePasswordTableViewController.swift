@@ -12,9 +12,11 @@ class ChangePasswordTableViewController: UITableViewController {
     
     //Setup Data
     
-    let numberOfRows = [3,1]
+    let numberOfRows = [3]
     
     let alertHelp = CreateAlert()
+    
+    let defaults = UserDefaults.standard
     
     
     //Outlets

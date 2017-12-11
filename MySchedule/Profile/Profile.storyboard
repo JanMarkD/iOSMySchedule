@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -768,43 +768,6 @@
                                                 <constraint firstItem="vqS-Gs-uHS" firstAttribute="top" secondItem="EPG-i6-HGf" secondAttribute="topMargin" id="bwS-Lu-vRI"/>
                                                 <constraint firstItem="YxW-IZ-aNc" firstAttribute="top" secondItem="EPG-i6-HGf" secondAttribute="topMargin" id="dtJ-zu-3K6"/>
                                                 <constraint firstItem="YxW-IZ-aNc" firstAttribute="leading" secondItem="vqS-Gs-uHS" secondAttribute="trailing" constant="15" id="lqg-fJ-vnT"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="2F0-VV-8d7">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="N2b-8L-q7u">
-                                        <rect key="frame" x="0.0" y="267.5" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N2b-8L-q7u" id="apy-D3-CEX">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KKd-9x-KSx">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMw-Zp-13S">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                                            <state key="normal" title="Change"/>
-                                                            <connections>
-                                                                <action selector="changePassword:" destination="zaP-sl-Cvx" eventType="touchUpInside" id="PcG-c1-FOC"/>
-                                                            </connections>
-                                                        </button>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="dMw-Zp-13S" secondAttribute="bottom" id="7oD-PY-9JR"/>
-                                                        <constraint firstItem="dMw-Zp-13S" firstAttribute="top" secondItem="KKd-9x-KSx" secondAttribute="top" id="J6k-Ql-uz8"/>
-                                                        <constraint firstAttribute="trailing" secondItem="dMw-Zp-13S" secondAttribute="trailing" id="kya-W2-heC"/>
-                                                    </constraints>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="KKd-9x-KSx" secondAttribute="bottom" id="6DM-tz-wLj"/>
-                                                <constraint firstAttribute="trailing" secondItem="KKd-9x-KSx" secondAttribute="trailing" id="7MZ-Yr-GkT"/>
-                                                <constraint firstItem="KKd-9x-KSx" firstAttribute="top" secondItem="apy-D3-CEX" secondAttribute="top" id="MS9-VW-GEF"/>
-                                                <constraint firstItem="KKd-9x-KSx" firstAttribute="leading" secondItem="apy-D3-CEX" secondAttribute="leading" id="lRR-zY-E58"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
