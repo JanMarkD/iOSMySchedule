@@ -76,7 +76,7 @@ class ChangePasswordTableViewController: UITableViewController, MFMailComposeVie
         mailComposerVC.mailComposeDelegate = self
         mailComposerVC.setToRecipients([(defaults.value(forKey: "Emailadress") as! String)])
         mailComposerVC.setSubject("New Password")
-        mailComposerVC.setMessageBody("Dear " + name[0] + " " +  name[1] + ",\n\n" + "Recently you changed your password, your new password is now:\n\n" + newPassword1.text! + "\n\n" + "Greetings,\n\nMySchedule" , isHTML: false)
+        mailComposerVC.setMessageBody("Dear " + name[0] + " " +  name[1] + ",\n\n" + "Recently you changed your password. Your password is now:\n\n" + newPassword1.text! + "\n\n" + "Greetings,\n\nMySchedule" , isHTML: false)
         return mailComposerVC
     }
     
