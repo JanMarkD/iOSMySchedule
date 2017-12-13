@@ -220,7 +220,7 @@ class scheduleRetriever: NSObject{
                     
                     self.defaults.set(accestoken, forKey: "Accestoken")
                     
-                    let url = URL(string: "https://driestarcollege.zportal.nl/api/v3/appointments?user="+studentCode+"&start="+startTime+"&end="+endTime+"&access_token="+accestoken)!
+                    let url = URL(string: "https://driestarcollege.zportal.nl/api/v3/appointments?user=" + studentCode + "&start=" + startTime + "&end=" + endTime + "&access_token=" + accestoken)!
                     var request = URLRequest(url: url)
                     request.httpMethod = "GET"
                     
