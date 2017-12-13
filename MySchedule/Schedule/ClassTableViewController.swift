@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+// TODO: Design tableviewcells and text colors.
+
 class ClassTableViewController: UITableViewController {
     
     
@@ -21,27 +23,24 @@ class ClassTableViewController: UITableViewController {
     //Outlets
     
     @IBOutlet weak var subject: UILabel!
+    
     @IBOutlet weak var location: UILabel!
+    
     @IBOutlet weak var teacher: UILabel!
+    
     @IBOutlet weak var hour: UILabel!
+    
     @IBOutlet weak var time: UILabel!
+    
     @IBOutlet weak var remark: UILabel!
+    
     @IBOutlet weak var descriptionChange: UILabel!
-    
-    
-    //Functions
-    
-    
-    
-    
-    //Actions
-    
-    
-    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Checks if data is empty, if not fills in data.
 
         if let subjectString = classData.subject{
             if subjectString != ""{
@@ -80,14 +79,14 @@ class ClassTableViewController: UITableViewController {
             }
         }
         
+        //Cell height and background.
+        
+        tableView.rowHeight = 46
+        
         tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "Background home"))
-
-    }    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
-
+    
+    //Set up tableview sections, rows and headers.
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return numberOfRowsInSection.count
@@ -98,12 +97,6 @@ class ClassTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        if let view = view as? UITableViewHeaderFooterView {
-            view.textLabel?.textColor = UIColor.white
-        }
-    }
-    
-    override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         if let view = view as? UITableViewHeaderFooterView {
             view.textLabel?.textColor = UIColor.white
         }

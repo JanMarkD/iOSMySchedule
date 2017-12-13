@@ -8,6 +8,8 @@
 
 import UIKit
 
+// TODO: Design tableviewcells and text colors.
+
 class SignUpTableViewController: UITableViewController {
     
     
@@ -20,18 +22,30 @@ class SignUpTableViewController: UITableViewController {
     
     //Outlets
     
+    @IBOutlet var allTextFields: [UITextField]!
+    
     @IBOutlet weak var firstName: UITextField!
+    
     @IBOutlet weak var lastName: UITextField!
+    
     @IBOutlet weak var emailAdress: UITextField!
+    
     @IBOutlet weak var domainName: UITextField!
+    
     @IBOutlet weak var activationCode: UITextField!
+    
     @IBOutlet weak var userName: UITextField!
+    
     @IBOutlet weak var passWord1: UITextField!
+    
     @IBOutlet weak var passWord2: UITextField!
+    
     @IBOutlet weak var studentCode: UITextField!
     
     
     //Functions
+    
+    //Check if passwords match.
     
     func checkPasswords(password1:String, password2:String) -> Bool{
         if (password1 == password2){
@@ -41,50 +55,45 @@ class SignUpTableViewController: UITableViewController {
         }
     }
     
+    //Check if all fields are filled in.
+    
     func checkFields() -> Bool {
-        let firstNameX = firstName.text ?? "Nothing"
-        let lastNameX = lastName.text ?? "Nothing"
-        let emailAdressX = emailAdress.text ?? "Nothing"
-        let domainNameX = domainName.text ?? "Nothing"
-        let activationCodeX = activationCode.text ?? ""
-        let studentCodeX = studentCode.text ?? "Nothing"
-        let userNameX = userName.text ?? "kdjfkj"
-        let password1 = passWord1.text ?? "Nothingx"
-        let password2 = passWord2.text ?? "Nothing"
-        if (firstNameX == "")||(lastNameX == "")||(emailAdressX == "")||(domainNameX == "")||(activationCodeX == "")||(password1 == "")||(password2 == "")||(userNameX == "")||(studentCodeX == ""){
-            return false
-        }else{
-            return true
+        for textField in allTextFields{
+            if textField.text == ""{
+                return false
+            }
         }
+        return true
     }
 
     
     //Actions
     
+    //If passwords are not the same, background of textfield turns red.
+    
     @IBAction func passwordEditingDidEnd(_ sender: UITextField) {
-        let password1 = passWord1.text ?? "Geen wachwoord1"
-        let password2 = passWord2.text ?? "Geen wachtwoord2"
+        let password1 = passWord1.text!
+        let password2 = passWord2.text!
         let check = checkPasswords(password1: password1, password2: password2)
         if (check == false){
             passWord2.backgroundColor = UIColor.red
-        }else{
-            print("Passwords match")
         }
     }
     
-
+    //If all data is correct and filled in, this action saves all data and creates account.
+    
     @IBAction func signUp(_ sender: UIButton) {
-        let password1 = passWord1.text ?? "Nothingx"
-        let password2 = passWord2.text ?? "Nothing"
-        let check = checkPasswords(password1: password1, password2: password2)
+        let password1 = passWord1.text
+        let password2 = passWord2.text
+        let check = checkPasswords(password1: password1!, password2: password2!)
         if (check == true){
-            let firstNameX = firstName.text ?? "Nothing"
-            let lastNameX = lastName.text ?? "Nothing"
-            let emailAdressX = emailAdress.text ?? "Nothing"
-            let domainNameX = domainName.text ?? "Nothing"
-            let activationCodeX = activationCode.text ?? ""
-            let userNameX = userName.text ?? "kdjfkj"
-            let studentCodeX = studentCode.text ?? ""
+            let firstNameX = firstName.text
+            let lastNameX = lastName.text
+            let emailAdressX = emailAdress.text
+            let domainNameX = domainName.text
+            let activationCodeX = activationCode.text
+            let userNameX = userName.text
+            let studentCodeX = studentCode.text
             if (checkFields() == false) {
                 alertHelp.alert(message: "Please fill in all fields", title: "Empty fields")
             }else{
@@ -108,13 +117,16 @@ class SignUpTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "Background1"))
+        //Background color and title.
         
-
+        tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "Background1"))
+    
         self.navigationItem.title = "Sign Up"
         self.tableView.allowsSelection = false
         
-        }
+    }
+    
+    //Checks if everything is correct and performs segue.
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "SignUp"{
@@ -133,10 +145,8 @@ class SignUpTableViewController: UITableViewController {
             return true
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+    
+    //Set up tableview, and headers and footers.
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return numberOfRows.count

@@ -10,12 +10,16 @@ import Foundation
 
 class DateHelp: NSObject{
     
+    //Returns current weeknumber.
+    
     func getWeekNumber(date: NSDate) -> Int{
         let myCalendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.ISO8601)!
         let myComponents = myCalendar.components(.weekOfYear, from: date as Date)
         let weekNumber = myComponents.weekOfYear
         return weekNumber!
     }
+    
+    //Returns time of a certain date in this format: 00:00.
     
     func minutesAndHoursFromDate(date: Date) -> [String:Int]{
         let calendar = NSCalendar.current
@@ -24,6 +28,7 @@ class DateHelp: NSObject{
         return ["hours": hour, "minutes": minute]
     }
     
+    //Converts a date to into which class hour it is at that time.
     
     func timeToHour(date: Date) -> Int{
         let firstHour = (8 * 60)
@@ -63,29 +68,20 @@ class DateHelp: NSObject{
         }
     }
     
+    //Returns start of current week.
+    
     func getStartOfCurrentWeek() -> Int{
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let date = dateFormatter.date(from: String(describing: NSDate()))
-        
-        if let date = date {
-            let calendar = Calendar(identifier: .gregorian)
-            
-            var startDate : Date = Date()
-            var interval : TimeInterval = 0
-            
-            if calendar.dateInterval(of: .weekOfYear, start: &startDate, interval: &interval, for: date) {
-                return getUnixTime(date: startDate as NSDate)
-            }
-        }
-        return getUnixTime(date: NSDate())
+        return getUnixTime(date: Date().startOfWeek! as NSDate)
     }
     
+    //Returns Unix time of a certain date (time in seconds since 1970).
     
     func getUnixTime(date: NSDate) -> Int{
         let result = date.timeIntervalSince1970
         return Int(result)
     }
+    
+    //Returns current day (1 = Sunday, 2 = Monday, ...)
     
     func getDayOfWeek(date:NSDate) -> Int {
         
@@ -97,7 +93,9 @@ class DateHelp: NSObject{
 }
 extension Date {
     var startOfWeek: Date? {
-        return Calendar.current.date(from: Calendar.current.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self))
+        let gregorian = Calendar(identifier: .gregorian)
+        guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
+        return gregorian.date(byAdding: .day, value: 1, to: sunday)
     }
 }
 extension Date {

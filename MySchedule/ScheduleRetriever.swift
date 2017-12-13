@@ -12,7 +12,17 @@ import CoreData
 
 class scheduleRetriever: NSObject{
     
+    
+    //Properties
+    
     let dateHelper = DateHelp()
+    
+    let defaults = UserDefaults.standard
+    
+    
+    //Functions
+    
+    //Convert JSON into a Swift Dictionary or Array.
     
     func convertJSON(data: Data, key: String, index: Int) -> Any{
         do{
@@ -31,6 +41,8 @@ class scheduleRetriever: NSObject{
         }
     }
     
+    //Check if value is Null, if true convert to Swift nil.
+    
     func nullToNil(value : AnyObject?) -> AnyObject? {
         if value is NSNull {
             return nil
@@ -39,8 +51,11 @@ class scheduleRetriever: NSObject{
         }
     }
 
+    //Takes deserialized JSON schedule data and turns it into CoreData entities.
     
     func unwrapSchedule(totalSchedule: Array<Dictionary<String, Any>>){
+        
+        //Get currently saved lessons and deletes them.
         
         let fetchRequest: NSFetchRequest<Lesson> = Lesson.fetchRequest()
         
@@ -50,9 +65,13 @@ class scheduleRetriever: NSObject{
                 CoreData.context.delete(allLessons[i])
             }
             
+            //Accesses each lesson in retrieved schedule data.
+            
             for x in 0..<totalSchedule.count{
                 
                 let lesson = totalSchedule[x]
+                
+                //Get all information out of the lesson.
                 
                 let startInSeconds = lesson["start"] as! Int
                 let endInSeconds = lesson["end"] as! Int
@@ -105,6 +124,8 @@ class scheduleRetriever: NSObject{
                     change = "modified"
                 }
                 
+                //Create new CoreData Lesson and assigns available information to this Lesson.
+                
                 let myLesson = Lesson(context: CoreData.context)
 
                 myLesson.time = time
@@ -133,18 +154,27 @@ class scheduleRetriever: NSObject{
     }
     
     func getAllData(studentCode: String, startTime: String, endTime: String){
-        
-        let defaults = UserDefaults.standard
+    
+        //Get information (also from parameters) needed to make HTTP request.
         
         let domainName = defaults.value(forKey: "Domain name") as! String
         
+        //Checks if user has a accestoken yet, if not the "else" part retrieves one and does the same thing.
+        
         if let accesToken = (defaults.value(forKey: "Accestoken") as? String){
+            
+            //Create URL needed for HTTP request
 
             let url = URL(string: "https://"+domainName+".zportal.nl/api/v3/appointments?user="+studentCode+"&start="+startTime+"&end="+endTime+"&access_token="+accesToken)!
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
             
+            //Makes HTTP request
+            
             let task = URLSession.shared.dataTask(with: request) { scheduleData, response, error in
+                
+                //Check for errors
+                
                 guard let scheduleData = scheduleData, error == nil else {
                     print("error=\(String(describing: error))")
                     return
@@ -155,6 +185,8 @@ class scheduleRetriever: NSObject{
                     print("response = \(String(describing: response))")
                 }
                 
+                //Data sended back is processed in unwrapSchedule function.
+                
                 let json = self.convertJSON(data: scheduleData, key: "response", index: 0)
                 if let schedule = json as? Dictionary<String, Any>{
                     let totalSchedule = schedule["data"]! as! Array<Dictionary<String, Any>>
@@ -163,6 +195,9 @@ class scheduleRetriever: NSObject{
             }
             task.resume()
         }else{
+            
+            //Creates a accesstoken by making another HTTP request. After that does the same as above.
+            
             let activationCode = defaults.value(forKey: "Activation code") as! String
             let url = URL(string: "https://driestarcollege.zportal.nl/api/v3/oauth/token")!
             var request = URLRequest(url: url)
@@ -183,7 +218,7 @@ class scheduleRetriever: NSObject{
                 
                 if let accestoken = self.convertJSON(data: tokenData, key: "access_token", index: 0) as? String{
                     
-                    defaults.set(accestoken, forKey: "Accestoken")
+                    self.defaults.set(accestoken, forKey: "Accestoken")
                     
                     let url = URL(string: "https://driestarcollege.zportal.nl/api/v3/appointments?user="+studentCode+"&start="+startTime+"&end="+endTime+"&access_token="+accestoken)!
                     var request = URLRequest(url: url)

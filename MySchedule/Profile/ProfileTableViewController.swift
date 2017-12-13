@@ -8,9 +8,12 @@
 
 import UIKit
 
+// TODO: Design tableviewcells and text colors.
+
 class ProfileTableViewController: UITableViewController {
     
-    //Setup Data
+    
+    //Properties
     
     let numberOfRows = [5,3]
     
@@ -22,47 +25,44 @@ class ProfileTableViewController: UITableViewController {
     //Outlets
     
     @IBOutlet weak var firstName: UILabel!
+    
     @IBOutlet weak var lastName: UILabel!
+    
     @IBOutlet weak var emailAdress: UILabel!
+    
     @IBOutlet weak var userName: UILabel!
+    
     @IBOutlet weak var studentCode: UILabel!
     
     @IBOutlet weak var subject1: UILabel!
+    
     @IBOutlet weak var subject2: UILabel!
+    
     @IBOutlet weak var subject3: UILabel!
     
     
-    //Functions
-    func checkFields() -> Bool{
-        let firstname = firstName.text!
-        let lastname = lastName.text!
-        let emailadress = emailAdress.text!
-        let username = userName.text!
-        let studentcode = studentCode.text!
-        
-        if (firstname == "")||(lastname == "")||(username == "")||(emailadress == "")||(studentcode == ""){
-            return false
-        }else{
-            return true
-        }
-    }
-
-    
     //Actions
     
-    @IBAction func unwindToLogin(segue: UIStoryboardSegue) {
-    }
+    @IBAction func unwindToLogin(segue: UIStoryboardSegue) {}
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Background of tableview, no selection and cell height.
+        
         self.tableView.allowsSelection = false
+        
+        tableView.rowHeight = 46
         
         tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "Background home"))
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+        //Get all user data and set text of labels.
+        
         if let name = defaults.value(forKey: "Name") as? [String]{
             firstName.text = name[0]
             lastName.text = name[1]
@@ -86,9 +86,7 @@ class ProfileTableViewController: UITableViewController {
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+    //Set up tableview sections, rows, headers and footers.
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return numberOfRows.count
@@ -96,19 +94,6 @@ class ProfileTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numberOfRows[section]
-    }
-    
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "saveChanges"{
-            let check = checkFields()
-            if check == true{
-                return true
-            }else{
-                return false
-            }
-        }else{
-            return true
-        }
     }
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {

@@ -8,9 +8,12 @@
 
 import UIKit
 
+// TODO: Design tableviewcells and text colors, separator.
+
 class ChangeProfileTableViewController: UITableViewController {
     
-    //Setup Data
+    
+    //Properties
     
     let numberOfRowsInSection = [5,1,1,3]
     
@@ -21,24 +24,44 @@ class ChangeProfileTableViewController: UITableViewController {
     
     //Outlets
     
+    @IBOutlet var allTextFields: [UITextField]!
+    
     @IBOutlet weak var firstName: UITextField!
+    
     @IBOutlet weak var lastName: UITextField!
+    
     @IBOutlet weak var emailAdress: UITextField!
+    
     @IBOutlet weak var userName: UITextField!
+    
     @IBOutlet weak var studentCode: UILabel!
     
-    
     @IBOutlet weak var subject1: UITextField!
+    
     @IBOutlet weak var subject2: UITextField!
+    
     @IBOutlet weak var subject3: UITextField!
+    
+    @IBOutlet weak var autoFillLogin: UISwitch!
     
     
     //Functions
     
+    //Check if neccesary fields are all filled in.
+    
+    func checkFields() -> Bool{
+        for textField in allTextFields{
+            if textField.text == ""{
+                return false
+            }
+        }
+        return true
+    }
+    
+    //Function that is selector for save button in navigation bar, checks fields and saves data. Performs unwind segue to profile tab.
+    
     @objc func changeProfile(){
-        let check = checkFields()
-        print(check)
-        if check == false{
+        if checkFields() == false{
             alertHelp.alert(message: "Please fill in all fields", title: "Empty Fields")
         }else{
             let firstname = firstName.text!
@@ -72,40 +95,40 @@ class ChangeProfileTableViewController: UITableViewController {
             alertHelp.alert(message: "", title: "Changes were made succesful")
         }
     }
-    
-    func checkFields() -> Bool{
-        let firstname = firstName.text!
-        let lastname = lastName.text!
-        let emailadress = emailAdress.text!
-        let username = userName.text!
-        let studentcode = studentCode.text!
-        
-        if (firstname == "")||(lastname == "")||(username == "")||(emailadress == "")||(studentcode == ""){
-            return false
-        }else{
-            return true
-        }
-    }
-    
+
     
     //Actions
     
-    @IBAction func unwindToChangeProfile(segue: UIStoryboardSegue) {
+    @IBAction func unwindToChangeProfile(segue: UIStoryboardSegue) {}
+    
+    //Saves new value of Autofill Login to UserDefaults.
+    
+    @IBAction func autoFillLoginChanged(_ sender: UISwitch) {
+        let autofilllogin = autoFillLogin.isOn
+        defaults.set(autofilllogin, forKey: "Autofill Login")
     }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Set up navigation bar buttons and title. Background of tableview, no selection and cell height.
+        
         self.navigationItem.title = "Change Profile"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.done, target:self, action: #selector(changeProfile))
+        
         self.tableView.allowsSelection = false
+        
+        tableView.rowHeight = 46
         
         tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "Background home"))
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        super.viewWillAppear(true)
+        
+        //Get all user data and set text of labels.
+        
         if let name = defaults.value(forKey: "Name") as? [String]{
             firstName.text = name[0]
             lastName.text = name[1]
@@ -124,12 +147,15 @@ class ChangeProfileTableViewController: UITableViewController {
             subject2.text = favouriteSubjects[1]
             subject3.text = favouriteSubjects[2]
         }
+        
+        //Get current state of Autofill Login and set switch.
+        
+        if let autofilllogin = defaults.value(forKey: "Autofill Login") as? Bool{
+            autoFillLogin.isOn = autofilllogin
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
+    //Set up tableview sections, rows, headers and footers.
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return numberOfRowsInSection.count

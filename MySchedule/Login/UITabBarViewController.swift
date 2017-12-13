@@ -12,12 +12,11 @@ class UITabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Which tab the tabbarcontroller should start with.
+        
         self.selectedIndex = 1
         
         tabBar.isTranslucent = true
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 }

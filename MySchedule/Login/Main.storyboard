@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="URc-qe-OXY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="URc-qe-OXY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -40,7 +40,8 @@
                                 </constraints>
                                 <state key="normal" title="Login" backgroundImage="Rectangle Login blue"/>
                                 <connections>
-                                    <segue destination="f8B-I5-eZF" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="0Qg-vG-4F2"/>
+                                    <action selector="loginButton:" destination="URc-qe-OXY" eventType="touchUpInside" id="faX-Zg-Z8f"/>
+                                    <segue destination="f8B-I5-eZF" kind="presentation" identifier="Login" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="0Qg-vG-4F2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fph-1B-1OA">
@@ -538,6 +539,15 @@
                         <outlet property="passWord2" destination="NjO-by-iho" id="G1S-bQ-4yX"/>
                         <outlet property="studentCode" destination="8Ts-0I-rKY" id="myA-Wz-FLN"/>
                         <outlet property="userName" destination="KFk-Y3-7OT" id="l5y-TD-tEr"/>
+                        <outletCollection property="allTextFields" destination="hqQ-BY-uFo" collectionClass="NSMutableArray" id="FHG-HL-aJV"/>
+                        <outletCollection property="allTextFields" destination="Oab-ZJ-1XR" collectionClass="NSMutableArray" id="IhH-j6-4Z3"/>
+                        <outletCollection property="allTextFields" destination="Ufy-qn-uo4" collectionClass="NSMutableArray" id="8ug-j5-VGK"/>
+                        <outletCollection property="allTextFields" destination="8Ts-0I-rKY" collectionClass="NSMutableArray" id="c4l-C6-GKW"/>
+                        <outletCollection property="allTextFields" destination="FdN-Z4-iVT" collectionClass="NSMutableArray" id="dJw-si-3iX"/>
+                        <outletCollection property="allTextFields" destination="Pqq-6Z-rr1" collectionClass="NSMutableArray" id="iaI-DL-W6j"/>
+                        <outletCollection property="allTextFields" destination="KFk-Y3-7OT" collectionClass="NSMutableArray" id="RL2-vQ-s7A"/>
+                        <outletCollection property="allTextFields" destination="4st-pu-1Sq" collectionClass="NSMutableArray" id="8KF-ou-vEt"/>
+                        <outletCollection property="allTextFields" destination="NjO-by-iho" collectionClass="NSMutableArray" id="lig-W5-udX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iSo-4q-iac" userLabel="First Responder" sceneMemberID="firstResponder"/>

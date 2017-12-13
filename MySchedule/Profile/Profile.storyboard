@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -337,7 +337,7 @@
             <objects>
                 <tableViewController id="hIH-X7-jn1" customClass="ChangeProfileTableViewController" customModule="MySchedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="XaK-Zq-Wmh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="850"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -547,7 +547,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="ZwF-IK-kXn">
+                            <tableViewSection footerTitle="Automatically fills in your username and password at the login screen." id="ZwF-IK-kXn">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3Ip-M9-P05">
                                         <rect key="frame" x="0.0" y="391.5" width="375" height="44"/>
@@ -564,6 +564,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cbh-Td-trS">
                                                     <rect key="frame" x="297" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="autoFillLoginChanged:" destination="hIH-X7-jn1" eventType="valueChanged" id="m1a-9h-nJH"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -583,7 +586,7 @@
                                 <string key="footerTitle">Please refer to your favourite subjects by entering the name of these subjects. If you have a class about one of your favourite subjects, it will be marked.</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ms7-8Z-mIt">
-                                        <rect key="frame" x="0.0" y="499" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="527" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ms7-8Z-mIt" id="bzx-VH-pQS">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -614,7 +617,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="c3d-aW-g7x">
-                                        <rect key="frame" x="0.0" y="543" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="571" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c3d-aW-g7x" id="VRL-em-3aA">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -645,7 +648,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nMY-Ss-3ht">
-                                        <rect key="frame" x="0.0" y="587" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="615" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nMY-Ss-3ht" id="4LT-cP-HlA">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -683,7 +686,9 @@
                             <outlet property="delegate" destination="hIH-X7-jn1" id="KYX-SQ-oXj"/>
                         </connections>
                     </tableView>
+                    <size key="freeformSize" width="375" height="850"/>
                     <connections>
+                        <outlet property="autoFillLogin" destination="cbh-Td-trS" id="LFH-GJ-Cso"/>
                         <outlet property="emailAdress" destination="6hE-vv-bXR" id="tdg-4z-e42"/>
                         <outlet property="firstName" destination="hg7-GN-LLL" id="gc8-Qv-a5F"/>
                         <outlet property="lastName" destination="65y-oJ-j48" id="Ysq-wq-F3P"/>
@@ -692,6 +697,10 @@
                         <outlet property="subject2" destination="d2f-YS-v7J" id="BM7-Hq-M7a"/>
                         <outlet property="subject3" destination="SLX-TW-5gR" id="8RG-cv-6jy"/>
                         <outlet property="userName" destination="kUn-aQ-a0w" id="rHB-i1-CdD"/>
+                        <outletCollection property="allTextFields" destination="hg7-GN-LLL" collectionClass="NSMutableArray" id="QAt-JW-Wsq"/>
+                        <outletCollection property="allTextFields" destination="65y-oJ-j48" collectionClass="NSMutableArray" id="j3u-Rf-GK3"/>
+                        <outletCollection property="allTextFields" destination="6hE-vv-bXR" collectionClass="NSMutableArray" id="QZE-4c-4vu"/>
+                        <outletCollection property="allTextFields" destination="kUn-aQ-a0w" collectionClass="NSMutableArray" id="v2r-xg-09B"/>
                         <segue destination="b0X-zy-fpU" kind="unwind" identifier="saveChanges" unwindAction="unwindToLoginWithSegue:" id="bVk-ha-0Mq"/>
                     </connections>
                 </tableViewController>

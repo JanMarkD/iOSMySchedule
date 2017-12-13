@@ -11,6 +11,8 @@ import UIKit
 
 class CreateAlert: NSObject{
     
+    //Search for the viewcontroller that is currently on screen, in order to present alert on that viewcontroller.
+    
     func topMostController() -> UIViewController {
         var topController: UIViewController? = UIApplication.shared.keyWindow?.rootViewController
         while ((topController?.presentedViewController) != nil) {
@@ -18,6 +20,8 @@ class CreateAlert: NSObject{
         }
         return topController!
     }
+    
+    //Creates an UIAlertController with a title, message and a default "OK" dismiss button and presents in on current viewcontroller.
     
     func alert(message:String, title:String){
         let alert=UIAlertController(title: title, message: message, preferredStyle: .alert);
