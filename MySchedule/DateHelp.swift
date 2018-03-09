@@ -64,7 +64,7 @@ class DateHelp: NSObject{
         }else if timeInMinutes >= endOfSchool && timeInMinutes<=endOfDay{
             return 9
         }else{
-            return 0
+            return 10
         }
     }
     

@@ -19,7 +19,12 @@ class HomeViewController: UIViewController {
     
     let dateHelper = DateHelp()
     
+    let alertHelp = CreateAlert()
+    
     let defaults = UserDefaults.standard
+    
+    var activityIndicator = UIActivityIndicatorView()
+    
     
     
     //Outlets
@@ -32,10 +37,10 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var classNext: UILabel!
 
+    @IBOutlet weak var noNetwork: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    
+    func startUpdating() {
         //Gets data needed for HTTP request, checks if device is connected, if true performs request.
         
         let startTime = dateHelper.getStartOfCurrentWeek()
@@ -43,8 +48,34 @@ class HomeViewController: UIViewController {
         let studentCode = defaults.value(forKey: "Student code") as! String
         
         if Reachability.isConnectedToNetwork(){
-            retriever.getAllData(studentCode: studentCode, startTime: String(startTime), endTime: String(endTime))
+            activityIndicator.startAnimating()
+            UIApplication.shared.beginIgnoringInteractionEvents()
+            
+            Timer.scheduledTimer(withTimeInterval: 2.2, repeats: false){(timer) in
+                let handlerBlock: (Bool) -> Void = { doneWork in
+                    if doneWork {
+                        self.activityIndicator.stopAnimating()
+                        UIApplication.shared.endIgnoringInteractionEvents()
+                        print("Finished")
+                    }
+                }
+                self.retriever.getAllData(studentCode: studentCode, startTime: String(startTime), endTime: String(endTime), enterDoStuff: handlerBlock)
+            }
+        }else{
+            noNetwork.text = "No Internet Connection"
+            noNetwork.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "Rectangle Home background"))
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = .whiteLarge
+        self.view.addSubview(activityIndicator)
+        
+        startUpdating()
         
         //Set text of "Welcome" label.
         

@@ -153,7 +153,7 @@ class scheduleRetriever: NSObject{
         } catch {}
     }
     
-    func getAllData(studentCode: String, startTime: String, endTime: String){
+    func getAllData(studentCode: String, startTime: String, endTime: String, enterDoStuff: (Bool) -> Void){
     
         //Get information (also from parameters) needed to make HTTP request.
         
@@ -246,5 +246,6 @@ class scheduleRetriever: NSObject{
             }
             task.resume()
         }
+        enterDoStuff(true)
     }
 }

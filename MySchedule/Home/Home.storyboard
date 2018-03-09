@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AM1-Yf-D8M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AM1-Yf-D8M">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -71,6 +71,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="px1-Mw-G9e">
                                 <rect key="frame" x="76" y="104" width="223" height="223"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwd-74-uDB">
+                                <rect key="frame" x="39" y="20" width="297" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.72731136658031081" green="0.065090831404639032" blue="0.05814538270222086" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -79,6 +85,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Y9U-aR-0TN" secondAttribute="trailing" constant="35" id="689-3F-hYa"/>
                             <constraint firstItem="1h3-qL-AGw" firstAttribute="centerX" secondItem="B09-ad-ZmC" secondAttribute="centerX" id="7NE-B8-dh0"/>
                             <constraint firstItem="4fw-w4-8e9" firstAttribute="centerX" secondItem="1h3-qL-AGw" secondAttribute="centerX" id="7qb-x8-pP3"/>
+                            <constraint firstItem="wwd-74-uDB" firstAttribute="leading" secondItem="B0O-BZ-VEu" secondAttribute="leadingMargin" constant="23" id="9en-Gv-gZG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xL7-tF-72K" secondAttribute="trailing" constant="23" id="BaV-Qv-rQu"/>
                             <constraint firstItem="xRC-kz-bdM" firstAttribute="top" secondItem="B0O-BZ-VEu" secondAttribute="top" id="FDD-aG-adZ"/>
                             <constraint firstItem="RIK-i7-Dxs" firstAttribute="top" secondItem="B09-ad-ZmC" secondAttribute="bottom" constant="97" id="HGg-Si-mUm"/>
@@ -89,15 +96,18 @@
                             <constraint firstItem="1h3-qL-AGw" firstAttribute="top" secondItem="4fw-w4-8e9" secondAttribute="bottom" constant="15" id="UQV-GX-UUJ"/>
                             <constraint firstItem="px1-Mw-G9e" firstAttribute="centerX" secondItem="xL7-tF-72K" secondAttribute="centerX" id="eAl-Wm-3zP"/>
                             <constraint firstItem="Y9U-aR-0TN" firstAttribute="centerX" secondItem="4fw-w4-8e9" secondAttribute="centerX" id="fB1-tX-vf2"/>
+                            <constraint firstItem="xL7-tF-72K" firstAttribute="top" secondItem="wwd-74-uDB" secondAttribute="bottom" constant="25" id="fOA-5v-Gxm"/>
                             <constraint firstItem="1h3-qL-AGw" firstAttribute="leading" secondItem="B0O-BZ-VEu" secondAttribute="leadingMargin" constant="61" id="huT-Kq-Pow"/>
                             <constraint firstItem="px1-Mw-G9e" firstAttribute="leading" secondItem="B0O-BZ-VEu" secondAttribute="leadingMargin" constant="60" id="jlt-9D-EtZ"/>
                             <constraint firstItem="Y9U-aR-0TN" firstAttribute="top" secondItem="px1-Mw-G9e" secondAttribute="bottom" constant="25" id="lON-Of-1Ri"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wwd-74-uDB" secondAttribute="trailing" constant="23" id="lWq-mj-Gas"/>
                             <constraint firstItem="RIK-i7-Dxs" firstAttribute="top" secondItem="xL7-tF-72K" secondAttribute="bottom" constant="83" id="mUU-F7-VFK"/>
                             <constraint firstItem="xL7-tF-72K" firstAttribute="leading" secondItem="B0O-BZ-VEu" secondAttribute="leadingMargin" constant="23" id="pIq-cS-1yA"/>
                             <constraint firstItem="4fw-w4-8e9" firstAttribute="top" secondItem="Y9U-aR-0TN" secondAttribute="bottom" constant="35" id="pk6-qG-EpJ"/>
                             <constraint firstItem="B09-ad-ZmC" firstAttribute="top" secondItem="1h3-qL-AGw" secondAttribute="bottom" constant="23" id="sxR-en-Csh"/>
                             <constraint firstAttribute="trailing" secondItem="xRC-kz-bdM" secondAttribute="trailing" id="ul1-I9-tUu"/>
                             <constraint firstItem="px1-Mw-G9e" firstAttribute="centerX" secondItem="Y9U-aR-0TN" secondAttribute="centerX" id="w4W-NX-ra4"/>
+                            <constraint firstItem="wwd-74-uDB" firstAttribute="top" secondItem="Vtz-bZ-qfk" secondAttribute="bottom" id="z7c-40-Hcy"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="homeIcon" landscapeImage="homeIcon" selectedImage="homeIcon" id="hcU-if-bzU"/>
@@ -106,6 +116,7 @@
                         <outlet property="classNext" destination="1h3-qL-AGw" id="LmU-7E-mS1"/>
                         <outlet property="classRightNow" destination="4fw-w4-8e9" id="EV5-xf-toA"/>
                         <outlet property="logoImage" destination="px1-Mw-G9e" id="Keg-jz-jsn"/>
+                        <outlet property="noNetwork" destination="wwd-74-uDB" id="WU2-4h-vOg"/>
                         <outlet property="welcomeUser" destination="Y9U-aR-0TN" id="czf-eW-e44"/>
                     </connections>
                 </viewController>
