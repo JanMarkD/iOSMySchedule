@@ -12,7 +12,6 @@ import UIKit
 
 class ChangeProfileTableViewController: UITableViewController {
     
-    
     //Properties
     
     let numberOfRowsInSection = [5,1,1,3]

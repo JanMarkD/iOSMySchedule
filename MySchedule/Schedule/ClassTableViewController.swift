@@ -13,7 +13,6 @@ import CoreData
 
 class ClassTableViewController: UITableViewController {
     
-    
     //Setup Data
     
     var classData = Lesson()
