@@ -264,7 +264,7 @@ class ScheduleTableViewController: UITableViewController {
             let six = #imageLiteral(resourceName: "6hour")
             let seven = #imageLiteral(resourceName: "7hour")
             let eight = #imageLiteral(resourceName: "8hour")
-            //let nine =
+            let nine = #imageLiteral(resourceName: "9hour")
             let cancelled = #imageLiteral(resourceName: "cancelledFilled")
             let modified = #imageLiteral(resourceName: "modifiedClassFilled")
             
@@ -281,7 +281,7 @@ class ScheduleTableViewController: UITableViewController {
             case 6?: cell.imageView?.image = six
             case 7?: cell.imageView?.image = seven
             case 8?: cell.imageView?.image = eight
-            //case 9?: cell.imageView?.image = nine
+            case 9?: cell.imageView?.image = nine
             default: print("")
             }
             
