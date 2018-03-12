@@ -9,6 +9,10 @@
 import UIKit
 
 // TODO: Design tableviewcells and text colors, separator.
+struct cellData {
+    
+    let cell : Int!
+}
 
 class ChangeProfileTableViewController: UITableViewController {
     
