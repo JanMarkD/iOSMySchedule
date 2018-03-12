@@ -63,7 +63,7 @@ class HomeViewController: UIViewController {
     
         }else{
             noNetwork.text = "No Internet Connection"
-            noNetwork.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "Rectangle Home background"))
+            noNetwork.backgroundColor = UIColor.white
         }
     }
     

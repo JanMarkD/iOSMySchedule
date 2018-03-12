@@ -48,6 +48,14 @@ class InterfaceController: WKInterfaceController {
                     
                     switch(Int(classesToday[i]["hour"]!))!{
                     case 1: row.hourImageView.setImage(#imageLiteral(resourceName: "modifiedYellow"))
+                    case 2: row.hourImageView.setImage(#imageLiteral(resourceName: "modifiedYellow"))
+                    case 3: row.hourImageView.setImage(#imageLiteral(resourceName: "modifiedYellow"))
+                    case 4: row.hourImageView.setImage(#imageLiteral(resourceName: "modifiedYellow"))
+                    case 5: row.hourImageView.setImage(#imageLiteral(resourceName: "modifiedYellow"))
+                    case 6: row.hourImageView.setImage(#imageLiteral(resourceName: "modifiedYellow"))
+                    case 7: row.hourImageView.setImage(#imageLiteral(resourceName: "modifiedYellow"))
+                    case 8: row.hourImageView.setImage(#imageLiteral(resourceName: "modifiedYellow"))
+                    case 9: row.hourImageView.setImage(#imageLiteral(resourceName: "modifiedYellow"))
                     default: print("")
                     }
                     switch(classesToday[i]["change"]!){

@@ -149,6 +149,7 @@ class scheduleRetriever: NSObject{
                     lessonWatch["changeDescription"] = changeDescription
                     lessonWatch["remark"] = remark
                     lessonWatch["day"] = String(self.dateHelper.getDayOfWeek(date: startDate as NSDate))
+                    lessonWatch["change"] = change
                     
                     if lessonWatch.isEmpty == false{
                         switch(lessonWatch["day"]!){

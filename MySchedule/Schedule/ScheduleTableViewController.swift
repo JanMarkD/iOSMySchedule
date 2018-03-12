@@ -127,6 +127,7 @@ class ScheduleTableViewController: UITableViewController {
         //Background and weeknumber label text.
         
         tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "Background home"))
+        tableView.allowsSelection = false
         
         let weeknumber = dateHelper.getWeekNumber(date: NSDate())
         self.navigationItem.title = "Week " + String(weeknumber)
