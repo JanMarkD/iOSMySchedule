@@ -46,7 +46,8 @@ class InterfaceController: WKInterfaceController {
                     row.subjectLabel.setText(classesToday[i]["subject"])
                     row.locationLabel.setText(classesToday[i]["location"])
                     
-                    switch(Int(classesToday[i]["hour"]!)){
+                    switch(Int(classesToday[i]["hour"]!))!{
+                    case 1: row.hourImageView.setImage(#imageLiteral(resourceName: "modifiedYellow"))
                     default: print("")
                     }
                     switch(classesToday[i]["change"]!){

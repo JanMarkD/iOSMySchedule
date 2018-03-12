@@ -65,6 +65,12 @@ class scheduleRetriever: NSObject{
                 CoreData.context.delete(allLessons[i])
             }
             
+            var monday = [[String:String]]()
+            var tuesday = [[String:String]]()
+            var wednesday = [[String:String]]()
+            var thursday = [[String:String]]()
+            var friday = [[String:String]]()
+            
             //Accesses each lesson in retrieved schedule data.
             
             for x in 0..<totalSchedule.count{
@@ -124,6 +130,38 @@ class scheduleRetriever: NSObject{
                     change = "modified"
                 }
                 
+                if weekNumber == dateHelper.getWeekNumber(date: NSDate()){
+                    
+                    var lessonWatch = [String:String]()
+                    
+                    if teacher.count != 0{
+                        lessonWatch["teacher"] = (teacher[0] as! String)
+                    }
+                    if subject.count != 0{
+                        lessonWatch["subject"] = (subject[0] as! String)
+                    }
+                    if location.count != 0{
+                        lessonWatch["location"] = (location[0] as! String).uppercased()
+                    }
+                    
+                    lessonWatch["time"] = time
+                    lessonWatch["hour"] = String(hour)
+                    lessonWatch["changeDescription"] = changeDescription
+                    lessonWatch["remark"] = remark
+                    lessonWatch["day"] = String(self.dateHelper.getDayOfWeek(date: startDate as NSDate))
+                    
+                    if lessonWatch.isEmpty == false{
+                        switch(lessonWatch["day"]!){
+                        case "2": monday.append(lessonWatch)
+                        case "3": tuesday.append(lessonWatch)
+                        case "4": wednesday.append(lessonWatch)
+                        case "5": thursday.append(lessonWatch)
+                        case "6": friday.append(lessonWatch)
+                        default: print("")
+                        }
+                    }
+                }
+                
                 //Create new CoreData Lesson and assigns available information to this Lesson.
                 
                 let myLesson = Lesson(context: CoreData.context)
@@ -150,10 +188,21 @@ class scheduleRetriever: NSObject{
 
                 CoreData.saveContext()
             }
+            
+            monday.sort {$0["hour"]! < $1["hour"]!}
+            tuesday.sort {$0["hour"]! < $1["hour"]!}
+            wednesday.sort {$0["hour"]! < $1["hour"]!}
+            thursday.sort {$0["hour"]! < $1["hour"]!}
+            friday.sort {$0["hour"]! < $1["hour"]!}
+            
+            let classesThisWeek = [monday,tuesday,wednesday,thursday,friday]
+            
+            print(classesThisWeek)
+            
         } catch {}
     }
     
-    func getAllData(studentCode: String, startTime: String, endTime: String, enterDoStuff: (Bool) -> Void){
+    func getAllData(studentCode: String, startTime: String, endTime: String, enterDoStuff: @escaping (Bool) -> Void){
     
         //Get information (also from parameters) needed to make HTTP request.
         
@@ -246,6 +295,10 @@ class scheduleRetriever: NSObject{
             }
             task.resume()
         }
-        enterDoStuff(true)
+        print("0")
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: false){ (timer) in
+            print("3")
+            enterDoStuff(true)
+        }
     }
 }

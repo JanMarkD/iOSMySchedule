@@ -41,6 +41,7 @@ class HomeViewController: UIViewController {
     
     
     func startUpdating() {
+        
         //Gets data needed for HTTP request, checks if device is connected, if true performs request.
         
         let startTime = dateHelper.getStartOfCurrentWeek()
@@ -50,17 +51,16 @@ class HomeViewController: UIViewController {
         if Reachability.isConnectedToNetwork(){
             activityIndicator.startAnimating()
             UIApplication.shared.beginIgnoringInteractionEvents()
-            
-            Timer.scheduledTimer(withTimeInterval: 2.2, repeats: false){(timer) in
-                let handlerBlock: (Bool) -> Void = { doneWork in
-                    if doneWork {
-                        self.activityIndicator.stopAnimating()
-                        UIApplication.shared.endIgnoringInteractionEvents()
-                        print("Finished")
-                    }
+
+            let handlerBlock: (Bool) -> Void = { doneWork in
+                if doneWork {
+                    self.activityIndicator.stopAnimating()
+                    UIApplication.shared.endIgnoringInteractionEvents()
                 }
-                self.retriever.getAllData(studentCode: studentCode, startTime: String(startTime), endTime: String(endTime), enterDoStuff: handlerBlock)
             }
+            
+            self.retriever.getAllData(studentCode: studentCode, startTime: String(startTime), endTime: String(endTime), enterDoStuff: handlerBlock)
+    
         }else{
             noNetwork.text = "No Internet Connection"
             noNetwork.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "Rectangle Home background"))
