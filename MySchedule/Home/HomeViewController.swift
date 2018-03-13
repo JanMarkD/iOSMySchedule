@@ -111,14 +111,26 @@ class HomeViewController: UIViewController {
                 let nextHour = currentHour + 1
                 
                 if weekNumber == currentWeek && dayNumber == currentDay && String(currentHour) == hour{
-                    let currentLocation = lessons[i].location
-                    let currentSubject = lessons[i].subject
-                    classRightNow.text = "You have " + currentSubject! + ", in " + currentLocation!
+                    var currentLocation = "?"
+                    var currentSubject = "?"
+                    if let currentLocation1 = lessons[i].location{
+                        currentLocation = lessons[i].location!
+                    }
+                    if let currentSubject1 = lessons[i].subject{
+                        currentSubject = lessons[i].subject!
+                    }
+                    classRightNow.text = "You have " + currentSubject + ", in " + currentLocation
                 }
                 if weekNumber == currentWeek && dayNumber == currentDay && String(nextHour) == hour{
-                    let nextLocation = lessons[i].location
-                    let nextSubject = lessons[i].subject
-                    classNext.text = "Your next lesson is " + nextSubject! + ", in " + nextLocation!
+                    var nextLocation = "?"
+                    var nextSubject = "?"
+                    if let nextLocation1 = lessons[i].location{
+                        nextLocation = lessons[i].location!
+                    }
+                    if let nextSubject1 = lessons[i].subject{
+                        nextSubject = lessons[i].subject!
+                    }
+                    classNext.text = "Your next lesson is " + nextSubject + ", in " + nextLocation
                 }
             }
             

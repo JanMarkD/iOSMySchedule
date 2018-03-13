@@ -198,8 +198,6 @@ class scheduleRetriever: NSObject{
             
             let classesThisWeek = [monday,tuesday,wednesday,thursday,friday]
             
-            print(classesThisWeek)
-            
         } catch {}
     }
     

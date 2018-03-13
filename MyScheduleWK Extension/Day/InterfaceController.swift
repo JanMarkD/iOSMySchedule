@@ -58,11 +58,11 @@ class InterfaceController: WKInterfaceController {
                     case 9: row.hourImageView.setImage(#imageLiteral(resourceName: "modifiedYellow"))
                     default: print("")
                     }
-                    switch(classesToday[i]["change"]!){
-                    case "new", "modified", "moved": row.alertImageView.setImage(#imageLiteral(resourceName: "modifiedYellow"))
-                    case "cancelled": row.alertImageView.setImage(#imageLiteral(resourceName: "cancelledRed"))
-                    default: print("")
-                    }
+//                    switch(classesToday[i]["change"]!){
+//                    case "new", "modified", "moved": row.alertImageView.setImage(#imageLiteral(resourceName: "modifiedYellow"))
+//                    case "cancelled": row.alertImageView.setImage(#imageLiteral(resourceName: "cancelledRed"))
+//                    default: print("")
+                    //}
                 }
             }
         }
